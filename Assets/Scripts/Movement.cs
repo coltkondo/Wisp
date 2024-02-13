@@ -57,11 +57,13 @@ public class Movement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+            anim.SetTrigger("Jump");
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
+            anim.SetTrigger("Jump");
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
@@ -141,8 +143,10 @@ public class Movement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && wallJumpingCounter > 0f)
         {
             isWallJumping = true;
+            anim.SetTrigger("Jump");
             rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
             wallJumpingCounter = 0f;
+
 
             if (transform.localScale.x != wallJumpingDirection)
             {
