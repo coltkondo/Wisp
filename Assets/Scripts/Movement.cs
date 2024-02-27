@@ -63,7 +63,6 @@ public class Movement : MonoBehaviour
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
-            anim.SetTrigger("Jump");
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
