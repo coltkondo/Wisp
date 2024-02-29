@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public PlayerAudio playerAudio;
     private float horizontal;
     public float speed = 8f;
     public float jumpingPower = 16f;
@@ -36,7 +37,7 @@ public class Movement : MonoBehaviour
 
     void Start(){
         anim = GetComponent<Animator>(); // Get the Animator component attached to the GameObject.
-
+        playerAudio = GetComponent<PlayerAudio>();
     }
     private void Update()
     {
@@ -50,21 +51,37 @@ public class Movement : MonoBehaviour
 
         if (horizontal != 0){
             anim.SetBool("IsWalking", true);
+            if (playerAudio && !playerAudio.WalkSource.isPlaying && playerAudio.WalkSource.clip != null)
+				{
+					playerAudio.WalkSource.Play();
+				}
         }
         else{
             anim.SetBool("IsWalking", false);
+            if (playerAudio && playerAudio.WalkSource.isPlaying && playerAudio.WalkSource.clip != null)
+				{
+					playerAudio.WalkSource.Stop();
+				}
         }
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             anim.SetTrigger("Jump");
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+        	if (playerAudio && playerAudio != null)
+		    {
+			    playerAudio.JumpSource.Play();
+		    }
         }
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             anim.SetTrigger("Jump");
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            if (playerAudio && playerAudio != null)
+		    {
+			    playerAudio.JumpSource.Play();
+		    }
         }
 
 

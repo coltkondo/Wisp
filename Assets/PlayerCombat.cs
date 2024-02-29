@@ -11,6 +11,13 @@ public class PlayerCombat : MonoBehaviour
     public int attackDamage = 40;
     public float attackRate = 2f;
     float nextAttackTime = 0f;
+    
+	[Header("Audio")]
+	public PlayerAudio playerAudio;
+    private void Start()
+	{
+        playerAudio = GetComponent<PlayerAudio>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -20,6 +27,10 @@ public class PlayerCombat : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
                 {
                     Attack();
+                    if (playerAudio && !playerAudio.AttackSource.isPlaying && playerAudio.AttackSource.clip != null)
+                    {
+                        playerAudio.AttackSource.Play();
+                    }
                     nextAttackTime = Time.time + 1f / attackRate;
                 }
         }
