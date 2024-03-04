@@ -8,7 +8,7 @@ public class EnemyAnimController : MonoBehaviour
 	private GameObject player;
 	[HideInInspector]
 	public bool isVisible;
-	private Animator animator;
+	public Animator animator;
 	public float respawnRadius = 0;
 	private float distance = -1;
 	[HideInInspector]
@@ -27,7 +27,7 @@ public class EnemyAnimController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		animator.SetBool("isHidden", stealth.isHidden);
+		//animator.SetBool("isHidden", stealth.isHidden);
 		animator.SetFloat("distance", distance); // set an animator float variable for 
 		distance = (player.transform.position - transform.position).magnitude; // how far away this object is from the player
 
