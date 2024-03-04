@@ -36,7 +36,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: distance
-    m_EventTreshold: 10
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 734632249334186513}
   m_Solo: 0
@@ -169,7 +169,7 @@ AnimatorStateMachine:
     m_Position: {x: 310, y: 100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5663939135901150404}
-    m_Position: {x: 530, y: 230, z: 0}
+    m_Position: {x: 260, y: 360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7787861510575243601}
     m_Position: {x: 650, y: 180, z: 0}
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 808f3a56f75c80f4f8b902bdaae170d9, type: 3}
   m_Name: 
@@ -362,7 +362,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 51200be63ab0e47a0a322950f11b7fb0, type: 2}
     m_Threshold: 0
-    m_Position: {x: 0, y: 0}
+    m_Position: {x: 0, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: distance
@@ -378,7 +378,7 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 51200be63ab0e47a0a322950f11b7fb0, type: 2}
     m_Threshold: 0.6666667
-    m_Position: {x: 0, y: 0}
+    m_Position: {x: 0, y: -1}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: distance
@@ -411,7 +411,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: distance
-    m_EventTreshold: 10
+    m_EventTreshold: 2
   - m_ConditionMode: 2
     m_ConditionEvent: isHidden
     m_EventTreshold: 0

@@ -30,17 +30,17 @@ public class Movement : MonoBehaviour
     [SerializeField] private Transform wallCheck;
     [SerializeField] private LayerMask wallLayer;
 
-    [SerializeField] private TrailRenderer tr;
+    [SerializeField] private GameObject smokeTrailPrefab; // Assign this in the Inspector
 
     Animator anim;
 
-    void Start(){
+    void Start()
+    {
         anim = GetComponent<Animator>(); // Get the Animator component attached to the GameObject.
-
     }
+
     private void Update()
     {
-
         if (isDashing)
         {
             return;
@@ -48,10 +48,12 @@ public class Movement : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (horizontal != 0){
+        if (horizontal != 0)
+        {
             anim.SetBool("IsWalking", true);
         }
-        else{
+        else
+        {
             anim.SetBool("IsWalking", false);
         }
 
@@ -66,12 +68,10 @@ public class Movement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
-
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
             StartCoroutine(Dash());
         }
-
 
         WallSlide();
         WallJump();
@@ -80,12 +80,10 @@ public class Movement : MonoBehaviour
         {
             Flip();
         }
-
     }
 
     private void FixedUpdate()
     {
-        
         if (isDashing)
         {
             return;
@@ -95,10 +93,6 @@ public class Movement : MonoBehaviour
         {
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         }
-
-        
-
-        //rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
     private bool IsGrounded()
@@ -146,7 +140,6 @@ public class Movement : MonoBehaviour
             rb.velocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
             wallJumpingCounter = 0f;
 
-
             if (transform.localScale.x != wallJumpingDirection)
             {
                 isFacingRight = !isFacingRight;
@@ -174,19 +167,31 @@ public class Movement : MonoBehaviour
             transform.localScale = localScale;
         }
     }
-    private IEnumerator Dash()
-    {
-        canDash = false;
-        isDashing = true;
-        float originalGravity = rb.gravityScale;
-        rb.gravityScale = 0f;
-        rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
-        tr.emitting = true;
-        yield return new WaitForSeconds(dashingTime);
-        tr.emitting = false;
-        rb.gravityScale = originalGravity;
-        isDashing = false;
-        yield return new WaitForSeconds(dashingCooldown);
-        canDash = true;
-    }
+
+private IEnumerator Dash()
+{
+    canDash = false;
+    isDashing = true;
+    
+    // Adjust these values as needed to position the smoke trail correctly relative to your player's feet
+    Vector3 smokeSpawnPosition = transform.position - new Vector3(0, 0.3f, 0); // Adjust 0.5f to lower or raise the spawn position
+    
+    // Instantiate smoke trail with the adjusted position
+    GameObject smokeTrailInstance = Instantiate(smokeTrailPrefab, smokeSpawnPosition, Quaternion.identity);
+    
+    // Flip the smoke trail based on the player's facing direction
+    smokeTrailInstance.GetComponent<SpriteRenderer>().flipX = !isFacingRight;
+
+    float originalGravity = rb.gravityScale;
+    rb.gravityScale = 0f;
+    rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+    
+    yield return new WaitForSeconds(dashingTime);
+    
+    rb.gravityScale = originalGravity;
+    isDashing = false;
+    yield return new WaitForSeconds(dashingCooldown);
+    canDash = true;
+}
+
 }
