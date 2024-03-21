@@ -1,9 +1,9 @@
 [NAME=???][SPEAKERSPRITE=] Well, well, look who it is.
 [NAME=You][SPEAKERSPRITE=Wisp] Who are you!?
-You don't have a name.
-[NAME=???][SPEAKERSPRITE=Knight]  Tis I! Sir Erik of the Knights!
+ You don't have a name.
+[NAME=???][SPEAKERSPRITE=Knight] Tis I! Sir Erik of the Knights!
 [NAME=Sir Erik] No time for chit-of-chat, you must go collect the donuts!
-[NAME=You][SPEAKERSPRITE=Wisp] ...why?
+[NAME=You][SPEAKERSPRITE=Wisp] ...Why?
 [NAME=Sir Erik][SPEAKERSPRITE=Knight] Because you gotta get collectibles to escape the level!
 [NAME=You][SPEAKERSPRITE=Wisp] But why donuts?
-[NAME=Sir Erik][SPEAKERSPRITE=Knight] I dunno, ask the Professor.
+[NAME=Sir Erik][SPEAKERSPRITE=Knight] I donut know, ask the Professor.
