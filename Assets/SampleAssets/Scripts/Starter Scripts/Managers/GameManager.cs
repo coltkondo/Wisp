@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 	{
 		if (Player == null)
 		{
-			Player = FindObjectOfType<PlayerMovement>().gameObject;
+			Player = FindObjectOfType<Movement>().gameObject;
 		}
 		RespawnPlace = Player.transform.position;
 	}
@@ -31,14 +31,23 @@ public class GameManager : MonoBehaviour
 		RespawnPlace = newPlace.transform.position;
 	}
 
-	public void DisablePlayerMovement(bool isDisabled)
+	public void DisablePlayerMovement()
 	{
-		PlayerMovement playerMovement = Player.GetComponent<PlayerMovement>();
+		Movement Movement = Player.GetComponent<Movement>();
 		PlayerAudio playerAudio = Player.GetComponent<PlayerAudio>();
 
-		if (playerMovement)
-			playerMovement.DisablePlayer(isDisabled);
+        Movement.DisablePlayer();
 		if (playerAudio)
 			playerAudio.StopAll();
 	}
+
+    public void EnablePlayerMovement()
+    {
+        Movement Movement = Player.GetComponent<Movement>();
+        PlayerAudio playerAudio = Player.GetComponent<PlayerAudio>();
+
+        Movement.EnablePlayer();
+		if (playerAudio)
+			playerAudio.StopAll();
+    }
 }

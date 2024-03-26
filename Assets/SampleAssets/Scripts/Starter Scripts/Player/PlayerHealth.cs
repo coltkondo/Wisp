@@ -236,30 +236,28 @@ public class PlayerHealth : MonoBehaviour
 	private void TimeToDie()
 	{
 		StartCoroutine(PlayerDies());
-		
 	}
 
 	IEnumerator PlayerDies()
 	{
 		if (gameManager != null && gameSceneManager != null)
 		{
-			anim.SetBool("isDead", true);
+			anim.SetTrigger("isDead");
 			Debug.Log("Set dead to true");
-			gameManager.DisablePlayerMovement(true);
+			gameManager.DisablePlayerMovement();
 			if (playerAudio && !playerAudio.DeathSource.isPlaying && playerAudio.DeathSource.clip != null)
 			{
 				playerAudio.DeathSource.Play();
 			}
-			yield return new WaitForSeconds(1f);
+			//yield return new WaitForSeconds(0.3f);
 			StartCoroutine(gameSceneManager.FadeOut());
 
 			yield return new WaitForSeconds(1f);
-			anim.SetBool("isDead", false);
 			gameManager.Respawn(gameObject);
 			StartCoroutine(gameSceneManager.FadeIn());
-			yield return new WaitForSeconds(1f);
-			ResetHealth();
-			gameManager.DisablePlayerMovement(false);
+            yield return new WaitForSeconds(1.2f);
+            ResetHealth();
+            gameManager.EnablePlayerMovement();
 			//anim.SetBool("isDead", false);
 		}
 		else
