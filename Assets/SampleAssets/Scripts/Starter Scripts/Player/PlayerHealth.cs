@@ -236,13 +236,14 @@ public class PlayerHealth : MonoBehaviour
 	private void TimeToDie()
 	{
 		StartCoroutine(PlayerDies());
+		
 	}
 
 	IEnumerator PlayerDies()
 	{
 		if (gameManager != null && gameSceneManager != null)
 		{
-			anim.SetTrigger("isDead");
+			anim.SetBool("isDead", true);
 			Debug.Log("Set dead to true");
 			gameManager.DisablePlayerMovement(true);
 			if (playerAudio && !playerAudio.DeathSource.isPlaying && playerAudio.DeathSource.clip != null)
@@ -253,6 +254,7 @@ public class PlayerHealth : MonoBehaviour
 			StartCoroutine(gameSceneManager.FadeOut());
 
 			yield return new WaitForSeconds(1f);
+			anim.SetBool("isDead", false);
 			gameManager.Respawn(gameObject);
 			StartCoroutine(gameSceneManager.FadeIn());
 			yield return new WaitForSeconds(1f);
