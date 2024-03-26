@@ -113,11 +113,18 @@ public class EnemyPatrolPathBehaviour : StateMachineBehaviour
 	}
 
 	private void Flip()
-	{
-		anim.SetBool("SpriteFacingRight", !anim.GetBool("SpriteFacingRight")); //flip whether the sprite is facing right
-		Vector3 currentScale = anim.transform.localScale;
-		currentScale.x *= -1;
-		anim.transform.localScale = currentScale;
-	}
+{
+    anim.SetBool("SpriteFacingRight", !anim.GetBool("SpriteFacingRight")); // Flip whether the sprite is facing right
+
+    // Find the child GameObject that represents the visual sprite
+    Transform spriteTransform = anim.gameObject.transform.Find("Sprite");
+    if (spriteTransform != null)
+    {
+        Vector3 currentScale = spriteTransform.localScale;
+        currentScale.x *= -1;
+        spriteTransform.localScale = currentScale;
+    }
+}
+
 
 }
