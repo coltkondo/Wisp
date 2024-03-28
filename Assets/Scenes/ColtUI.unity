@@ -2714,6 +2714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d06a41d158ac74b8810a75a1bdc551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
   animator: {fileID: 1129300458}
   attackPoint: {fileID: 275264626}
   attackRange: 0.57
@@ -3250,6 +3251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d06a41d158ac74b8810a75a1bdc551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 7742431058765413196, guid: 19f99d586778f1345871bbc32b28ced1, type: 3}
   animator: {fileID: 1501496370}
   attackPoint: {fileID: 1763390922}
   attackRange: 0.66
@@ -3335,6 +3337,10 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1501496370}
+    - target: {fileID: 3867603116833815654, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3798136522195948768, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
     m_RemovedGameObjects: []
