@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerCombat : MonoBehaviour
 {
@@ -20,6 +19,7 @@ public class PlayerCombat : MonoBehaviour
 
     [Header("Audio")]
     public PlayerAudio playerAudio;
+
     private void Start()
     {
         playerAudio = GetComponent<PlayerAudio>();
@@ -28,7 +28,6 @@ public class PlayerCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleWeaponRotation();
         HandleShooting();
 
         if (Time.time >= nextAttackTime)
@@ -52,9 +51,12 @@ public class PlayerCombat : MonoBehaviour
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-        foreach (Collider2D enemy in hitEnemies) // removed semicolon after foreach loop
+        Debug.Log("hit enemies: " + hitEnemies.Length);
+        foreach (Collider2D enemy in hitEnemies)
         {
+            Debug.Log("Hit enemy: " + enemy.name);
             enemy.GetComponent<EnemyHealth>().DecreaseHealth(attackDamage);
+
         }
     }
 
@@ -65,30 +67,12 @@ public class PlayerCombat : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
-    private void HandleWeaponRotation()
-    {
-        worldPosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        lookDirection = worldPosition - new Vector2(transform.position.x, transform.position.y);
-
-
-        angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-
-        if (angle > 90 || angle < -90)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-        else
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-    }
 
     private void HandleShooting()
     {
-        if (Keyboard.current.xKey.wasPressedThisFrame)
+        if (Input.GetKeyDown(KeyCode.X))
         {
             bulletInstance = Instantiate(bullet, attackPoint.position, Quaternion.identity);
-
         }
     }
 }

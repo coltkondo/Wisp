@@ -66,7 +66,6 @@ public class EnemyChaseBehaviour : StateMachineBehaviour
             // Vector3 currentScale = spriteTranform.localScale;
             // currentScale.x *= -1;
             // spriteTransform.localScale = currentScale;
-            Debug.Log("Skele FLIPPED");
             spriteTransform.localScale = new Vector3(spriteTransform.localScale.x *-1, spriteTransform.localScale.y, spriteTransform.localScale.z);
         }
     }  
