@@ -25,6 +25,8 @@ public class Movement : MonoBehaviour
     public float dashingTime = 0.2f;
     public float dashingCooldown = 1f;
 
+    public bool isDisabled = false;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -45,6 +47,11 @@ public class Movement : MonoBehaviour
     {
         if (isDashing)
         {
+            return;
+        }
+        if (isDisabled == true)
+        {
+            horizontal = 0;
             return;
         }
 
@@ -186,7 +193,17 @@ public class Movement : MonoBehaviour
         }
     }
 
-private IEnumerator Dash()
+    public void DisablePlayer()
+    {
+        isDisabled = true;
+    }
+
+    public void EnablePlayer()
+    {
+        isDisabled = false;
+    }
+
+    private IEnumerator Dash()
 {
     canDash = false;
     isDashing = true;

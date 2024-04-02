@@ -29,7 +29,6 @@ public class EnemyAnimController : MonoBehaviour
 	{
 		//animator.SetBool("isHidden", stealth.isHidden);
 		animator.SetFloat("distance", distance); // set an animator float variable for 
-		Debug.Log(player.transform.position.magnitude + "|" + transform.position.magnitude);
 		distance = (player.transform.position - transform.position).magnitude; // how far away this object is from the player
 
 		/*
