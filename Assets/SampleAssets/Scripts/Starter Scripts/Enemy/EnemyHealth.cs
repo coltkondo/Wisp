@@ -1,103 +1,112 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-	//This class should be placed on anything enemy related! Or anything that the player can damage
+    [Header("Settings")]
+    public bool EnemyHealthBar = false;
+    public int maxHealth = 100;
+    public int currentHealth;
 
-	[Header("Settings")]
-	public bool EnemyHealthBar = false;
-	public int maxHealth = 100;
-	public int currentHealth;
+    [Header("Health Bar")]
+    public float padding = 2f;
+    public Vector2 Dimensions;
+    public GameObject HealthBar;
+    public RectTransform canvasRectTransform;
 
-	[Header("Health Bar")]
-	[Tooltip("Padding between healthbar and enemy")]
-	public float padding = 2f;
+    [Header("Item Drop Settings")]
+    public GameObject itemPrefab; // The prefab for the item to drop
+    public int numberOfItemsToDrop = 3; // The number of items to drop
 
-	[Tooltip("Use this to control how wide or tall the health bar is")]
-	public Vector2 Dimensions;
+    private Image healthBarImage;
+    private RectTransform healthRectTransform;
+    private Animator anim;
 
-	[Tooltip("Prefab for healthbar")]
-	public GameObject HealthBar;
-	public RectTransform canvasRectTransform;
+    void Start()
+    {
+        currentHealth = maxHealth;
+        anim = GetComponent<Animator>();
+        if (EnemyHealthBar)
+        {
+            SetupHealthBar();
+        }
+    }
 
-	private Image healthBarImage;
-	private RectTransform healthRectTransform;
-
-	private Animator anim;
+    void Update()
+    {
+        if (EnemyHealthBar)
+        {
+            UpdateHealthBarPosition();
+        }
 	
+    }
 
-	void Start()
-	{
-		currentHealth = maxHealth;
-		anim = GetComponent<Animator>();
-		if (EnemyHealthBar)
-		{
-			if (canvasRectTransform == null)
-				canvasRectTransform = GameObject.FindGameObjectWithTag("EnemyHealthCanvas").GetComponent<RectTransform>();
+    public void DecreaseHealth(int value)
+    {
+        currentHealth -= value;
+        if (currentHealth <= 0)
+        {
+            HandleDeath();
+        }
+        if (EnemyHealthBar)
+            UpdateHealthBar();
+    }
 
-			GameObject newHealthBar = Instantiate(HealthBar, transform.position, Quaternion.identity);
-			healthRectTransform = newHealthBar.GetComponent<RectTransform>();
+    private IEnumerator DestroyAfterAnimation()
+    {
+        DropItems(); // Drop items before destroying the enemy
+        yield return new WaitForSeconds(2.0f); // Adjust the delay based on your death animation duration
+        Destroy(gameObject);
+        if (EnemyHealthBar) Destroy(healthBarImage.gameObject);
+    }
 
-			newHealthBar.transform.SetParent(canvasRectTransform);
+    private void UpdateHealthBar()
+    {
+        float fillAmount = (float)currentHealth / maxHealth;
+        healthBarImage.fillAmount = fillAmount > 1 ? 1.0f : fillAmount;
+    }
 
-			healthBarImage = newHealthBar.GetComponent<Image>();
-			healthBarImage.type = Image.Type.Filled;
+    private void SetupHealthBar()
+    {
+        if (canvasRectTransform == null)
+            canvasRectTransform = GameObject.FindGameObjectWithTag("EnemyHealthCanvas").GetComponent<RectTransform>();
 
-			UpdateHealthBar();
-			healthRectTransform.sizeDelta += Dimensions;
-		}
-	}
+        GameObject newHealthBar = Instantiate(HealthBar, transform.position, Quaternion.identity);
+        healthRectTransform = newHealthBar.GetComponent<RectTransform>();
+        newHealthBar.transform.SetParent(canvasRectTransform);
+        healthBarImage = newHealthBar.GetComponent<Image>();
+        healthBarImage.type = Image.Type.Filled;
+        healthRectTransform.sizeDelta += Dimensions;
+        UpdateHealthBar();
+    }
 
-	void Update()
-	{
-		if (EnemyHealthBar)
-		{
-			Vector2 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
-			healthRectTransform.anchoredPosition = screenPoint - canvasRectTransform.sizeDelta / 2f;
-			healthRectTransform.anchoredPosition += new Vector2(0f, padding);
-			//healthRectTransform.sizeDelta += Dimensions;
+    private void UpdateHealthBarPosition()
+    {
+        Vector2 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        healthRectTransform.anchoredPosition = screenPoint - canvasRectTransform.sizeDelta / 2f + new Vector2(0f, padding);
+    }
 
-		}
-	}
+    private void HandleDeath()
+    {
+        currentHealth = 0;
+        anim.SetBool("isDead", true);
+        StartCoroutine(DestroyAfterAnimation());
+    }
 
-	public void DecreaseHealth(int value)
-	{
-		currentHealth -= value;
-		if (currentHealth <= 0)
-		{
-			currentHealth = 0;
-			anim.SetBool("isDead", true); // Jane Apostol Fall '23
-
-			StartCoroutine(DestroyAfterAnimation()); // Jane Apostol Fall '23  Delay destruction of sprite until after animation
-		}
-
-		if (EnemyHealthBar)
-			UpdateHealthBar();
-	}
-
-	private IEnumerator DestroyAfterAnimation() // Jane Apostol Fall '23
-	{
-		yield return new WaitForSeconds(2.0f);  // Adjust the delay based on your death animation duration
-		Destroy(this.gameObject);
-		Destroy(healthBarImage.gameObject);
-	}
-
-	void UpdateHealthBar()//Updates the health bar according to the new health amounts
-	{
-		float fillAmount = (float)currentHealth / maxHealth;
-		if (fillAmount > 1)
-		{
-			fillAmount = 1.0f;
-		}
-
-		healthBarImage.fillAmount = fillAmount;
-	}
+    private void DropItems()
+    {
+        for (int i = 0; i < numberOfItemsToDrop; i++)
+        {
+            // Adjust the spawn position if necessary to prevent items from overlapping
+            Vector3 spawnPosition = transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
+            Instantiate(itemPrefab, spawnPosition, Quaternion.identity);
+        }
+    }
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		Debug.Log("Collision detected");
 		if (collision.gameObject.TryGetComponent(out Damager weapon))
 		{
 			if (weapon.alignmnent == Damager.Alignment.Player || weapon.alignmnent == Damager.Alignment.Environment)

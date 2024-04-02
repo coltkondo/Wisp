@@ -39,7 +39,7 @@ public class Timestop_Eric : MonoBehaviour
     }
 
         // Time Bar Section - Updates the UI for changes to player's time points.
-        void increaseTimePoints(int value)
+        public void increaseTimePoints(int value)
     {
         currentTimePoints += value;
         if (currentTimePoints > maxTimePoints)
