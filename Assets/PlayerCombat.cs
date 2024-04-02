@@ -73,6 +73,12 @@ public class PlayerCombat : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             bulletInstance = Instantiate(bullet, attackPoint.position, Quaternion.identity);
+            
+            if (playerAudio && !playerAudio.ShootSource.isPlaying && playerAudio.ShootSource.clip != null)
+            {
+                playerAudio.ShootSource.Play();
+            }
         }
     }
+
 }

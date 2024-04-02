@@ -2802,15 +2802,21 @@ MonoBehaviour:
   LoopWalkAudio: 1
   AttackAudioClip: {fileID: 8300000, guid: c7b92616a8a424c4c98af6a93d91cd54, type: 3}
   LoopAttackAudio: 0
+  ShootAudioClip: {fileID: 0}
+  LoopShootAudio: 0
   DeathAudioClip: {fileID: 8300000, guid: aaec579848e98bb4db846509c40c86f0, type: 3}
   LoopDeathAudio: 0
   JumpAudioClip: {fileID: 8300000, guid: 8bf43df0325d3764198776a0daf09bfc, type: 3}
   LoopJumpAudio: 0
+  DamageAudioClip: {fileID: 0}
+  LoopDamageAudio: 0
   VolumeLevel: 1
   WalkSource: {fileID: 0}
   AttackSource: {fileID: 0}
+  ShootSource: {fileID: 0}
   DeathSource: {fileID: 0}
   JumpSource: {fileID: 0}
+  DamageSource: {fileID: 0}
 --- !u!1 &1258563723
 GameObject:
   m_ObjectHideFlags: 0
@@ -3301,7 +3307,7 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 6465579086542488219, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
   m_PrefabInstance: {fileID: 1544372381}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1501496376
+--- !u!114 &1501496385
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3310,19 +3316,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1501496358}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49d06a41d158ac74b8810a75a1bdc551, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b244460e5b75a24d88b4d2e99041fbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7742431058765413196, guid: 19f99d586778f1345871bbc32b28ced1, type: 3}
-  animator: {fileID: 1501496370}
-  attackPoint: {fileID: 1763390922}
-  attackRange: 0.66
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 128
-  attackDamage: 40
-  attackRate: 2
-  playerAudio: {fileID: 0}
+  WalkAudioClip: {fileID: 8300000, guid: f11baa05a7772a547bc15b57a1d6b7b5, type: 3}
+  LoopWalkAudio: 0
+  AttackAudioClip: {fileID: 8300000, guid: 53db7d23b2dccdf418af61799e02f9af, type: 3}
+  LoopAttackAudio: 0
+  ShootAudioClip: {fileID: 8300000, guid: e9d99be9885c40442b54d9d5c9b4c6b4, type: 3}
+  LoopShootAudio: 0
+  DeathAudioClip: {fileID: 8300000, guid: aaec579848e98bb4db846509c40c86f0, type: 3}
+  LoopDeathAudio: 0
+  JumpAudioClip: {fileID: 8300000, guid: 8bf43df0325d3764198776a0daf09bfc, type: 3}
+  LoopJumpAudio: 0
+  DamageAudioClip: {fileID: 8300000, guid: 1a481f0cdb1fc9f45bf43076c90708eb, type: 3}
+  LoopDamageAudio: 0
+  VolumeLevel: 1
+  WalkSource: {fileID: 0}
+  AttackSource: {fileID: 0}
+  ShootSource: {fileID: 0}
+  DeathSource: {fileID: 0}
+  JumpSource: {fileID: 0}
+  DamageSource: {fileID: 0}
 --- !u!1001 &1544372381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3388,6 +3403,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 873531625}
     - target: {fileID: 3356057517831624795, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: playerAudio
+      value: 
+      objectReference: {fileID: 1501496385}
+    - target: {fileID: 3356057517831624795, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: gameSceneManager
       value: 
       objectReference: {fileID: 873531624}
@@ -3403,6 +3422,22 @@ PrefabInstance:
       propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5847989207768456444, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5847989207768456444, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: playerAudio
+      value: 
+      objectReference: {fileID: 1501496385}
+    - target: {fileID: 5847989207768456444, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: jumpingPower
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7871766548928998085, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: playerAudio
+      value: 
+      objectReference: {fileID: 1501496385}
     m_RemovedComponents:
     - {fileID: 3798136522195948768, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
     m_RemovedGameObjects: []
@@ -3413,7 +3448,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3452270629591168218, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1501496376}
+      addedObject: {fileID: 1501496385}
   m_SourcePrefab: {fileID: 100100000, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
 --- !u!1 &1558419663
 GameObject:

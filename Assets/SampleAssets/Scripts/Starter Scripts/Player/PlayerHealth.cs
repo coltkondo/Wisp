@@ -79,6 +79,10 @@ public class PlayerHealth : MonoBehaviour
 			return;
 		}
 		currentHealth -= value;
+		if (playerAudio && !playerAudio.DamageSource.isPlaying && playerAudio.DamageSource.clip != null)
+        {
+            playerAudio.DamageSource.Play();
+        }
 		if (currentHealth <= 0)
 		{
 			currentHealth = 0;
@@ -103,6 +107,10 @@ public class PlayerHealth : MonoBehaviour
 
 	private void SegameManagerentedHealthDecrease(int value)//Helper function
 	{
+		if (playerAudio && !playerAudio.DamageSource.isPlaying && playerAudio.DamageSource.clip != null)
+        {
+            playerAudio.DamageSource.Play();
+        }
 		if (value > TempHearts.Count)
 		{
 			value = TempHearts.Count;
