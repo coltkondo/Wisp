@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Timestop_Eric : MonoBehaviour
 {
     public GameObject timeBar;
-    public GameObject player;
+    
 
     public int currentTimePoints;
     public int maxTimePoints;
