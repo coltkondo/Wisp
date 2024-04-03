@@ -68,10 +68,17 @@ public class EnemyChaseBehaviour : StateMachineBehaviour
 	}
 
 	private void Flip()
-	{
-		anim.SetBool("SpriteFacingRight", !anim.GetBool("SpriteFacingRight")); //flip whether the sprite is facing right
-		Vector3 currentScale = anim.transform.localScale;
-		currentScale.x *= -1;
-		anim.transform.localScale = currentScale;
-	}
+    {
+        anim.SetBool("SpriteFacingRight", !anim.GetBool("SpriteFacingRight")); // Flip whether the sprite is facing right
+        
+        // Find the child GameObject that represents the visual sprite      
+        Transform spriteTransform = anim.gameObject.transform;
+        if (spriteTransform != null)
+        {
+            // Vector3 currentScale = spriteTranform.localScale;
+            // currentScale.x *= -1;
+            // spriteTransform.localScale = currentScale;
+            spriteTransform.localScale = new Vector3(spriteTransform.localScale.x *-1, spriteTransform.localScale.y, spriteTransform.localScale.z);
+        }
+    }  
 }

@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6912924099898979769}
   - component: {fileID: 6586399424044285890}
   - component: {fileID: 6930157268394194448}
+  - component: {fileID: 1502212154210136109}
+  - component: {fileID: 4661787408397758461}
   m_Layer: 0
   m_Name: tempEnemy
   m_TagString: Enemy
@@ -33,8 +35,7 @@ Transform:
   m_LocalPosition: {x: 1.369, y: -0.466, z: 0.11430446}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3925963460819347614}
+  m_Children: []
   m_Father: {fileID: 2559225399817006838}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5234195698883219388
@@ -120,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44c804db124c9430b94d46bbfd11afd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 796587029824596300}
+  weapon: {fileID: 0}
   showAttackRadius: 1
   attackRadius: 2
   coolDown: 0.5
@@ -161,61 +162,13 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &793047402578397156
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3925963460819347614}
-  - component: {fileID: 796587029824596300}
-  - component: {fileID: 676793378326733399}
-  m_Layer: 0
-  m_Name: Hitbox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3925963460819347614
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793047402578397156}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1747816701072669607}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &796587029824596300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793047402578397156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daefd5f56ab8dda48a4ae6de07fa00a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TopDown: 0
-  alignmnent: 1
-  damageValue: 1
---- !u!70 &676793378326733399
+--- !u!70 &1502212154210136109
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793047402578397156}
+  m_GameObject: {fileID: 56004228644658950}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -241,9 +194,24 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0102671385, y: 0.06416291}
+  m_Offset: {x: 0.01026714, y: 0.06416291}
   m_Size: {x: 0.7635968, y: 0.7635968}
   m_Direction: 0
+--- !u!114 &4661787408397758461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56004228644658950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daefd5f56ab8dda48a4ae6de07fa00a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TopDown: 0
+  alignmnent: 1
+  damageValue: 1
 --- !u!1 &2209110391993460258
 GameObject:
   m_ObjectHideFlags: 0
