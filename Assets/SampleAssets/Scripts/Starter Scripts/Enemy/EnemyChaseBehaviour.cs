@@ -6,15 +6,19 @@ public class EnemyChaseBehaviour : StateMachineBehaviour
 {
     private Transform playerPos;
     public float speed;
+    private float speedHolder;
     private Animator anim;
     [Tooltip("To use Blend Tree it needs the following parameters: float \"distance\", float \"Horizontal\", float \"Vertical\", bool \"SpriteFacingRight\" ")]
     public bool useBlendTree = false;
+    private GameManager gameManager;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         playerPos = GameObject.FindGameObjectWithTag("Player").transform; // load in the player's position
         anim = animator;
+        speedHolder = speed;
+        gameManager = FindAnyObjectByType<GameManager>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -30,6 +34,14 @@ public class EnemyChaseBehaviour : StateMachineBehaviour
             anim.SetFloat("Vertical", blendTreePos.y);
 
             FlipCheck(blendTreePos.x);
+        }
+
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("isTimeStopped"))
+        {
+            speed = 0f;
+        } else
+        {
+            speed = speedHolder;
         }
 
         enemyPos.position = Vector2.MoveTowards(enemyPos.transform.position, playerPos.position, step); // move towards the player

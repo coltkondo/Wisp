@@ -13,10 +13,12 @@ public class Timestop_Eric : MonoBehaviour
     public int maxTimePoints;
 
     private PlayerHealth playerHealth;
+    private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
         playerHealth = player.GetComponent<PlayerHealth>();
+        gameManager = FindAnyObjectByType<GameManager>();
 
         timeBar.GetComponent<Image>().type = Image.Type.Filled;
         currentTimePoints = maxTimePoints;
@@ -28,13 +30,15 @@ public class Timestop_Eric : MonoBehaviour
         {
             decreaseTimePoints(1);
             //perform time stop effects here
+            gameManager.timeIsStopped = true;
         }
 
         if (Input.GetKeyDown(KeyCode.Z)) //Z Click for Heal
         {
             Debug.Log("Heal Key Pressed");
             decreaseTimePoints(1);
-            playerHealth.IncreaseHealth(1);
+            StartCoroutine(PlayerHealFreeze());
+
         }
     }
 
@@ -74,5 +78,15 @@ public class Timestop_Eric : MonoBehaviour
         }
 
         timeBar.GetComponent<Image>().fillAmount = fillAmount;
+    }
+
+    IEnumerator PlayerHealFreeze()
+    {
+        gameManager.DisablePlayerMovement();
+        // INSERT HEAL ANIMATION FLAG HERE
+        yield return new WaitForSeconds(0.3f);
+        playerHealth.IncreaseHealth(1);
+        yield return new WaitForSeconds(0.2f);
+        gameManager.EnablePlayerMovement();
     }
 }
