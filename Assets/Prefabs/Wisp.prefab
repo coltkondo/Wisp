@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 3356057517831624795}
   - component: {fileID: 2144772588267353002}
   - component: {fileID: 7871766548928998085}
-  - component: {fileID: 5682128596580301747}
+  - component: {fileID: 8084568360553902649}
   m_Layer: 0
   m_Name: Wisp
   m_TagString: Player
@@ -447,7 +447,7 @@ MonoBehaviour:
   attackDamage: 1
   attackRate: 2
   playerAudio: {fileID: 0}
---- !u!114 &5682128596580301747
+--- !u!114 &8084568360553902649
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

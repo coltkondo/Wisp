@@ -23,7 +23,6 @@ public class TimeCollectible : MonoBehaviour
                 timeControl.increaseTimePoints(timePointsToAdd);
                 
             }
-
             // Optionally, destroy the collectible after it's been collected
             
         }
