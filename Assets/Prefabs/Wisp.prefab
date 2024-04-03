@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1241568582739940218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9137990939542140992}
+  m_Layer: 0
+  m_Name: hitCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9137990939542140992
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241568582739940218}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.401, y: -0.091, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1645768335579175570}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2091583640701227305
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,8 +77,10 @@ GameObject:
   - component: {fileID: 5847989207768456444}
   - component: {fileID: 8963033686368518727}
   - component: {fileID: 6465579086542488219}
-  - component: {fileID: 3798136522195948768}
   - component: {fileID: 3356057517831624795}
+  - component: {fileID: 2144772588267353002}
+  - component: {fileID: 7871766548928998085}
+  - component: {fileID: 8084568360553902649}
   m_Layer: 0
   m_Name: Wisp
   m_TagString: Player
@@ -70,6 +103,7 @@ Transform:
   m_Children:
   - {fileID: 7260630247844269246}
   - {fileID: 7208244489622501167}
+  - {fileID: 9137990939542140992}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &587417927181366724
@@ -198,6 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1036248a1f29349b05040ba860e7e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAudio: {fileID: 0}
   speed: 4
   jumpingPower: 8
   isFacingRight: 1
@@ -207,6 +242,7 @@ MonoBehaviour:
   dashingPower: 4
   dashingTime: 0.2
   dashingCooldown: 1
+  isDisabled: 0
   rb: {fileID: 3867603116833815654}
   groundCheck: {fileID: 7208244489622501167}
   groundLayer:
@@ -351,26 +387,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3798136522195948768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3452270629591168218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8e39f99dcd999946aaca275cc363bd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UsePlayerAttackAnimations: 0
-  anim: {fileID: 0}
-  rb: {fileID: 0}
-  playerMoveScript: {fileID: 0}
-  weaponList: []
-  weapon: {fileID: 0}
-  coolDown: 0.4
-  playerAudio: {fileID: 0}
 --- !u!114 &3356057517831624795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,6 +408,61 @@ MonoBehaviour:
   useHealthBar: 0
   playerAudio: {fileID: 0}
   index: 0
+--- !u!114 &2144772588267353002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3452270629591168218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cca942bf39127fa408c8c2ec655c6938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: []
+  useUI: 1
+  invisImagePrefab: {fileID: 2311413204403214685, guid: 6cd83d8009d54e5488ab1facd712a2a2, type: 3}
+  inventoryImageEmpty: {fileID: 0}
+  padding: 0
+--- !u!114 &7871766548928998085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3452270629591168218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d06a41d158ac74b8810a75a1bdc551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 7742431058765413196, guid: 19f99d586778f1345871bbc32b28ced1, type: 3}
+  animator: {fileID: 6465579086542488219}
+  attackPoint: {fileID: 9137990939542140992}
+  attackRange: 0.5
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  attackDamage: 1
+  attackRate: 2
+  playerAudio: {fileID: 0}
+--- !u!114 &8084568360553902649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3452270629591168218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd097f8b615a18458f7de123360fc2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBar: {fileID: 0}
+  player: {fileID: 3452270629591168218}
+  currentTimePoints: 4
+  maxTimePoints: 4
 --- !u!1 &6591741127831624062
 GameObject:
   m_ObjectHideFlags: 0
