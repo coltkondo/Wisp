@@ -104,11 +104,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyHealthBar: 0
   maxHealth: 5
-  currentHealth: 0
   padding: 2
   Dimensions: {x: 0, y: 0}
   HealthBar: {fileID: 0}
   canvasRectTransform: {fileID: 0}
+  itemPrefab: {fileID: 5002716552632815579, guid: 78212a995efed47e2ab4fa6e18bbd5b3, type: 3}
+  numberOfItemsToDrop: 1
 --- !u!114 &6912924099898979769
 MonoBehaviour:
   m_ObjectHideFlags: 0
