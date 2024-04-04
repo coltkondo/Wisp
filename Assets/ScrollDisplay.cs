@@ -8,22 +8,25 @@ public class ScrollDisplay : MonoBehaviour
     public TextAsset textFile; // Your text file
     public TMP_Text scrollText; // Reference to the TMP_Text component in your Scroll UI
 
+    private bool isActive = false;
+
     private void Awake()
     {
-        // Since you already assign scrollText in the Inspector, you might not need to find it at runtime.
-        // However, if you prefer to dynamically locate it in your scrollUIPrefab, ensure scrollUIPrefab is set to the correct GameObject in the Inspector.
-        // scrollText = scrollUIPrefab.GetComponentInChildren<TMP_Text>();
-
         // Initially, the scroll UI should be inactive (hidden)
         scrollUIPrefab.SetActive(false);
+        isActive = false;
     }
 
     private void Update()
     {
-        // Check if the left mouse button is clicked and the scroll is currently displayed to hide it
-        if (scrollUIPrefab.activeSelf && Input.GetMouseButtonDown(0))
+        // Toggle the visibility of the scroll UI when the E key is pressed
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            HideScroll();
+            
+            if (isActive)
+            {
+                HideScroll();
+            }
         }
     }
 
@@ -40,15 +43,19 @@ public class ScrollDisplay : MonoBehaviour
         // Load the text file content into the TMP_Text component
         scrollText.text = textFile.text;
         
-        // Make the Scroll UI visible
+        // Make the Scroll UI visible and update isActive
         scrollUIPrefab.SetActive(true);
+        isActive = true;
     }
 
     // Method to hide the scroll UI
     public void HideScroll()
     {
-        // Make the Scroll UI invisible
+        // Make the Scroll UI invisible and update isActive
         scrollUIPrefab.SetActive(false);
+        isActive = false;
+        Debug.Log("Hiding scroll");
+        // If you don't want to disable the gameObject this script is attached to, comment out or remove the next line
         this.gameObject.SetActive(false);
     }
 }

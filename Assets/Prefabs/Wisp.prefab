@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 3356057517831624795}
   - component: {fileID: 2144772588267353002}
   - component: {fileID: 7871766548928998085}
+  - component: {fileID: 8084568360553902649}
   m_Layer: 0
   m_Name: Wisp
   m_TagString: Player
@@ -446,6 +447,22 @@ MonoBehaviour:
   attackDamage: 1
   attackRate: 2
   playerAudio: {fileID: 0}
+--- !u!114 &8084568360553902649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3452270629591168218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd097f8b615a18458f7de123360fc2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBar: {fileID: 0}
+  player: {fileID: 3452270629591168218}
+  currentTimePoints: 4
+  maxTimePoints: 4
 --- !u!1 &6591741127831624062
 GameObject:
   m_ObjectHideFlags: 0
