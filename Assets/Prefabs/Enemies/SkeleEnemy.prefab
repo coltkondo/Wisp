@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 409641296112888651}
   - component: {fileID: 6152692306238798615}
   - component: {fileID: 2468146127971554083}
-  - component: {fileID: 713473535735073697}
+  - component: {fileID: 5360904390999155134}
   m_Layer: 0
   m_Name: tempEnemy
   m_TagString: Untagged
@@ -340,7 +340,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!70 &713473535735073697
+--- !u!70 &5360904390999155134
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -369,11 +369,11 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.07289255, y: -0.026031077}
-  m_Size: {x: 0.7687714, y: 1.1843561}
+  m_Offset: {x: 0.11472225, y: 0.0040972233}
+  m_Size: {x: 0.8363888, y: 1.1395836}
   m_Direction: 0
 --- !u!1 &9100796918288698028
 GameObject:

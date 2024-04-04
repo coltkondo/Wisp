@@ -269,7 +269,7 @@ MonoBehaviour:
   MaxYBoundary: 5
   MinYBoundary: -5
   clampCamera: 0
-  PlayerCharacter: {fileID: 549073528}
+  PlayerCharacter: {fileID: 1311271571}
   smoothSpeed: 0.125
 --- !u!1 &217904015
 GameObject:
@@ -69547,7 +69547,12 @@ CanvasRenderer:
 --- !u!1 &1283756297 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3452270629591168218, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
-  m_PrefabInstance: {fileID: 2109331799}
+  m_PrefabInstance: {fileID: 236909151}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1311271571 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1645768335579175570, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+  m_PrefabInstance: {fileID: 236909151}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1283756300 stripped
 Animator:
@@ -70261,7 +70266,7 @@ PrefabInstance:
     - target: {fileID: 5354452291545427814, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 1283756297}
+      objectReference: {fileID: 1311271561}
     - target: {fileID: 8965207512815088854, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
       propertyPath: m_Name
       value: Managers
@@ -70476,7 +70481,6 @@ SceneRoots:
   - {fileID: 75558905}
   - {fileID: 1338436114}
   - {fileID: 1150689104}
-  - {fileID: 2109331799}
   - {fileID: 1963895737}
   - {fileID: 744090035}
   - {fileID: 1921263984}
