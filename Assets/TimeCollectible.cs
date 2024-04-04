@@ -18,11 +18,13 @@ public class TimeCollectible : MonoBehaviour
             if (timeControl != null)
             {
                 Debug.Log("doing increase time");
+                this.gameObject.SetActive(false);
+                Debug.Log("ITEM SHOULD GET DESTROYED");
                 timeControl.increaseTimePoints(timePointsToAdd);
+                
             }
-
             // Optionally, destroy the collectible after it's been collected
-            Destroy(gameObject);
+            
         }
     }
 }
