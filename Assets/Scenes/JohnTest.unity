@@ -937,11 +937,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyHealthBar: 0
   maxHealth: 100
-  currentHealth: 0
   padding: 2
   Dimensions: {x: 0, y: 0}
   HealthBar: {fileID: 0}
   canvasRectTransform: {fileID: 0}
+  itemPrefab: {fileID: 0}
+  numberOfItemsToDrop: 3
 --- !u!1 &419978428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,6 +1646,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c6919a4cbf47542aaabe867d87e19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraXOffset: 0.5
+  cameraYOffset: 0.45
   MaxXBoundary: 5
   MinXBoundary: -5
   MaxYBoundary: 5
@@ -2577,6 +2580,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cabd793e73575d4393757ab123a3e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeIsStopped: 0
+  timeFreezeDuration: 0
+  enemies: []
+  anim: []
   RespawnPlace: {x: 0, y: 0, z: 0}
   Player: {fileID: 1129300451}
 --- !u!114 &873531626
@@ -3279,6 +3286,7 @@ MonoBehaviour:
   dashingPower: 4
   dashingTime: 0.2
   dashingCooldown: 1
+  isDisabled: 0
   rb: {fileID: 1129300452}
   groundCheck: {fileID: 95607435}
   groundLayer:
@@ -3456,6 +3464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d06a41d158ac74b8810a75a1bdc551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
   animator: {fileID: 1129300458}
   attackPoint: {fileID: 275264626}
   attackRange: 0.57
@@ -3481,15 +3490,21 @@ MonoBehaviour:
   LoopWalkAudio: 1
   AttackAudioClip: {fileID: 8300000, guid: c7b92616a8a424c4c98af6a93d91cd54, type: 3}
   LoopAttackAudio: 0
+  ShootAudioClip: {fileID: 0}
+  LoopShootAudio: 0
   DeathAudioClip: {fileID: 8300000, guid: aaec579848e98bb4db846509c40c86f0, type: 3}
   LoopDeathAudio: 0
   JumpAudioClip: {fileID: 8300000, guid: 8bf43df0325d3764198776a0daf09bfc, type: 3}
   LoopJumpAudio: 0
+  DamageAudioClip: {fileID: 0}
+  LoopDamageAudio: 0
   VolumeLevel: 1
   WalkSource: {fileID: 0}
   AttackSource: {fileID: 0}
+  ShootSource: {fileID: 0}
   DeathSource: {fileID: 0}
   JumpSource: {fileID: 0}
+  DamageSource: {fileID: 0}
 --- !u!1 &1258563723
 GameObject:
   m_ObjectHideFlags: 0
@@ -5095,7 +5110,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2142503226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbbbfb8899e909748848146598482501, type: 3}
+  m_Script: {fileID: 11500000, guid: 8de40759502387d43bb346db372e7510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1063019744}
