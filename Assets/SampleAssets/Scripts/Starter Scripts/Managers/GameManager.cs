@@ -29,12 +29,12 @@ public class GameManager : MonoBehaviour
 		enemies = GameObject.FindGameObjectsWithTag("Enemy"); //Searches for all of the enemies within the Level
 		Debug.Log("NUMBER OF ENEMIES: " + enemies.Length + "");
 
-		for (int i = 0; i < enemies.Length; i++) // Finds all of the enemies Animators
+		/*for (int i = 0; i < enemies.Length; i++) // Finds all of the enemies Animators
 		{
 			anim = new Animator[enemies.Length];
 			anim[i] = enemies[i].GetComponent<Animator>();
 		}
-        Debug.Log("NUMBER OF ENEMY ANIMATORS: " + anim.Length + "");
+        Debug.Log("NUMBER OF ENEMY ANIMATORS: " + anim.Length + ""); */
     }
 
     private void Update()
@@ -82,15 +82,23 @@ public class GameManager : MonoBehaviour
 			timeStopRunning = true;
             Debug.Log("Time is stopped");
             //lock enemy speed
-            for (int i = 0; i < anim.Length; i++)
+            /*for (int i = 0; i < anim.Length; i++)
             {
                 anim[i].SetBool("isTimeStopped", true); //Freezes all enemies in place
-            }
-            //lock all projectiles
-            // other stuff
-            yield return new WaitForSeconds(timeFreezeDuration);
-            for (int i = 0; i < anim.Length; i++)
+            }*/
+            for (int i = 0; i < enemies.Length; i++) // Finds all of the enemies Animators
             {
+                anim = new Animator[enemies.Length];
+                anim[i] = enemies[i].GetComponent<Animator>();
+				anim[i].SetBool("isTimeStopped", true);
+            }
+			//lock all projectiles
+			// other stuff
+            yield return new WaitForSeconds(timeFreezeDuration);
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                anim = new Animator[enemies.Length];
+                anim[i] = enemies[i].GetComponent<Animator>();
                 anim[i].SetBool("isTimeStopped", false); //Un-Freezes all enemies
             }
             timeIsStopped = false;
