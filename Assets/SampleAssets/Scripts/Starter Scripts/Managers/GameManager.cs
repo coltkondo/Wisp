@@ -82,11 +82,8 @@ public class GameManager : MonoBehaviour
 			timeStopRunning = true;
             Debug.Log("Time is stopped");
             //lock enemy speed
-            /*for (int i = 0; i < anim.Length; i++)
-            {
-                anim[i].SetBool("isTimeStopped", true); //Freezes all enemies in place
-            }*/
-            for (int i = 0; i < enemies.Length;) // Finds all of the enemies Animators
+            // Freezes all of the Enemies in place
+            for (int i = 0; i < enemies.Length;) 
             {
 				if (enemies[i] != null)
 				{
@@ -100,10 +97,11 @@ public class GameManager : MonoBehaviour
 				}
                 
             }
-			//lock all projectiles
-			// other stuff
+            // lock all projectiles
+            // other stuff
+            // Un-Freezes Enemies
             yield return new WaitForSeconds(timeFreezeDuration);
-            for (int i = 0; i < enemies.Length;) // Finds all of the enemies Animators
+            for (int i = 0; i < enemies.Length;)
             {
                 if (enemies[i] != null)
                 {
