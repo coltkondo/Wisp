@@ -9,7 +9,7 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
 
-    [Header("Health Bar")]
+    [Header("Health Bar for enemy")]
     public float padding = 2f;
     public Vector2 Dimensions;
     public GameObject HealthBar;
@@ -49,7 +49,7 @@ public class EnemyHealth : MonoBehaviour
             HandleDeath();
         }
         if (EnemyHealthBar)
-            UpdateHealthBar();
+            UpdateHealthBar();//cool comment
     }
 
     private IEnumerator DestroyAfterAnimation()
@@ -104,7 +104,7 @@ public class EnemyHealth : MonoBehaviour
         for (int i = 0; i < numberOfItemsToDrop; i++)
         {
             // Adjust the spawn position if necessary to prevent items from overlapping
-            Vector3 spawnPosition = transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
+            Vector3 spawnPosition = transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, 0);
             Instantiate(itemPrefab, spawnPosition, Quaternion.identity);
         }
     }
