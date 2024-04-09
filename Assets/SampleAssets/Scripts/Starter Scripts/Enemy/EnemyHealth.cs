@@ -9,7 +9,7 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
 
-    [Header("Health Bar")]
+    [Header("Health Bar for enemy")]
     public float padding = 2f;
     public Vector2 Dimensions;
     public GameObject HealthBar;
@@ -49,7 +49,7 @@ public class EnemyHealth : MonoBehaviour
             HandleDeath();
         }
         if (EnemyHealthBar)
-            UpdateHealthBar();
+            UpdateHealthBar();//cool comment
     }
 
     private IEnumerator DestroyAfterAnimation()
