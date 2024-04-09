@@ -37,6 +37,7 @@ public class MenuPause : MonoBehaviour
         confirmQuit.SetActive(true);
     }
     public void QuitYes() {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("GameStart");
     }
 

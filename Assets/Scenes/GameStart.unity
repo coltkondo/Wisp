@@ -218,7 +218,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &12710504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -775,7 +775,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -8499,7 +8499,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 324781d92b3506f4a8e7510c8587392c, type: 2}
   m_audioClip: {fileID: 8300000, guid: ab4ef2cb6a6b73b4fa48f168deed00b0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -14702,7 +14702,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 324781d92b3506f4a8e7510c8587392c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 41224d953412e2a4997b3eb2bb558ffb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -14875,7 +14875,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
