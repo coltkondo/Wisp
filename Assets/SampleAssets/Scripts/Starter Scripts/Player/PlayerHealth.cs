@@ -34,6 +34,8 @@ public class PlayerHealth : MonoBehaviour
 
 	private Animator anim;
 
+	private bool playerDead = false;
+
 
 	[HideInInspector] public int index = 0; //for editor uses
 
@@ -250,9 +252,11 @@ public class PlayerHealth : MonoBehaviour
 	{
 		if (gameManager != null && gameSceneManager != null)
 		{
-			anim.SetTrigger("isDead");
+			anim.SetBool("isDead", true);
 			Debug.Log("Set dead to true");
 			gameManager.DisablePlayerMovement();
+
+
 			if (playerAudio && !playerAudio.DeathSource.isPlaying && playerAudio.DeathSource.clip != null)
 			{
 				playerAudio.DeathSource.Play();
@@ -266,7 +270,7 @@ public class PlayerHealth : MonoBehaviour
             yield return new WaitForSeconds(1.2f);
             ResetHealth();
             gameManager.EnablePlayerMovement();
-			//anim.SetBool("isDead", false);
+			
 		}
 		else
 		{

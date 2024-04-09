@@ -104,7 +104,7 @@ public class EnemyHealth : MonoBehaviour
         for (int i = 0; i < numberOfItemsToDrop; i++)
         {
             // Adjust the spawn position if necessary to prevent items from overlapping
-            Vector3 spawnPosition = transform.position + new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
+            Vector3 spawnPosition = transform.position + new Vector3(Random.Range(-0.5f, 0.5f), 0, 0);
             Instantiate(itemPrefab, spawnPosition, Quaternion.identity);
         }
     }
