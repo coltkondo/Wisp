@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6930157268394194448}
   - component: {fileID: 1502212154210136109}
   - component: {fileID: 4661787408397758461}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tempEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5959820627257969555}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Paths
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5478091148025291246}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: point2
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -286,7 +286,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5264598337287900074}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: point1
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -317,7 +317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2559225399817006838}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BatEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.4372556, y: 0.78436375, z: -0.11430446}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1747816701072669607}
