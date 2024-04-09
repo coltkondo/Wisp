@@ -323,23 +323,26 @@ public class PlayerHealth : MonoBehaviour
 			anim.SetBool("isDead", true);
 			Debug.Log("Set dead to true");
 			gameManager.DisablePlayerMovement();
-
+			iFrames = true;
 
 			if (playerAudio && !playerAudio.DeathSource.isPlaying && playerAudio.DeathSource.clip != null)
 			{
 				playerAudio.DeathSource.Play();
 			}
-			//yield return new WaitForSeconds(0.3f);
+			yield return new WaitForSeconds(0.3f);
+			//WISP DEATH ANIMATION GOES HERE (INCREASE WAITFORSECONDS TO COMPENSATE)
 			StartCoroutine(gameSceneManager.FadeOut());
 
-			yield return new WaitForSeconds(1f);
+			yield return new WaitForSeconds(0.5f);
 			gameManager.Respawn(gameObject);
 			StartCoroutine(gameSceneManager.FadeIn());
-            yield return new WaitForSeconds(1.2f);
+            yield return new WaitForSeconds(0.5f);
             ResetHealth();
             gameManager.EnablePlayerMovement();
-			
-		}
+            yield return new WaitForSeconds(0.5f);
+            iFrames = false;
+
+        }
 		else
 		{
 			Debug.Log("Game Manager or Game Scene Manager not assigned on player!");
