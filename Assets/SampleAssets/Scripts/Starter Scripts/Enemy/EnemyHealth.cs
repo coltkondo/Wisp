@@ -22,11 +22,13 @@ public class EnemyHealth : MonoBehaviour
     private Image healthBarImage;
     private RectTransform healthRectTransform;
     private Animator anim;
+    private SpriteRenderer spriteRender;
 
     void Start()
     {
         currentHealth = maxHealth;
         anim = GetComponent<Animator>();
+        spriteRender = GetComponent<SpriteRenderer>();
         if (EnemyHealthBar)
         {
             SetupHealthBar();
@@ -43,13 +45,15 @@ public class EnemyHealth : MonoBehaviour
 
     public void DecreaseHealth(int value)
     {
+
         currentHealth -= value;
+        StartCoroutine(dmgFlicker());
         if (currentHealth <= 0)
         {
             HandleDeath();
         }
         if (EnemyHealthBar)
-            UpdateHealthBar();//cool comment
+            UpdateHealthBar();
     }
 
     private IEnumerator DestroyAfterAnimation()
@@ -59,6 +63,23 @@ public class EnemyHealth : MonoBehaviour
 		DropItems(); // Drop items before destroying the enemy
         Destroy(gameObject);
         if (EnemyHealthBar) Destroy(healthBarImage.gameObject);
+    }
+
+    IEnumerator dmgFlicker()
+    {
+        // Red Damage Flicker
+        spriteRender.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = Color.red;
+        // Return to Normal
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = Color.white;
     }
 
     private void UpdateHealthBar()

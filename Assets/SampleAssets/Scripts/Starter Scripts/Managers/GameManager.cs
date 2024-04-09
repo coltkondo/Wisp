@@ -86,20 +86,37 @@ public class GameManager : MonoBehaviour
             {
                 anim[i].SetBool("isTimeStopped", true); //Freezes all enemies in place
             }*/
-            for (int i = 0; i < enemies.Length; i++) // Finds all of the enemies Animators
+            for (int i = 0; i < enemies.Length;) // Finds all of the enemies Animators
             {
-                anim = new Animator[enemies.Length];
-                anim[i] = enemies[i].GetComponent<Animator>();
-				anim[i].SetBool("isTimeStopped", true);
+				if (enemies[i] != null)
+				{
+                    anim = new Animator[enemies.Length];
+                    anim[i] = enemies[i].GetComponent<Animator>();
+                    anim[i].SetBool("isTimeStopped", true);
+					i++;
+                } else
+				{
+					i++;
+				}
+                
             }
 			//lock all projectiles
 			// other stuff
             yield return new WaitForSeconds(timeFreezeDuration);
-            for (int i = 0; i < enemies.Length; i++)
+            for (int i = 0; i < enemies.Length;) // Finds all of the enemies Animators
             {
-                anim = new Animator[enemies.Length];
-                anim[i] = enemies[i].GetComponent<Animator>();
-                anim[i].SetBool("isTimeStopped", false); //Un-Freezes all enemies
+                if (enemies[i] != null)
+                {
+                    anim = new Animator[enemies.Length];
+                    anim[i] = enemies[i].GetComponent<Animator>();
+                    anim[i].SetBool("isTimeStopped", false);
+                    i++;
+                }
+                else
+                {
+                    i++;
+                }
+
             }
             timeIsStopped = false;
             Debug.Log("Time is resumed");
