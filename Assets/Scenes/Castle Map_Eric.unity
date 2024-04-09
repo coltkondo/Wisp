@@ -33870,7 +33870,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2568163719105550266, guid: 1ac0acc1519a34aa0b0e8985665a7a8b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6008428095278589359, guid: 1ac0acc1519a34aa0b0e8985665a7a8b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33878,7 +33878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6008428095278589359, guid: 1ac0acc1519a34aa0b0e8985665a7a8b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.25
+      value: -5.59
       objectReference: {fileID: 0}
     - target: {fileID: 6008428095278589359, guid: 1ac0acc1519a34aa0b0e8985665a7a8b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -33911,6 +33911,10 @@ PrefabInstance:
     - target: {fileID: 6008428095278589359, guid: 1ac0acc1519a34aa0b0e8985665a7a8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758146672270319538, guid: 1ac0acc1519a34aa0b0e8985665a7a8b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -68685,7 +68689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556218643735727278, guid: 9611c8adde81d41aaa161e65094b56f0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -69380,13 +69384,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8027420832673747933, guid: 2119dac6a27e746419b17d53c72a4fc5, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 9100796918288698028, guid: 2119dac6a27e746419b17d53c72a4fc5, type: 3}
       propertyPath: m_Name
       value: SkeleEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 9100796918288698028, guid: 2119dac6a27e746419b17d53c72a4fc5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
