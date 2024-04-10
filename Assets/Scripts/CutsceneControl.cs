@@ -46,7 +46,7 @@ public class CutsceneControl : MonoBehaviour
             fadeImage.color = new Color(0, 0, 0, alpha); 
 
             if (fadeImage.color.a >= 1) {
-                SceneManager.LoadScene("Castle Map");
+                SceneManager.LoadScene(2);
             }
         }
 
@@ -82,7 +82,7 @@ public class CutsceneControl : MonoBehaviour
     void EndReached(VideoPlayer vp)
     {
         isFading = true;
-        SceneManager.LoadScene("Castle Map");
+        SceneManager.LoadScene(2);
     }
 
     void ActivateButton()
