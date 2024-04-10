@@ -18,6 +18,7 @@ public class DialogueTrigger : MonoBehaviour
     [HideInInspector]
     public bool hasBeenUsed = false;
     bool inArea = false;
+    public GameObject interactionPrompt;
 
 
     // public bool useCollision; // unused for now
@@ -30,6 +31,14 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
+
+        if (interactionPrompt.activeInHierarchy && Input.GetKeyDown(KeyCode.E)) // Check if 'E' is pressed when prompt is active
+        {
+            manager.currentTrigger = this;
+            TriggerDialogue();
+            interactionPrompt.SetActive(false); // Optionally, hide the interaction prompt
+        }
+
         if (!hasBeenUsed && inArea && Input.GetKeyDown(KeyCode.E) && nextTime < Time.timeSinceLevelLoad)
         {
             //Debug.Log("Advance");
@@ -87,11 +96,9 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player" && !hasBeenUsed)
-        {
-            manager.currentTrigger = this;
-            TriggerDialogue();
-            //Debug.Log("Collision");
+
+        if (other.gameObject.tag == "Player" && !hasBeenUsed) {
+            interactionPrompt.SetActive(true); // Show interaction prompt
         }
     }
     private void OnTriggerStay2D(Collider2D other)
@@ -103,8 +110,9 @@ public class DialogueTrigger : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
-        {
+
+        if (other.gameObject.tag == "Player") {
+            interactionPrompt.SetActive(false); // Hide interaction prompt when player leaves 
             manager.EndDialogue();
         }
         inArea = false;
