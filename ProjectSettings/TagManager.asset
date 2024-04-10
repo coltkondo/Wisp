@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GuardView
   - Enemy
+  - Projectiles
   layers:
   - Default
   - TransparentFX
