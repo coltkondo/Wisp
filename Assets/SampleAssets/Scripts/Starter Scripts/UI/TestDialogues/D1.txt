@@ -1,4 +1,5 @@
 [NAME=???][SPEAKERSPRITE=] Well, well, look who it is.
+[NAME=???][SPEAKERSPRITE=] Well, well, look who it is.
 [NAME=You][SPEAKERSPRITE=Wisp] Who are you!?
 You don't have a name.
 [NAME=???][SPEAKERSPRITE=Knight]  Tis I! Sir Erik of the Knights!
