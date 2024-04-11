@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +6,10 @@ using UnityEngine;
 //A script by Michael O'Connell, extended by Benjamin Cohen
 
 
-public class DirectDialogue : MonoBehaviour
+public class DirectTrigger : MonoBehaviour
 {
-       //Attach this script to an empty gameobject with a 2D collider set to trigger
-    DialogueManager manager;
+    //Attach this script to an empty gameobject with a 2D collider set to trigger
+    DirectManager manager;
     public TextAsset TextFileAsset; // your imported text file for your NPC
     private Queue<string> dialogue = new Queue<string>(); // stores the dialogue (Great Performance!)
     public float waitTime = 0.5f; // lag time for advancing dialogue so you can actually read it
@@ -25,7 +25,7 @@ public class DirectDialogue : MonoBehaviour
 
     private void Start()
     {
-        manager = FindObjectOfType<DialogueManager>();
+        manager = FindObjectOfType<DirectManager>();
     }
 
 
@@ -34,7 +34,7 @@ public class DirectDialogue : MonoBehaviour
 
         if (interactionPrompt.activeInHierarchy && Input.GetKeyDown(KeyCode.E)) // Check if 'E' is pressed when prompt is active
         {
-            manager.directTrigger = this;
+            manager.currentTrigger = this;
             TriggerDialogue();
             interactionPrompt.SetActive(false); // Optionally, hide the interaction prompt
         }
@@ -115,6 +115,7 @@ public class DirectDialogue : MonoBehaviour
             interactionPrompt.SetActive(false); // Hide interaction prompt when player leaves 
             manager.EndDialogue();
         }
+        
         inArea = false;
 
     }
