@@ -5,6 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public class CameraMovement : MonoBehaviour
 {
+
+	public float cameraXOffset = 0.5f; //This is the offset of the camera X from the player
+	public float cameraYOffset = 0.45f; //This is the offset of the camera Y from the player
+
 	//This class should be placed on a camera
 	[Header("Camera Bounds")]
 	[Tooltip("These are the boundaries of where the camera can move in worldspace")]
@@ -41,7 +45,7 @@ public class CameraMovement : MonoBehaviour
 	{
 
 		Vector3 point = cam.WorldToViewportPoint(PlayerCharacter.position);//Grab where the player is
-		Vector3 delta = PlayerCharacter.position - cam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //We have the vector between the two
+		Vector3 delta = PlayerCharacter.position - cam.ViewportToWorldPoint(new Vector3(cameraXOffset, cameraYOffset, point.z)); //We have the vector between the two
 		Vector3 destination = transform.position + delta;//And we have where we need to go
 		transform.position = Vector3.SmoothDamp(transform.position, destination, ref Velocity, smoothSpeed);//So now we make that look smooth
 

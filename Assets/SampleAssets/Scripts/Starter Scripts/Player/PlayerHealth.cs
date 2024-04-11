@@ -33,6 +33,11 @@ public class PlayerHealth : MonoBehaviour
 	public PlayerAudio playerAudio;
 
 	private Animator anim;
+    private SpriteRenderer spriteRender;
+
+    public bool iFrames = false;
+    public float iFramesDuration;
+    private bool playerDead = false;
 
 
 	[HideInInspector] public int index = 0; //for editor uses
@@ -42,7 +47,8 @@ public class PlayerHealth : MonoBehaviour
 		SetUpHealth();
 		anim = GetComponent<Animator>();
 		playerAudio = GetComponent<PlayerAudio>();
-	}
+        spriteRender = GetComponent<SpriteRenderer>();
+    }
 
 	public void SetUpHealth()
 	{
@@ -71,26 +77,44 @@ public class PlayerHealth : MonoBehaviour
 		}
 	}
 
-	public void DecreaseHealth(int value)//This is the function to use if you want to decrease the player's health somewhere
-	{
-		if (!useHealthBar)
-		{
-			SegameManagerentedHealthDecrease(value);
-			return;
-		}
-		currentHealth -= value;
-		if (playerAudio && !playerAudio.DamageSource.isPlaying && playerAudio.DamageSource.clip != null)
+    public void DecreaseHealth(int value)//This is the function to use if you want to decrease the player's health somewhere
+    {
+        //Debug.Log("IFRAMES: Player Hit");
+        if (!useHealthBar)
+        {
+            if (iFrames == false)
+            {
+                Debug.Log("IFRAMES: Player Hit");
+                SegameManagerentedHealthDecrease(value);
+                StartCoroutine(dmgFlicker());
+                iFrames = true;
+                StartCoroutine(iFrameCD());
+                return;
+            }
+
+        }
+
+        if (iFrames == false)
+        {
+
+            currentHealth -= value;
+            iFrames = true;
+            StartCoroutine(iFrameCD());
+        }
+
+
+        if (playerAudio && !playerAudio.DamageSource.isPlaying && playerAudio.DamageSource.clip != null)
         {
             playerAudio.DamageSource.Play();
         }
-		if (currentHealth <= 0)
-		{
-			currentHealth = 0;
-		}
-		UpdateHealthBar();
-	}
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+        }
+        UpdateHealthBar();
+    }
 
-	public void IncreaseHealth(int value)//This is the function to use if you want to increase the player's heath somewhere
+    public void IncreaseHealth(int value)//This is the function to use if you want to increase the player's heath somewhere
 	{
 		if (!useHealthBar)
 		{
@@ -246,28 +270,79 @@ public class PlayerHealth : MonoBehaviour
 		StartCoroutine(PlayerDies());
 	}
 
-	IEnumerator PlayerDies()
+    IEnumerator iFrameCD()
+    {
+        Debug.Log("IFRAMES: COOLDOWN BEGINS");
+        yield return new WaitForSeconds(iFramesDuration);
+        iFrames = false;
+    }
+
+    IEnumerator dmgFlicker()
+    {
+        // Red Damage Flicker
+        spriteRender.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = Color.red;
+        // Begin I-Frame Flicker
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = new Color(1f, 1f, 1f, 0.5f);
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = new Color(0.5f, 0.5f, 0.5f, 0.25f);
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = new Color(1f, 1f, 1f, 0.5f);
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = new Color(0.5f, 0.5f, 0.5f, 0.25f);
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = new Color(1f, 1f, 1f, 0.5f);
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = new Color(0.5f, 0.5f, 0.5f, 0.25f);
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = new Color(1f, 1f, 1f, 0.5f);
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = new Color(0.5f, 0.5f, 0.5f, 0.25f);
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = new Color(1f, 1f, 1f, 0.5f);
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = new Color(0.5f, 0.5f, 0.5f, 0.25f);
+        // Return to Normal
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = Color.white;
+    }
+
+
+    IEnumerator PlayerDies()
 	{
 		if (gameManager != null && gameSceneManager != null)
 		{
-			anim.SetTrigger("isDead");
+			anim.SetBool("isDead", true);
 			Debug.Log("Set dead to true");
 			gameManager.DisablePlayerMovement();
+			iFrames = true;
+
 			if (playerAudio && !playerAudio.DeathSource.isPlaying && playerAudio.DeathSource.clip != null)
 			{
 				playerAudio.DeathSource.Play();
 			}
-			//yield return new WaitForSeconds(0.3f);
+			yield return new WaitForSeconds(0.3f);
+			//WISP DEATH ANIMATION GOES HERE (INCREASE WAITFORSECONDS TO COMPENSATE)
 			StartCoroutine(gameSceneManager.FadeOut());
 
-			yield return new WaitForSeconds(1f);
+			yield return new WaitForSeconds(0.5f);
 			gameManager.Respawn(gameObject);
 			StartCoroutine(gameSceneManager.FadeIn());
-            yield return new WaitForSeconds(1.2f);
+            yield return new WaitForSeconds(0.5f);
             ResetHealth();
             gameManager.EnablePlayerMovement();
-			//anim.SetBool("isDead", false);
-		}
+            yield return new WaitForSeconds(0.5f);
+            iFrames = false;
+
+        }
 		else
 		{
 			Debug.Log("Game Manager or Game Scene Manager not assigned on player!");

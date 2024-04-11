@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 9171816307694104061}
   m_Layer: 0
   m_Name: body
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,11 +221,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyHealthBar: 0
   maxHealth: 3
-  currentHealth: 0
   padding: 2
   Dimensions: {x: 0, y: 0}
   HealthBar: {fileID: 0}
   canvasRectTransform: {fileID: 0}
+  itemPrefab: {fileID: 5002716552632815579, guid: 78212a995efed47e2ab4fa6e18bbd5b3, type: 3}
+  numberOfItemsToDrop: 1
 --- !u!114 &661200639563122913
 MonoBehaviour:
   m_ObjectHideFlags: 0

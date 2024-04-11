@@ -27,6 +27,8 @@ public class Movement : MonoBehaviour
 
     public bool isDisabled = false;
 
+    public bool wallDisabled = true;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -98,8 +100,10 @@ public class Movement : MonoBehaviour
             StartCoroutine(Dash());
         }
 
-        WallSlide();
-        WallJump();
+        if (!wallDisabled) {
+            WallSlide();
+            WallJump();
+        }
 
         if (!isWallJumping)
         {

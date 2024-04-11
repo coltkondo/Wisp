@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +19,12 @@ public class GameManager : MonoBehaviour
 
 	[Tooltip("Place your player game object in here so this knows where to handle respawns")]
 	public GameObject Player;
+
+    PostProcessVolume m_Volume;
+    Vignette m_Vignette;
+    ColorGrading m_ColorGrading;
+
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -29,12 +37,13 @@ public class GameManager : MonoBehaviour
 		enemies = GameObject.FindGameObjectsWithTag("Enemy"); //Searches for all of the enemies within the Level
 		Debug.Log("NUMBER OF ENEMIES: " + enemies.Length + "");
 
-		for (int i = 0; i < enemies.Length; i++) // Finds all of the enemies Animators
-		{
-			anim = new Animator[enemies.Length];
-			anim[i] = enemies[i].GetComponent<Animator>();
-		}
-        Debug.Log("NUMBER OF ENEMY ANIMATORS: " + anim.Length + "");
+        //Timestop Greyscale Stuff
+        m_ColorGrading = ScriptableObject.CreateInstance<ColorGrading>();
+        m_ColorGrading.enabled.Override(false);
+        m_ColorGrading.saturation.Override(-100f);
+
+        m_Volume = PostProcessManager.instance.QuickVolume(gameObject.layer, 100f, m_ColorGrading);
+
     }
 
     private void Update()
@@ -76,25 +85,52 @@ public class GameManager : MonoBehaviour
 			playerAudio.StopAll();
     }
 
-	IEnumerator FreezeTime()
+
+
+    IEnumerator FreezeTime()
 	{
 		if (timeStopRunning == false) {
 			timeStopRunning = true;
             Debug.Log("Time is stopped");
+            m_ColorGrading.enabled.Override(true);
             //lock enemy speed
-            for (int i = 0; i < anim.Length; i++)
+            // Freezes all of the Enemies in place
+            for (int i = 0; i < enemies.Length;) 
             {
-                anim[i].SetBool("isTimeStopped", true); //Freezes all enemies in place
+				if (enemies[i] != null)
+				{
+                    anim = new Animator[enemies.Length];
+                    anim[i] = enemies[i].GetComponent<Animator>();
+                    anim[i].SetBool("isTimeStopped", true);
+					i++;
+                } else
+				{
+					i++;
+				}
+                
             }
-            //lock all projectiles
+            // lock all projectiles
             // other stuff
+            // Un-Freezes Enemies
             yield return new WaitForSeconds(timeFreezeDuration);
-            for (int i = 0; i < anim.Length; i++)
+            for (int i = 0; i < enemies.Length;)
             {
-                anim[i].SetBool("isTimeStopped", false); //Un-Freezes all enemies
+                if (enemies[i] != null)
+                {
+                    anim = new Animator[enemies.Length];
+                    anim[i] = enemies[i].GetComponent<Animator>();
+                    anim[i].SetBool("isTimeStopped", false);
+                    i++;
+                }
+                else
+                {
+                    i++;
+                }
+
             }
             timeIsStopped = false;
             Debug.Log("Time is resumed");
+            m_ColorGrading.enabled.Override(false);
             timeStopRunning = false;
         }
     }
