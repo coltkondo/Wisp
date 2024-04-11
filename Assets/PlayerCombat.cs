@@ -7,6 +7,7 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private GameObject bullet;
     public Animator animator;
     public Transform attackPoint;
+    public Transform attackPointAbove; // New attack point for attacking above
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
     public int attackDamage = 40;
@@ -25,7 +26,8 @@ public class PlayerCombat : MonoBehaviour
         playerAudio = GetComponent<PlayerAudio>();
     }
 
-    // Update is called once per frame
+    private bool isHoldingW = false;
+
     void Update()
     {
         HandleShooting();
@@ -34,7 +36,14 @@ public class PlayerCombat : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Attack();
+                if (isHoldingW)
+                {
+                    AttackAbove();
+                }
+                else
+                {
+                    Attack();
+                }
                 if (playerAudio && !playerAudio.AttackSource.isPlaying && playerAudio.AttackSource.clip != null)
                 {
                     playerAudio.AttackSource.Play();
@@ -43,6 +52,29 @@ public class PlayerCombat : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            isHoldingW = true;
+        }
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            isHoldingW = false;
+        }
+    }
+
+    void AttackAbove()
+    {
+        animator.SetTrigger("AttackAbove");
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPointAbove.position, attackRange, enemyLayers);
+
+        Debug.Log("hit enemies: " + hitEnemies.Length);
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            Debug.Log("Hit enemy: " + enemy.name);
+            enemy.GetComponent<EnemyHealth>().DecreaseHealth(attackDamage);
+
+        }
     }
 
     void Attack()
@@ -65,6 +97,10 @@ public class PlayerCombat : MonoBehaviour
         if (attackPoint == null)
             return;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        
+        if (attackPointAbove == null)
+            return;
+        Gizmos.DrawWireSphere(attackPointAbove.position, attackRange);
     }
 
 
