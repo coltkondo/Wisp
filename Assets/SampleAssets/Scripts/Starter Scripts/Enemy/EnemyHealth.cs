@@ -112,9 +112,14 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth = 0;
 		CapsuleCollider2D collider = GetComponent<CapsuleCollider2D>();
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (collider != null)
         {
             collider.enabled = false;
+        }
+        if (rb != null)
+        {
+            rb.Sleep();
         }
         anim.SetBool("isDead", true);
         StartCoroutine(DestroyAfterAnimation());
