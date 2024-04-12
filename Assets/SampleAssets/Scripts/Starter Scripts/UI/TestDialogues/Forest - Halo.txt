@@ -1,6 +1,7 @@
-[NAME=???][SPEAKERSPRITE=Halo]Wisp, congratulations! 
+[NAME=???][SPEAKERSPRITE=Halo]Wisp! Congratulations! 
 [NAME=???][SPEAKERSPRITE=Halo]You've finally graduated as a Grim Reaper, a role few can aspire to!
-[NAME=???][SPEAKERSPRITE=Halo]My name is Halo, I'll be your mentor from now on.
+[NAME=???][SPEAKERSPRITE=Halo]Chevalier's speeches always leave goosebumps on your skin, wouldn't you agree?
+[NAME=???][SPEAKERSPRITE=Halo]In any case, my name is Halo, I'll be your mentor from now on.
 [NAME=Halo][SPEAKERSPRITE=Halo]I will guide you as you find your footing in this new role.
 [NAME=Halo][SPEAKERSPRITE=Halo]Before anything else, take this!
 [NAME=][SPEAKERSPRITE=]Wisp received the Time Watch!

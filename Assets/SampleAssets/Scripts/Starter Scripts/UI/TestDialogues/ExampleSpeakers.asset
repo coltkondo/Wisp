@@ -20,4 +20,4 @@ MonoBehaviour:
   - name: Wisp
     sprite: {fileID: 21300000, guid: 47a1fedcc75378842af2cf800369ced0, type: 3}
   - name: Halo
-    sprite: {fileID: 21300000, guid: 3e32a5979ab2ffd4bb65f5dbff560dda, type: 3}
+    sprite: {fileID: 21300000, guid: f597ffc6a03a95f4a8a1cb502a3a57b7, type: 3}
