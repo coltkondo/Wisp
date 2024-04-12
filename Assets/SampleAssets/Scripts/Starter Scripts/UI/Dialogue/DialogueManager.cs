@@ -53,6 +53,7 @@ public class DialogueManager : MonoBehaviour
 
 	[HideInInspector]
 	public DialogueTrigger currentTrigger;
+	public DirectDialogue directTrigger;
 
 	private bool levelBool = false;
 	private int levelIndex;
@@ -232,6 +233,10 @@ public class DialogueManager : MonoBehaviour
 		if (currentTrigger.singleUseDialogue)
 		{
 			currentTrigger.hasBeenUsed = true;
+		}
+		if (directTrigger.singleUseDialogue)
+		{
+			directTrigger.hasBeenUsed = true;
 		}
 		inputStream.Clear();
 	}
