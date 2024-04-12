@@ -16,7 +16,7 @@ using System;
  * A script by Michael O'Connell, extended by Benjamin Cohen, further extended by Eric Bejleri, and then extended even FURTHER again by Benjamin Cohen
  */
 
-public class DialogueManager : MonoBehaviour
+public class DirectManager : MonoBehaviour
 {
 	[Header("UI Elements")]
 	[Tooltip("your fancy canvas image that holds your text objects")]
@@ -52,7 +52,7 @@ public class DialogueManager : MonoBehaviour
 	/* ^ IMPORTANT IMPORTANT IMPORTANT IMPORTANT ^*/
 
 	[HideInInspector]
-	public DialogueTrigger currentTrigger;
+	public DirectTrigger currentTrigger;
 	//public DirectDialogue directTrigger;
 
 	private bool levelBool = false;
@@ -75,8 +75,6 @@ public class DialogueManager : MonoBehaviour
 
 	[Header("Options")]
 	public bool freezePlayerOnDialogue = true;
-
-	public GameObject fadeOutImage;
 
 	private void Start()
 	{
@@ -237,26 +235,5 @@ public class DialogueManager : MonoBehaviour
 			currentTrigger.hasBeenUsed = true;
 		}
 		inputStream.Clear();
-
-		if (currentTrigger.isTransition)
-		{
-			StartCoroutine(Transition());
-		}
-
-		IEnumerator Transition() {
-        Animator anim = fadeOutImage.GetComponent<Animator>();
-        anim.SetTrigger("StartFadeOut"); // Make sure the trigger name matches the one in the Animator
-
-        // Wait for the animation to finish
-        yield return new WaitForSeconds(2); // Adjust this time based on the animation length
-
-        // Deactivate objects
-        foreach (var obj in currentTrigger.objectsToDisable)
-        {
-            obj.SetActive(false);
-        }
-
-		anim.SetTrigger("StartFadeIn"); // Make sure the trigger name matches the one in the Animator
 	}
-}
 }
