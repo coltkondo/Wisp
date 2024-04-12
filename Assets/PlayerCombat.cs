@@ -70,7 +70,7 @@ public class PlayerCombat : MonoBehaviour
 
     private void HandleShooting()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetMouseButtonDown(1))
         {
             bulletInstance = Instantiate(bullet, attackPoint.position, Quaternion.identity);
             
