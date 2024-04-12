@@ -603,7 +603,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8889900244537436829, guid: 0e52a445541cfcd46aa3ff44a73e4352, type: 3}
   m_PrefabInstance: {fileID: 5812598820270133613}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &487741107
+--- !u!114 &487741111
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -612,14 +612,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 487741102}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f9c022f7072fea4ea7a17914472d91f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b803fa7986e89f4092153f8e71cf396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextFileAsset: {fileID: 4900000, guid: 42f4a0fcaf47d0340a7ea886c1c5565c, type: 3}
-  waitTime: 1
+  TextFileAsset: {fileID: 0}
+  waitTime: 0.5
   singleUseDialogue: 0
   hasBeenUsed: 0
-  interactionPrompt: {fileID: 438854562}
+  interactionPrompt: {fileID: 0}
 --- !u!114 &586187936 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7554471400950717464, guid: f997f720a82db9d41815d18e6a495343, type: 3}
@@ -34288,7 +34288,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5354452291545427814, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
   m_PrefabInstance: {fileID: 1963895737}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1777133432}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7cabd793e73575d4393757ab123a3e46, type: 3}
@@ -34299,7 +34299,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3394909527261201120, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
   m_PrefabInstance: {fileID: 1963895737}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1777133432}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 155555feb21b3444bba1aa8a3e623f58, type: 3}
@@ -69281,6 +69281,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1777133432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8965207512815088854, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
+  m_PrefabInstance: {fileID: 1963895737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1777133436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777133432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07429bf1d023ee04487c64d0dc12e4ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueUI: {fileID: 593444438}
+  TextBox: {fileID: 1454074850}
+  NameText: {fileID: 1206346835}
+  speaker: {fileID: 586187936}
+  continueImage: {fileID: 931689716}
+  isScrollingText: 1
+  typeSpeed: 0.01
+  currentTrigger: {fileID: 0}
+  invisSprite: {fileID: 0}
+  speakerLibrary: {fileID: 11400000, guid: 5f6138b7d9482b142a255791c78eb123, type: 2}
+  speakerSpriteNames: []
+  freezePlayerOnDialogue: 1
 --- !u!1 &1921263982
 GameObject:
   m_ObjectHideFlags: 0
@@ -69460,7 +69489,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8965207512815088854, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1777133436}
   m_SourcePrefab: {fileID: 100100000, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
 --- !u!1001 &2109331799
 PrefabInstance:
@@ -69569,6 +69601,10 @@ PrefabInstance:
     - target: {fileID: 5847989207768456444, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: jumpingPower
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5847989207768456444, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: isFacingRight
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8084568360553902649, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: timeBar
@@ -69698,7 +69734,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8889900244537436829, guid: 0e52a445541cfcd46aa3ff44a73e4352, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 487741107}
+      addedObject: {fileID: 487741111}
   m_SourcePrefab: {fileID: 100100000, guid: 0e52a445541cfcd46aa3ff44a73e4352, type: 3}
 --- !u!1001 &6864707021099285108
 PrefabInstance:
