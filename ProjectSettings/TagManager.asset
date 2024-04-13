@@ -41,6 +41,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Sky
+    uniqueID: 1153106279
+    locked: 0
+  - name: Stars
+    uniqueID: 3766619127
+    locked: 0
+  - name: Mountain1
+    uniqueID: 3304697061
+    locked: 0
+  - name: Mountain2
+    uniqueID: 2590397747
+    locked: 0
+  - name: Trees
+    uniqueID: 2131145481
+    locked: 0
+  - name: Game
+    uniqueID: 1743874225
+    locked: 0
+  - name: Ground
+    uniqueID: 3806425545
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
