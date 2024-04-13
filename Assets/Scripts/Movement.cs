@@ -38,11 +38,13 @@ public class Movement : MonoBehaviour
     [SerializeField] private GameObject smokeTrailPrefab; // Assign this in the Inspector
 
     Animator anim;
+    PlayerCombat combat;
 
     void Start()
     {
         anim = GetComponent<Animator>(); // Get the Animator component attached to the GameObject.
         playerAudio = GetComponent<PlayerAudio>();
+        combat = GetComponent<PlayerCombat>();
     }
 
     private void Update()
@@ -185,6 +187,24 @@ public class Movement : MonoBehaviour
     {
         isWallJumping = false;
     }
+
+    /*private void Flip()
+    {
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Wisp_Attack"))
+        {
+            return;
+        } else
+        {
+            if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)  // This version can be used to prevent Wisp from flipping mid-attack.
+            {                                                                           // You might want this if you don't like that Wisp can deal dmg while facing the other way
+                isFacingRight = !isFacingRight;                                         // if the player turns mid-attack.
+                Vector3 localScale = transform.localScale;
+                localScale.x *= -1f;
+                transform.localScale = localScale;
+            }
+        }
+        
+    }*/
 
     private void Flip()
     {

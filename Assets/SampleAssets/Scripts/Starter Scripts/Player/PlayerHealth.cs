@@ -267,6 +267,7 @@ public class PlayerHealth : MonoBehaviour
 
 	private void TimeToDie()
 	{
+		Debug.Log("Time to Die");
 		StartCoroutine(PlayerDies());
 	}
 

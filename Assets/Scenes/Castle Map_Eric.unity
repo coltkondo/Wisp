@@ -290,6 +290,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 3821781935328455462, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6481828694286370037, guid: f997f720a82db9d41815d18e6a495343, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -368,6 +372,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6481828694286370037, guid: f997f720a82db9d41815d18e6a495343, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042616559349968884, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8039329330583948016, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -69145,6 +69157,10 @@ PrefabInstance:
     - target: {fileID: 5847989207768456444, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: jumpingPower
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7871766548928998085, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: attackRange
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 7871766548928998085, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: attackDamage
