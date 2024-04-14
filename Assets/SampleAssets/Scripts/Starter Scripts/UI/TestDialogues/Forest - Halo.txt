@@ -1,25 +1,24 @@
 [NAME=???][SPEAKERSPRITE=Halo]Wisp! Congratulations! 
 [NAME=???][SPEAKERSPRITE=Halo]You've finally graduated as a Grim Reaper, a role few can aspire to!
 [NAME=???][SPEAKERSPRITE=Halo]Chevalier's speeches always leave goosebumps on your skin, wouldn't you agree?
-[NAME=???][SPEAKERSPRITE=Halo]In any case, my name is Halo, I'll be your mentor from now on.
+[NAME=???][SPEAKERSPRITE=Halo]In any case, I'm Halo, I'll be your mentor from now on.
 [NAME=Halo][SPEAKERSPRITE=Halo]I will guide you as you find your footing in this new role.
 [NAME=Halo][SPEAKERSPRITE=Halo]Before anything else, take this!
 [NAME=][SPEAKERSPRITE=]Wisp received the Time Watch!
 [NAME=Halo][SPEAKERSPRITE=Halo]This is the Time Watch, a tool of great significance to us Reapers.
 [NAME=Halo][SPEAKERSPRITE=Halo]It's not just a device to mark the passage of time but a key to manipulating it.
 [NAME=Halo][SPEAKERSPRITE=Halo]With the Time Watch, you can perform a variety of amazing things—you see.
-[NAME=Halo][SPEAKERSPRITE=Halo]It's an incredibly useful tool for a Grim Reaper after all, but remember, the watch's power isn't infinite.
-[NAME=Halo][SPEAKERSPRITE=Halo]Use it sparingly and wisely.
-[NAME=Halo][SPEAKERSPRITE=Halo]The watch can heal your wounds. It rewinds time on your physical being, undoing recent harm.
+[NAME=Halo][SPEAKERSPRITE=Halo]The watch can heal your wounds by rewinding time on your physical being.
 [NAME=Halo][SPEAKERSPRITE=Halo]However, this requires soul points, which you can accumulate by defeating enemies.
-[NAME=Halo][SPEAKERSPRITE=Halo]These points are the lifeblood of the watch, recharging its powers.
 [NAME=Halo][SPEAKERSPRITE=Halo]Lastly, the watch can manipulate time in your surroundings, not just within you. 
 [NAME=Halo][SPEAKERSPRITE=Halo]Find a path blocked or a bridge collapsed?
 [NAME=Halo][SPEAKERSPRITE=Halo]With the Time Watch, you can reverse such changes, creating a way forward.
 [NAME=Halo][SPEAKERSPRITE=Halo]But, as with its other powers, this too hinges on soul points.
-[NAME=Halo][SPEAKERSPRITE=Halo]Each use is a decision, so wield it with wisdom.
+[NAME=Halo][SPEAKERSPRITE=Halo]It's an incredibly useful tool for a Grim Reaper after all, but remember, the watch's power isn't infinite.
+[NAME=Halo][SPEAKERSPRITE=Halo]Each use is a decision, so wield it sparingly and wisely.
 [NAME=Halo][SPEAKERSPRITE=Halo]And here, take this guide - a quick reference for the Time Watch.
-[NAME=Halo][SPEAKERSPRITE=Halo]It'll be handy if you're ever unsure about its functionalities. 
+[NAME=][SPEAKERSPRITE=]Wisp received 'Grim Reapers for Dummies'!
+[NAME=Halo][SPEAKERSPRITE=Halo]It'll be handy if you need to review what you were taught in the academy. 
 [NAME=Halo][SPEAKERSPRITE=Halo]Keep it close; it might just be the edge you need.
 [NAME=Halo][SPEAKERSPRITE=Halo]Now, for your first task as a Reaper. I will meet you at the village beyond the Hollows.
 [NAME=Halo][SPEAKERSPRITE=Halo]Consider this a test of your competence and understanding of your new abilities.
