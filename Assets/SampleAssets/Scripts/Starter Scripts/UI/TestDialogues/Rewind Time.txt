@@ -1,0 +1,4 @@
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Threads of yore, twist and twine.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Spirals of eternity, reverse and align.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]By the ancient moon's silver sign,
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Grant thine passage through the veils of time.

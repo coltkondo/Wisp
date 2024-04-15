@@ -26,7 +26,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Castle Map.unity
     guid: bc3d03e4987544863ac732ec7d721e38
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/JohnTest.unity
     guid: a2a6ff19a0a01eb47941b1f98486a9e9
   m_configObjects: {}

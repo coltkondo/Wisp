@@ -162,8 +162,6 @@ public class DirectManager : MonoBehaviour
 				speaker.sprite = invisSprite;
 			}
 			PrintDialogue(); // print the rest of this line
-
-
 		}
 		else
 		{
