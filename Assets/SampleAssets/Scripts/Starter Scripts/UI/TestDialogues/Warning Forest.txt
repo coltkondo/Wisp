@@ -1,1 +1,1 @@
-[NAME=???][SPEAKERSPRITE=]I'm forgetting something.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]I must be forgetting something.

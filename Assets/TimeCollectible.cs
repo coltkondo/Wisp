@@ -24,7 +24,7 @@ public class TimeCollectible : MonoBehaviour
                 
             }
             // Optionally, destroy the collectible after it's been collected
-            
+            Destroy(gameObject);
         }
     }
 }

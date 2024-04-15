@@ -27,7 +27,7 @@ public class Timestop_Eric : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1)) //Right Click for Input - Main Time Stop
+        if (Input.GetKeyDown(KeyCode.X)) //XC lick for Input - Main Time Stop
         {
             if (currentTimePoints != 0)
             {

@@ -15,6 +15,10 @@ public class DialogueTrigger : MonoBehaviour
     public float waitTime = 0.5f; // lag time for advancing dialogue so you can actually read it
     private float nextTime = 0f; // used with waitTime to create a timer system
     public bool singleUseDialogue = false;
+    public bool isTransition = false;
+    public GameObject[] objectsToDisable;
+
+    public GameObject[] objectsToEnable;
     [HideInInspector]
     public bool hasBeenUsed = false;
     bool inArea = false;
@@ -115,6 +119,7 @@ public class DialogueTrigger : MonoBehaviour
             interactionPrompt.SetActive(false); // Hide interaction prompt when player leaves 
             manager.EndDialogue();
         }
+        
         inArea = false;
 
     }
