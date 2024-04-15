@@ -253,7 +253,6 @@ public class DialogueManager : MonoBehaviour
 		IEnumerator Transition() {
         Animator anim = fadeOutImage.GetComponent<Animator>();
         anim.SetTrigger("StartFadeOut"); // Make sure the trigger name matches the one in the Animator
-
         // Wait for the animation to finish
         yield return new WaitForSeconds(2); // Adjust this time based on the animation length
 
@@ -269,6 +268,9 @@ public class DialogueManager : MonoBehaviour
         }
 
 		anim.SetTrigger("StartFadeIn"); // Make sure the trigger name matches the one in the Animator
+
+		anim.ResetTrigger("StartFadeOut");
+		anim.ResetTrigger("StartFadeIn");
 	}
 }
 	private void ShowObject(string objectName)
