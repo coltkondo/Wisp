@@ -167,6 +167,13 @@ public class DialogueManager : MonoBehaviour
 
 
 		}
+		else if (inputStream.Peek().Contains("[SHOWOBJECT=")) // Custom tag to show an object
+		{
+			string part = inputStream.Peek();
+			string objectName = inputStream.Dequeue().Substring(part.IndexOf('=') + 1, part.IndexOf(']') - (part.IndexOf('=') + 1));
+			ShowObject(objectName); // You will define this function
+			PrintDialogue(); // Continue printing the rest of the dialogue
+		}
 		else
 		{
 			if (isScrollingText)//This deals with all the scrolling text
@@ -256,7 +263,32 @@ public class DialogueManager : MonoBehaviour
             obj.SetActive(false);
         }
 
+		foreach (var obj in currentTrigger.objectsToEnable)
+        {
+            obj.SetActive(true);
+        }
+
 		anim.SetTrigger("StartFadeIn"); // Make sure the trigger name matches the one in the Animator
 	}
 }
+	private void ShowObject(string objectName)
+	{
+		GameObject objToShow = GameObject.Find(objectName);
+		if (objToShow != null)
+		{	
+			// Set alpha from 0 to 1
+            Image image = objToShow.GetComponent<Image>();
+            if (image != null)
+            {
+                // Set alpha from 0 to 1
+                Color color = image.color;
+                color.a = 1;
+                image.color = color;
+            }
+		}
+		else
+		{
+			Debug.LogError("Object not found: " + objectName);
+		}
+	}
 }

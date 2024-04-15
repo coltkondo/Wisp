@@ -17,6 +17,8 @@ public class DialogueTrigger : MonoBehaviour
     public bool singleUseDialogue = false;
     public bool isTransition = false;
     public GameObject[] objectsToDisable;
+
+    public GameObject[] objectsToEnable;
     [HideInInspector]
     public bool hasBeenUsed = false;
     bool inArea = false;

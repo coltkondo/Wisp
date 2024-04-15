@@ -64,7 +64,7 @@ public class Movement : MonoBehaviour
         if (horizontal != 0)
         {
             anim.SetBool("IsWalking", true);
-            if (playerAudio && !playerAudio.WalkSource.isPlaying && playerAudio.WalkSource.clip != null)
+            if (playerAudio && !playerAudio.WalkSource.isPlaying && playerAudio.WalkSource.clip != null && IsGrounded())
 				{
 					playerAudio.WalkSource.Play();
 				}
@@ -72,7 +72,7 @@ public class Movement : MonoBehaviour
         else
         {
             anim.SetBool("IsWalking", false);
-            if (playerAudio && playerAudio.WalkSource.isPlaying && playerAudio.WalkSource.clip != null)
+            if (playerAudio && playerAudio.WalkSource.isPlaying && playerAudio.WalkSource.clip != null && IsGrounded())
 				{
 					playerAudio.WalkSource.Stop();
 				}
@@ -91,15 +91,15 @@ public class Movement : MonoBehaviour
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            if (playerAudio && playerAudio != null)
-		    {
-			    playerAudio.JumpSource.Play();
-		    }
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
             StartCoroutine(Dash());
+            if (playerAudio && playerAudio != null)
+		    {
+			    playerAudio.JumpSource.Play();
+		    }
         }
 
         if (!wallDisabled) {
