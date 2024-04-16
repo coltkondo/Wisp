@@ -117,8 +117,11 @@ public class DialogueTrigger : MonoBehaviour
 
         if (other.gameObject.tag == "Player") {
             interactionPrompt.SetActive(false); // Hide interaction prompt when player leaves 
-            manager.EndDialogue();
-        }
+
+            if (manager.isInDialouge) {
+                manager.EndDialogue();
+            }
+        } 
         
         inArea = false;
 

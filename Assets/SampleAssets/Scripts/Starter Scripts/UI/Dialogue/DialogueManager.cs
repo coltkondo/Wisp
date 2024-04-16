@@ -58,7 +58,7 @@ public class DialogueManager : MonoBehaviour
 	private bool levelBool = false;
 	private int levelIndex;
 
-	private bool isInDialouge = false;
+	public bool isInDialouge = false;
 	private bool isTyping = false;
 	private bool cancelTyping = false;
 
