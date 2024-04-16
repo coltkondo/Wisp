@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9387021236394742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8599196707662776685}
+  m_Layer: 0
+  m_Name: hitCheckUp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8599196707662776685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9387021236394742}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.443, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1645768335579175570}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1241568582739940218
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,6 +135,7 @@ Transform:
   - {fileID: 7260630247844269246}
   - {fileID: 7208244489622501167}
   - {fileID: 9137990939542140992}
+  - {fileID: 8599196707662776685}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &587417927181366724
@@ -243,6 +275,7 @@ MonoBehaviour:
   dashingTime: 0.2
   dashingCooldown: 1
   isDisabled: 0
+  wallDisabled: 1
   rb: {fileID: 3867603116833815654}
   groundCheck: {fileID: 7208244489622501167}
   groundLayer:
@@ -407,6 +440,8 @@ MonoBehaviour:
   HealthBar: {fileID: 0}
   useHealthBar: 0
   playerAudio: {fileID: 0}
+  iFrames: 0
+  iFramesDuration: 0
   index: 0
 --- !u!114 &2144772588267353002
 MonoBehaviour:
@@ -440,7 +475,8 @@ MonoBehaviour:
   bullet: {fileID: 7742431058765413196, guid: 19f99d586778f1345871bbc32b28ced1, type: 3}
   animator: {fileID: 6465579086542488219}
   attackPoint: {fileID: 9137990939542140992}
-  attackRange: 0.5
+  attackPointAbove: {fileID: 8599196707662776685}
+  attackRange: 0.61
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128

@@ -53,12 +53,11 @@ public class DialogueManager : MonoBehaviour
 
 	[HideInInspector]
 	public DialogueTrigger currentTrigger;
-	//public DirectDialogue directTrigger;
 
 	private bool levelBool = false;
 	private int levelIndex;
 
-	private bool isInDialouge = false;
+	public bool isInDialouge = false;
 	private bool isTyping = false;
 	private bool cancelTyping = false;
 
@@ -231,10 +230,6 @@ public class DialogueManager : MonoBehaviour
 		cancelTyping = false;
 		isTyping = false;
 		// isOpen = false;
-		if (freezePlayerOnDialogue)
-		{
-			UnFreezePlayer();
-		}
 		if (levelBool)
 		{
 			GameObject.FindObjectOfType<GameSceneManager>().LoadScene(levelIndex);
@@ -271,6 +266,11 @@ public class DialogueManager : MonoBehaviour
 
 		anim.ResetTrigger("StartFadeOut");
 		anim.ResetTrigger("StartFadeIn");
+
+		if (freezePlayerOnDialogue)
+		{
+			UnFreezePlayer();
+		}
 	}
 }
 	private void ShowObject(string objectName)
