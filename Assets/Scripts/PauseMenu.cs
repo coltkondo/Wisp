@@ -8,6 +8,8 @@ public class MenuPause : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject confirmQuit;
+
+    public GameObject settingsMenu;
     
     // Update is called once per frame
     void Update()
@@ -43,5 +45,9 @@ public class MenuPause : MonoBehaviour
 
     public void QuitNo() {
         confirmQuit.SetActive(false);
+    }
+
+    public void Settings() {
+        settingsMenu.SetActive(true);
     }
 }

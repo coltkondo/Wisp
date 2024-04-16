@@ -43,9 +43,8 @@ public class DialogueTrigger : MonoBehaviour
             interactionPrompt.SetActive(false); // Optionally, hide the interaction prompt
         }
 
-        if (!hasBeenUsed && inArea && Input.GetKeyDown(KeyCode.E) && nextTime < Time.timeSinceLevelLoad)
+        if (manager.isInDialouge && !hasBeenUsed && inArea && Input.GetKeyDown(KeyCode.E) && nextTime < Time.timeSinceLevelLoad)
         {
-            //Debug.Log("Advance");
             nextTime = Time.timeSinceLevelLoad + waitTime;
             manager.AdvanceDialogue();
         }
@@ -117,8 +116,11 @@ public class DialogueTrigger : MonoBehaviour
 
         if (other.gameObject.tag == "Player") {
             interactionPrompt.SetActive(false); // Hide interaction prompt when player leaves 
-            manager.EndDialogue();
-        }
+
+            if (manager.isInDialouge) {
+                manager.EndDialogue();
+            }
+        } 
         
         inArea = false;
 
