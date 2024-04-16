@@ -9,12 +9,13 @@ public class Timestop_Eric : MonoBehaviour
     public GameObject timeBar;
     public GameObject player;
 
-
     public int currentTimePoints;
     public int maxTimePoints;
 
     private PlayerHealth playerHealth;
     private GameManager gameManager;
+
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
