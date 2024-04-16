@@ -45,7 +45,7 @@ public class GameSceneManager : MonoBehaviour
     {
         Transition.SetActive(true);
         Transition.GetComponent<Animator>().SetBool("FadeIn", true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.7f);
         Transition.GetComponent<Animator>().SetBool("FadeIn", false);
         Transition.SetActive(false);
     }
@@ -54,7 +54,7 @@ public class GameSceneManager : MonoBehaviour
     {
         Transition.SetActive(true);
         Transition.GetComponent<Animator>().SetBool("FadeOut", true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.7f);
         Transition.GetComponent<Animator>().SetBool("FadeOut", false);
     }
 }

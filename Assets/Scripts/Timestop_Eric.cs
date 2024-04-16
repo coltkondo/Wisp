@@ -27,18 +27,27 @@ public class Timestop_Eric : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1)) //Right Click for Input - Main Time Stop
+        if (Input.GetKeyDown(KeyCode.X)) //XC lick for Input - Main Time Stop
         {
-            decreaseTimePoints(1);
-            //perform time stop effects here
-            gameManager.timeIsStopped = true;
+            if (currentTimePoints != 0)
+            {
+                decreaseTimePoints(1);
+                //perform time stop effects here
+                gameManager.timeIsStopped = true;
+            }
+            
         }
 
         if (Input.GetKeyDown(KeyCode.Z)) //Z Click for Heal
         {
-            Debug.Log("Heal Key Pressed");
-            decreaseTimePoints(1);
-            StartCoroutine(PlayerHealFreeze());
+            if (currentTimePoints != 0)
+            {
+                Debug.Log("Heal Key Pressed");
+                decreaseTimePoints(1);
+                StartCoroutine(PlayerHealFreeze());
+            }
+
+            
 
         }
     }

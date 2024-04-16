@@ -93,7 +93,6 @@ public class GameManager : MonoBehaviour
 			timeStopRunning = true;
             Debug.Log("Time is stopped");
             m_ColorGrading.enabled.Override(true);
-            //lock enemy speed
             // Freezes all of the Enemies in place
             for (int i = 0; i < enemies.Length;) 
             {

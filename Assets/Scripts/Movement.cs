@@ -38,11 +38,13 @@ public class Movement : MonoBehaviour
     [SerializeField] private GameObject smokeTrailPrefab; // Assign this in the Inspector
 
     Animator anim;
+    PlayerCombat combat;
 
     void Start()
     {
         anim = GetComponent<Animator>(); // Get the Animator component attached to the GameObject.
         playerAudio = GetComponent<PlayerAudio>();
+        combat = GetComponent<PlayerCombat>();
     }
 
     private void Update()
@@ -62,7 +64,7 @@ public class Movement : MonoBehaviour
         if (horizontal != 0)
         {
             anim.SetBool("IsWalking", true);
-            if (playerAudio && !playerAudio.WalkSource.isPlaying && playerAudio.WalkSource.clip != null)
+            if (playerAudio && !playerAudio.WalkSource.isPlaying && playerAudio.WalkSource.clip != null && IsGrounded())
 				{
 					playerAudio.WalkSource.Play();
 				}
@@ -70,7 +72,7 @@ public class Movement : MonoBehaviour
         else
         {
             anim.SetBool("IsWalking", false);
-            if (playerAudio && playerAudio.WalkSource.isPlaying && playerAudio.WalkSource.clip != null)
+            if (playerAudio && playerAudio.WalkSource.isPlaying && playerAudio.WalkSource.clip != null && IsGrounded())
 				{
 					playerAudio.WalkSource.Stop();
 				}
@@ -89,15 +91,15 @@ public class Movement : MonoBehaviour
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            if (playerAudio && playerAudio != null)
-		    {
-			    playerAudio.JumpSource.Play();
-		    }
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
             StartCoroutine(Dash());
+            if (playerAudio && playerAudio != null)
+		    {
+			    playerAudio.JumpSource.Play();
+		    }
         }
 
         if (!wallDisabled) {
@@ -185,6 +187,24 @@ public class Movement : MonoBehaviour
     {
         isWallJumping = false;
     }
+
+    /*private void Flip()
+    {
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Wisp_Attack"))
+        {
+            return;
+        } else
+        {
+            if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)  // This version can be used to prevent Wisp from flipping mid-attack.
+            {                                                                           // You might want this if you don't like that Wisp can deal dmg while facing the other way
+                isFacingRight = !isFacingRight;                                         // if the player turns mid-attack.
+                Vector3 localScale = transform.localScale;
+                localScale.x *= -1f;
+                transform.localScale = localScale;
+            }
+        }
+        
+    }*/
 
     private void Flip()
     {

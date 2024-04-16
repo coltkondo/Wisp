@@ -15,6 +15,10 @@ public class DialogueTrigger : MonoBehaviour
     public float waitTime = 0.5f; // lag time for advancing dialogue so you can actually read it
     private float nextTime = 0f; // used with waitTime to create a timer system
     public bool singleUseDialogue = false;
+    public bool isTransition = false;
+    public GameObject[] objectsToDisable;
+
+    public GameObject[] objectsToEnable;
     [HideInInspector]
     public bool hasBeenUsed = false;
     bool inArea = false;
@@ -39,9 +43,8 @@ public class DialogueTrigger : MonoBehaviour
             interactionPrompt.SetActive(false); // Optionally, hide the interaction prompt
         }
 
-        if (!hasBeenUsed && inArea && Input.GetKeyDown(KeyCode.E) && nextTime < Time.timeSinceLevelLoad)
+        if (manager.isInDialouge && !hasBeenUsed && inArea && Input.GetKeyDown(KeyCode.E) && nextTime < Time.timeSinceLevelLoad)
         {
-            //Debug.Log("Advance");
             nextTime = Time.timeSinceLevelLoad + waitTime;
             manager.AdvanceDialogue();
         }
@@ -113,8 +116,12 @@ public class DialogueTrigger : MonoBehaviour
 
         if (other.gameObject.tag == "Player") {
             interactionPrompt.SetActive(false); // Hide interaction prompt when player leaves 
-            manager.EndDialogue();
-        }
+
+            if (manager.isInDialouge) {
+                manager.EndDialogue();
+            }
+        } 
+        
         inArea = false;
 
     }

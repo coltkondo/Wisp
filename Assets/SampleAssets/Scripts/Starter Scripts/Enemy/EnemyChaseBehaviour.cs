@@ -5,12 +5,14 @@ using UnityEngine;
 public class EnemyChaseBehaviour : StateMachineBehaviour
 {
     private Transform playerPos;
+    private Vector2 playerGround;
     public float speed;
     private float speedHolder;
     private Animator anim;
     [Tooltip("To use Blend Tree it needs the following parameters: float \"distance\", float \"Horizontal\", float \"Vertical\", bool \"SpriteFacingRight\" ")]
     public bool useBlendTree = false;
     private GameManager gameManager;
+    public bool isGrounded;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -44,7 +46,17 @@ public class EnemyChaseBehaviour : StateMachineBehaviour
             speed = speedHolder;
         }
 
-        enemyPos.position = Vector2.MoveTowards(enemyPos.transform.position, playerPos.position, step); // move towards the player
+        if (isGrounded == true)
+        {
+            playerGround = playerPos.position;
+            playerGround.y = enemyPos.position.y;
+            enemyPos.position = Vector2.MoveTowards(enemyPos.transform.position, playerGround, step);
+        } else
+        {
+            enemyPos.position = Vector2.MoveTowards(enemyPos.transform.position, playerPos.position, step); // move towards the player
+        }
+
+        //enemyPos.position = Vector2.MoveTowards(enemyPos.transform.position, playerPos.position, step); // move towards the player
     }
 
     private void OnTriggerStay2D(Collider2D other) 

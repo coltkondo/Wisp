@@ -90,6 +90,7 @@ public class PlayerCombat : MonoBehaviour
             enemy.GetComponent<EnemyHealth>().DecreaseHealth(attackDamage);
 
         }
+
     }
 
     void OnDrawGizmosSelected()
@@ -106,7 +107,7 @@ public class PlayerCombat : MonoBehaviour
 
     private void HandleShooting()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetMouseButtonDown(1))
         {
             bulletInstance = Instantiate(bullet, attackPoint.position, Quaternion.identity);
             
@@ -116,5 +117,6 @@ public class PlayerCombat : MonoBehaviour
             }
         }
     }
+
 
 }
