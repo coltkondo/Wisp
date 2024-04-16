@@ -43,9 +43,8 @@ public class DialogueTrigger : MonoBehaviour
             interactionPrompt.SetActive(false); // Optionally, hide the interaction prompt
         }
 
-        if (!hasBeenUsed && inArea && Input.GetKeyDown(KeyCode.E) && nextTime < Time.timeSinceLevelLoad)
+        if (manager.isInDialouge && !hasBeenUsed && inArea && Input.GetKeyDown(KeyCode.E) && nextTime < Time.timeSinceLevelLoad)
         {
-            //Debug.Log("Advance");
             nextTime = Time.timeSinceLevelLoad + waitTime;
             manager.AdvanceDialogue();
         }
