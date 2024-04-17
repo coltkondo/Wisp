@@ -1,1 +1,1 @@
-[NAME=Wisp][SPEAKERSPRITE=Wisp]I must be forgetting something.
+[NAME=Knight][SPEAKERSPRITE=Knight]Have you talked to your mentor yet, little one?
