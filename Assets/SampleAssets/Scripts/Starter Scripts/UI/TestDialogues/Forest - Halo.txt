@@ -18,7 +18,7 @@
 [NAME=Halo][SPEAKERSPRITE=Halo]Each use is a decision, so wield it sparingly and wisely.
 [NAME=Halo][SPEAKERSPRITE=Halo]To heal yourself, use the Z key. If you want to stop the time in your surroundings, use the X key.
 [NAME=Halo][SPEAKERSPRITE=Halo]Last but not least, let's freshen up your memory on the basics of movement and combat.
-[NAME=Halo][SPEAKERSPRITE=Halo]You can move with the [b]WASD[/b] keys, jump with the Spacebar, and dash pressing Left Shift.
+[NAME=Halo][SPEAKERSPRITE=Halo]You can move with the WASD keys, jump with the Spacebar, and dash pressing Left Shift.
 [NAME=Halo][SPEAKERSPRITE=Halo]You can also attack with the left mouse button and shoot a fireball with your right mouse button.
 [NAME=Halo][SPEAKERSPRITE=Halo]Be careful, though, as your fireball uses soul points.
 [NAME=Halo][SPEAKERSPRITE=Halo]If you need help remembering all of this, check out this guide!
