@@ -266,12 +266,12 @@ public class DialogueManager : MonoBehaviour
 
 		anim.ResetTrigger("StartFadeOut");
 		anim.ResetTrigger("StartFadeIn");
+		}
 
 		if (freezePlayerOnDialogue)
 		{
 			UnFreezePlayer();
 		}
-	}
 }
 	private void ShowObject(string objectName)
 	{

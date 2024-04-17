@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 1190111289669707442}
   - component: {fileID: 5384928394293186436}
   - component: {fileID: 2532344255383206962}
-  - component: {fileID: 9037140962044957012}
-  - component: {fileID: 9042425691697686960}
   m_Layer: 0
   m_Name: Little Girl
   m_TagString: Untagged
@@ -98,41 +96,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0341233, y: -0.00053083897}
   m_Size: {x: 0.8748448, y: 1.3010418}
   m_Direction: 0
---- !u!114 &9037140962044957012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2319113188524600017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb22a3bd5b6fe1a4894a616921bc9a06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TextFileAsset: {fileID: 4900000, guid: 0813169a6a1c5fa45bd559ed149cde12, type: 3}
-  waitTime: 1
-  singleUseDialogue: 1
-  isTransition: 1
-  objectsToDisable:
-  - {fileID: 2319113188524600017}
-  - {fileID: 0}
-  objectsToEnable: []
-  hasBeenUsed: 0
-  interactionPrompt: {fileID: 0}
---- !u!114 &9042425691697686960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2319113188524600017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11d038c9b692a944f943fb2f825c8343, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!1 &5961337766587092719
 GameObject:
   m_ObjectHideFlags: 0
