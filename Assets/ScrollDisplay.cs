@@ -21,8 +21,7 @@ public class ScrollDisplay : MonoBehaviour
     {
         // Toggle the visibility of the scroll UI when the E key is pressed
         if (Input.GetKeyDown(KeyCode.E))
-        {
-            
+        {   
             if (isActive)
             {
                 HideScroll();
@@ -41,21 +40,25 @@ public class ScrollDisplay : MonoBehaviour
     private void DisplayScroll()
     {
         // Load the text file content into the TMP_Text component
+
         scrollText.text = textFile.text;
         
         // Make the Scroll UI visible and update isActive
         scrollUIPrefab.SetActive(true);
         isActive = true;
+        Time.timeScale = 0f;
     }
 
     // Method to hide the scroll UI
     public void HideScroll()
     {
         // Make the Scroll UI invisible and update isActive
+
         scrollUIPrefab.SetActive(false);
         isActive = false;
         Debug.Log("Hiding scroll");
+        Time.timeScale = 1f;
         // If you don't want to disable the gameObject this script is attached to, comment out or remove the next line
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
     }
 }

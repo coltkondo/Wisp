@@ -6946,6 +6946,11 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1 &638443124 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 918361637905634987, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+  m_PrefabInstance: {fileID: 302302288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &642728501
 GameObject:
   m_ObjectHideFlags: 0
@@ -102102,16 +102107,24 @@ PrefabInstance:
       value: Scroll (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6107848640399749038, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
+      propertyPath: textFile
+      value: 
+      objectReference: {fileID: 4900000, guid: 34fd429db91251341af65872c60273d3, type: 3}
+    - target: {fileID: 6107848640399749038, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
+      propertyPath: scrollText
+      value: 
+      objectReference: {fileID: 1816663096}
+    - target: {fileID: 6107848640399749038, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
       propertyPath: scrollUIPrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 638443124}
     - target: {fileID: 7780770702473917716, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.939698
+      value: 63.34
       objectReference: {fileID: 0}
     - target: {fileID: 7780770702473917716, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.242334
+      value: 6.87
       objectReference: {fileID: 0}
     - target: {fileID: 7780770702473917716, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -111227,6 +111240,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a213a0df0ceb4085be2d940a86faeee, type: 3}
+--- !u!114 &1816663096 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5481389820790942343, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+  m_PrefabInstance: {fileID: 302302288}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1828085104 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5398392275427215661, guid: ccac1d6bcb9ec4400b6475ba4f27a1c1, type: 3}
