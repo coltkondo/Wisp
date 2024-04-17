@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyChaseBehaviour : StateMachineBehaviour
 {
     private Transform playerPos;
+    private Rigidbody2D rb;
+    private GameObject thisObject;
     private Vector2 playerGround;
     public float speed;
     private float speedHolder;
@@ -21,6 +23,8 @@ public class EnemyChaseBehaviour : StateMachineBehaviour
         anim = animator;
         speedHolder = speed;
         gameManager = FindAnyObjectByType<GameManager>();
+        thisObject = animator.gameObject;
+        rb = thisObject.GetComponent<Rigidbody2D>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -28,8 +32,13 @@ public class EnemyChaseBehaviour : StateMachineBehaviour
     {
         Transform enemyPos = animator.transform;
         float step = speed * Time.deltaTime;
-        
-        if(useBlendTree)
+
+        if (enemyPos.eulerAngles != Vector3.zero)
+        {
+            enemyPos.eulerAngles = Vector3.zero;
+        }
+
+        if (useBlendTree)
         {
             Vector3 blendTreePos = (playerPos.position - enemyPos.transform.position);
             anim.SetFloat("Horizontal", blendTreePos.x);
@@ -41,18 +50,44 @@ public class EnemyChaseBehaviour : StateMachineBehaviour
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("isTimeStopped"))
         {
             speed = 0f;
+            rb.gravityScale = 0f;
         } else
         {
             speed = speedHolder;
         }
 
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Chase"))
+        {
+            if (isGrounded == true)
+            {
+                rb.gravityScale = 10f;
+            } else
+            {
+                rb.gravityScale = 0f;
+            }
+        }
+
         if (isGrounded == true)
         {
-            playerGround = playerPos.position;
+            /*playerGround = playerPos.position;
             playerGround.y = enemyPos.position.y;
-            enemyPos.position = Vector2.MoveTowards(enemyPos.transform.position, playerGround, step);
-        } else
+            enemyPos.position = Vector2.MoveTowards(enemyPos.transform.position, playerGround, step); */
+            playerGround = playerPos.position;
+            if (enemyPos.position.y > playerGround.y)
+            {
+                //enemyPos.eulerAngles = Vector3.zero;
+                enemyPos.position = Vector2.MoveTowards(enemyPos.transform.position, playerPos.position, step); // move towards the player
+            } 
+            else
+            {
+                playerGround.y = enemyPos.position.y;
+                //enemyPos.eulerAngles = Vector3.zero; 
+                enemyPos.position = Vector2.MoveTowards(enemyPos.transform.position, playerGround, step);
+            }
+        } 
+        else
         {
+            //enemyPos.eulerAngles = Vector3.zero;
             enemyPos.position = Vector2.MoveTowards(enemyPos.transform.position, playerPos.position, step); // move towards the player
         }
 
@@ -65,8 +100,13 @@ public class EnemyChaseBehaviour : StateMachineBehaviour
         anim.transform.position = Vector2.MoveTowards(anim.transform.position, -1 * lineToObject, speed * Time.deltaTime); // don't get too stuck on objects (barely noticeable)
     }
 
-    // Flip Check & Flip code from Player Movement Script
-    private void FlipCheck(float move)
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        rb.gravityScale = 0f;
+    }
+
+        // Flip Check & Flip code from Player Movement Script
+        private void FlipCheck(float move)
 	{
 		//Flip the sprite so that they are facing the correct way when moving
 		if (move > 0 && !anim.GetBool("SpriteFacingRight")) //if moving to the right and the sprite is not facing the right.
