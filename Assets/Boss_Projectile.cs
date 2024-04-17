@@ -8,12 +8,18 @@ public class Boss_Projectile : MonoBehaviour
     private Vector3 targetPosition;
     private bool isSummoned = false;
 
+    public float summonDelay = 3f;
+    public float lifetime = 5f;     // Lifetime of the projectile in seconds
+
+
     void Start()
     {
         // Start the summoning animation
-        animator.Play("SummoningAnimation");
+        animator.Play("Boss_Proj_Summon");
         // Set to launch the projectile after a delay
         Invoke(nameof(LaunchProjectile), 1f); // Wait for 1 second
+
+        Destroy(gameObject, lifetime);
     }
 
     void LaunchProjectile()
