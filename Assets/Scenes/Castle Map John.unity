@@ -3011,6 +3011,10 @@ PrefabInstance:
       value: Scroll (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6107848640399749038, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1604222976}
+    - target: {fileID: 6107848640399749038, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
       propertyPath: textFile
       value: 
       objectReference: {fileID: 4900000, guid: b9f5b0fd676ad0540bbeb86175c95adc, type: 3}
@@ -3018,6 +3022,10 @@ PrefabInstance:
       propertyPath: scrollText
       value: 
       objectReference: {fileID: 1816663096}
+    - target: {fileID: 6107848640399749038, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
+      propertyPath: pageFlipSound
+      value: 
+      objectReference: {fileID: 9096854050530175078}
     - target: {fileID: 6107848640399749038, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
       propertyPath: scrollUIPrefab
       value: 
@@ -104754,22 +104762,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8905301980029209447, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
-      propertyPath: amplitude
-      value: 0.18
-      objectReference: {fileID: 0}
     - target: {fileID: 5332864416336636836, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
       propertyPath: m_Name
       value: Scroll (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6107848640399749038, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
-      propertyPath: textFile
+      propertyPath: player
       value: 
-      objectReference: {fileID: 4900000, guid: 34fd429db91251341af65872c60273d3, type: 3}
+      objectReference: {fileID: 1604222976}
     - target: {fileID: 6107848640399749038, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
       propertyPath: scrollText
       value: 
       objectReference: {fileID: 1816663096}
+    - target: {fileID: 6107848640399749038, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
+      propertyPath: pageFlipSound
+      value: 
+      objectReference: {fileID: 9096854050530175078}
     - target: {fileID: 6107848640399749038, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
       propertyPath: scrollUIPrefab
       value: 
@@ -115495,6 +115503,10 @@ PrefabInstance:
       value: Scroll (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6107848640399749038, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1604222976}
+    - target: {fileID: 6107848640399749038, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
       propertyPath: textFile
       value: 
       objectReference: {fileID: 4900000, guid: 7ecebdd01b80e3743a9016429161ce95, type: 3}
@@ -115502,6 +115514,10 @@ PrefabInstance:
       propertyPath: scrollText
       value: 
       objectReference: {fileID: 1816663096}
+    - target: {fileID: 6107848640399749038, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
+      propertyPath: pageFlipSound
+      value: 
+      objectReference: {fileID: 9096854050530175078}
     - target: {fileID: 6107848640399749038, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
       propertyPath: scrollUIPrefab
       value: 
@@ -116424,11 +116440,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1645768335579175570, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.11
+      value: -20.4
       objectReference: {fileID: 0}
     - target: {fileID: 1645768335579175570, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -3.95
       objectReference: {fileID: 0}
     - target: {fileID: 1645768335579175570, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: m_LocalPosition.z
