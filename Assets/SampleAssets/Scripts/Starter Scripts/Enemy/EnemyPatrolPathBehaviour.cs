@@ -42,6 +42,10 @@ public class EnemyPatrolPathBehaviour : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         navigate();
+        if (thisObject.transform.eulerAngles != Vector3.zero)
+        {
+            thisObject.transform.eulerAngles = Vector3.zero;
+        }
     }
     
     private void setNextNode()
@@ -78,8 +82,9 @@ public class EnemyPatrolPathBehaviour : StateMachineBehaviour
 
     private void navigate()
     {
-        if(thisObject.transform.position == nextPos.position) // if we have reached this position
+        if (thisObject.transform.position == nextPos.position) // if we have reached this position
         {
+            Debug.Log("Enemy has reached the point!");
             setNextNode(); // set the next position
         }
         

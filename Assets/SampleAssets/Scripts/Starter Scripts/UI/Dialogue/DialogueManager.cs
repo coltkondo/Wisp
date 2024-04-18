@@ -77,9 +77,16 @@ public class DialogueManager : MonoBehaviour
 
 	public GameObject fadeOutImage;
 
+	public GameObject player;
+
+	private PlayerCombat playerCombat;
+	private Movement playerMovement;
+
 	private void Start()
-	{
+	{	
 		gameManager = GetComponent<GameManager>();
+		playerCombat = player.GetComponent<PlayerCombat>();
+		playerMovement = player.GetComponent<Movement>();
 		foreach (SpeakerLibrary.SpriteInfo info in speakerLibrary.speakerLibrary)
 		{
 			speakerSpriteNames.Add(info.name);
@@ -89,12 +96,12 @@ public class DialogueManager : MonoBehaviour
 
 	private void FreezePlayer()
 	{
-		gameManager.DisablePlayerMovement(); //Stops player from moving
+		playerMovement.enabled = false; //Stops player from moving
 	}
 
 	private void UnFreezePlayer()
 	{
-		gameManager.EnablePlayerMovement(); //Allows player to move again
+		playerMovement.enabled = true; //Allows player to move again
 	}
 
 	public void StartDialogue(Queue<string> dialogue)
@@ -103,6 +110,7 @@ public class DialogueManager : MonoBehaviour
 		speaker.sprite = invisSprite; //Clear the speaker
 		DialogueUI.SetActive(true);
 		continueImage.SetActive(false);
+		playerCombat.enabled = false;
 		if (freezePlayerOnDialogue)
 		{
 			FreezePlayer();
@@ -271,7 +279,8 @@ public class DialogueManager : MonoBehaviour
 		{
 			UnFreezePlayer();
 		}
-	}
+		}
+		playerCombat.enabled = true;
 }
 	private void ShowObject(string objectName)
 	{

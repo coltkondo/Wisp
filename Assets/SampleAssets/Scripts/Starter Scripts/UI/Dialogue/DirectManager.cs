@@ -76,9 +76,16 @@ public class DirectManager : MonoBehaviour
 	[Header("Options")]
 	public bool freezePlayerOnDialogue = true;
 
+	public GameObject fadeOutImage;
+
+	public GameObject player;
+
+	private PlayerCombat playerCombat;
+
 	private void Start()
 	{
 		gameManager = GetComponent<GameManager>();
+		playerCombat = player.GetComponent<PlayerCombat>();
 		foreach (SpeakerLibrary.SpriteInfo info in speakerLibrary.speakerLibrary)
 		{
 			speakerSpriteNames.Add(info.name);
@@ -102,6 +109,7 @@ public class DirectManager : MonoBehaviour
 		speaker.sprite = invisSprite; //Clear the speaker
 		DialogueUI.SetActive(true);
 		continueImage.SetActive(false);
+		playerCombat.enabled = false;
 		if (freezePlayerOnDialogue)
 		{
 			FreezePlayer();
@@ -220,10 +228,6 @@ public class DirectManager : MonoBehaviour
 		cancelTyping = false;
 		isTyping = false;
 		// isOpen = false;
-		if (freezePlayerOnDialogue)
-		{
-			UnFreezePlayer();
-		}
 		if (levelBool)
 		{
 			GameObject.FindObjectOfType<GameSceneManager>().LoadScene(levelIndex);
@@ -233,5 +237,39 @@ public class DirectManager : MonoBehaviour
 			currentTrigger.hasBeenUsed = true;
 		}
 		inputStream.Clear();
+
+		if (currentTrigger.isTransition)
+		{
+			StartCoroutine(Transition());
+		}
+
+		IEnumerator Transition() {
+        Animator anim = fadeOutImage.GetComponent<Animator>();
+        anim.SetTrigger("StartFadeOut"); // Make sure the trigger name matches the one in the Animator
+        // Wait for the animation to finish
+        yield return new WaitForSeconds(2); // Adjust this time based on the animation length
+
+        // Deactivate objects
+        foreach (var obj in currentTrigger.objectsToDisable)
+        {
+            obj.SetActive(false);
+        }
+
+		foreach (var obj in currentTrigger.objectsToEnable)
+        {
+            obj.SetActive(true);
+        }
+
+		anim.SetTrigger("StartFadeIn"); // Make sure the trigger name matches the one in the Animator
+
+		anim.ResetTrigger("StartFadeOut");
+		anim.ResetTrigger("StartFadeIn");
+
+		if (freezePlayerOnDialogue)
+		{
+			UnFreezePlayer();
+		}
+		}
+		playerCombat.enabled = true;
 	}
 }

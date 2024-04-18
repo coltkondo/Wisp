@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6930157268394194448}
   - component: {fileID: 1502212154210136109}
   - component: {fileID: 4661787408397758461}
+  - component: {fileID: 6451711725477040203}
   m_Layer: 7
   m_Name: tempEnemy
   m_TagString: Enemy
@@ -213,6 +214,33 @@ MonoBehaviour:
   TopDown: 0
   alignmnent: 1
   damageValue: 1
+--- !u!50 &6451711725477040203
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56004228644658950}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000
+  m_LinearDrag: 100
+  m_AngularDrag: 100
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &2209110391993460258
 GameObject:
   m_ObjectHideFlags: 0

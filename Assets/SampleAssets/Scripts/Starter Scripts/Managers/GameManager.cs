@@ -11,11 +11,13 @@ public class GameManager : MonoBehaviour
 	public float timeFreezeDuration;
 	public GameObject[] enemies;
 	public Animator[] anim;
+    public GameObject timestop_UI;
 
 	[HideInInspector]
 	public Vector3 RespawnPlace;
 
 	private bool timeStopRunning = false;
+    private Animator timestop_anim;
 
 	[Tooltip("Place your player game object in here so this knows where to handle respawns")]
 	public GameObject Player;
@@ -36,6 +38,12 @@ public class GameManager : MonoBehaviour
 
 		enemies = GameObject.FindGameObjectsWithTag("Enemy"); //Searches for all of the enemies within the Level
 		Debug.Log("NUMBER OF ENEMIES: " + enemies.Length + "");
+
+        timestop_anim = timestop_UI.GetComponent<Animator>();
+        if (timestop_anim != null)
+        {
+            Debug.Log("Timestop_Anim found!");
+        }
 
         //Timestop Greyscale Stuff
         m_ColorGrading = ScriptableObject.CreateInstance<ColorGrading>();
@@ -93,6 +101,8 @@ public class GameManager : MonoBehaviour
 			timeStopRunning = true;
             Debug.Log("Time is stopped");
             m_ColorGrading.enabled.Override(true);
+            timestop_UI.SetActive(true);
+            timestop_anim.SetBool("Play", true);
             // Freezes all of the Enemies in place
             for (int i = 0; i < enemies.Length;) 
             {

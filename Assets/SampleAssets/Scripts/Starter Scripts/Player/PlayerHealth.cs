@@ -84,10 +84,10 @@ public class PlayerHealth : MonoBehaviour
         {
             if (iFrames == false)
             {
+                iFrames = true;
                 Debug.Log("IFRAMES: Player Hit");
                 SegameManagerentedHealthDecrease(value);
                 StartCoroutine(dmgFlicker());
-                iFrames = true;
                 StartCoroutine(iFrameCD());
                 return;
             }
