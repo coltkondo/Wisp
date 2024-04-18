@@ -114,11 +114,12 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthBar();
     }
 
-    public void IncreaseHealth(int value)//This is the function to use if you want to increase the player's heath somewhere
+	public void IncreaseHealth(int value)//This is the function to use if you want to increase the player's heath somewhere
 	{
 		if (!useHealthBar)
 		{
 			SegameManagerentedHealthIncrease(value);
+			StartCoroutine(healFlicker());
 			return;
 		}
 		currentHealth += value;
@@ -127,6 +128,22 @@ public class PlayerHealth : MonoBehaviour
 			currentHealth = maxHealth;
 		}
 		UpdateHealthBar();
+		StartCoroutine(healFlicker());
+	}
+	IEnumerator healFlicker()
+	{
+		// Green Heal Flicker
+		spriteRender.color = Color.green;
+		yield return new WaitForSeconds(0.1f);
+		spriteRender.color = Color.white;
+		yield return new WaitForSeconds(0.1f);
+		spriteRender.color = Color.green;
+		yield return new WaitForSeconds(0.1f);
+		spriteRender.color = Color.white;
+		yield return new WaitForSeconds(0.1f);
+		spriteRender.color = Color.green;
+		yield return new WaitForSeconds(0.1f);
+		spriteRender.color = Color.white;
 	}
 
 	private void SegameManagerentedHealthDecrease(int value)//Helper function
