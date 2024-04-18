@@ -135,8 +135,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollUIPrefab: {fileID: 0}
-  textFile: {fileID: 4900000, guid: 6a17a10e852814f56b14edf3220a8071, type: 3}
+  textFile: {fileID: 4900000, guid: 34fd429db91251341af65872c60273d3, type: 3}
   scrollText: {fileID: 0}
+  player: {fileID: 0}
+  pageFlipSound: {fileID: 0}
 --- !u!114 &-8905301980029209447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,5 +152,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   degreesPerSecond: 0
-  amplitude: 0.3
+  amplitude: 0.18
   frequency: 1

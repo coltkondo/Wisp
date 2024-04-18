@@ -264,13 +264,12 @@ public class DirectManager : MonoBehaviour
 
 		anim.ResetTrigger("StartFadeOut");
 		anim.ResetTrigger("StartFadeIn");
-		}
 
 		if (freezePlayerOnDialogue)
 		{
 			UnFreezePlayer();
 		}
-
+		}
 		playerCombat.enabled = true;
 	}
 }
