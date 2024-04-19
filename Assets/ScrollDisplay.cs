@@ -16,9 +16,10 @@ public class ScrollDisplay : MonoBehaviour
 
     private bool isActive = false;
 
-    private void Awake()
+    private void Start()
     {
         // Initially, the scroll UI should be inactive (hidden)
+        pageFlipSound.Stop();
         scrollUIPrefab.SetActive(false);
         isActive = false;
         playerCombat = player.GetComponent<PlayerCombat>();
@@ -31,7 +32,6 @@ public class ScrollDisplay : MonoBehaviour
         {   
             if (isActive)
             {
-                pageFlipSound.Play();
                 HideScroll();
                 playerCombat.enabled = true;
             }
@@ -40,20 +40,24 @@ public class ScrollDisplay : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        pageFlipSound.Play();
+
         playerCombat.enabled = false;
+
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Page flip sound played");
+            pageFlipSound.Play();
             DisplayScroll();
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        playerCombat.enabled = true;
+
         if (other.gameObject.CompareTag("Player"))
         {
                 HideScroll();
-                playerCombat.enabled = true;
         }
     }
 
@@ -62,7 +66,8 @@ public class ScrollDisplay : MonoBehaviour
         // Load the text file content into the TMP_Text component
 
         scrollText.text = textFile.text;
-        
+        pageFlipSound.Play();
+        Debug.Log("Page flip sound played");
         // Make the Scroll UI visible and update isActive
         scrollUIPrefab.SetActive(true);
         isActive = true;
