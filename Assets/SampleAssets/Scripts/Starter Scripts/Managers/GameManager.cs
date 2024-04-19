@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
 	[HideInInspector]
 
-	private bool timeStopRunning = false;
+	public bool timeStopRunning = false;
     private Animator timestop_anim;
 
 	[Tooltip("Place your player game object in here so this knows where to handle respawns")]
@@ -99,6 +99,8 @@ public class GameManager : MonoBehaviour
     IEnumerator FreezeTime()
 	{
 		if (timeStopRunning == false) {
+            PlayerAudio playerAudio = Player.GetComponent<PlayerAudio>();
+            playerAudio.TimeStopSource.Play();
 			timeStopRunning = true;
             Debug.Log("Time is stopped");
             m_ColorGrading.enabled.Override(true);
