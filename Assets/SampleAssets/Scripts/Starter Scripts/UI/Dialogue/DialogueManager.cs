@@ -280,6 +280,11 @@ public class DialogueManager : MonoBehaviour
 			UnFreezePlayer();
 		}
 		}
+
+		if (freezePlayerOnDialogue)
+		{
+			UnFreezePlayer();
+		}
 		playerCombat.enabled = true;
 }
 	private void ShowObject(string objectName)

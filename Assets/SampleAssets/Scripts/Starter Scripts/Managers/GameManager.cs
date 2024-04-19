@@ -13,8 +13,9 @@ public class GameManager : MonoBehaviour
 	public Animator[] anim;
     public GameObject timestop_UI;
 
+    public Vector3 RespawnPlace;
+
 	[HideInInspector]
-	public Vector3 RespawnPlace;
 
 	private bool timeStopRunning = false;
     private Animator timestop_anim;
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviour
 		{
 			Player = FindObjectOfType<Movement>().gameObject;
 		}
-		RespawnPlace = Player.transform.position;
+		// RespawnPlace = Player.transform.position;
 
 		enemies = GameObject.FindGameObjectsWithTag("Enemy"); //Searches for all of the enemies within the Level
 		Debug.Log("NUMBER OF ENEMIES: " + enemies.Length + "");
