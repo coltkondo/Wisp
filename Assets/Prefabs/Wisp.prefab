@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 2144772588267353002}
   - component: {fileID: 7871766548928998085}
   - component: {fileID: 8084568360553902649}
+  - component: {fileID: 4467638547550068612}
   m_Layer: 0
   m_Name: Wisp
   m_TagString: Player
@@ -499,6 +500,43 @@ MonoBehaviour:
   player: {fileID: 3452270629591168218}
   currentTimePoints: 4
   maxTimePoints: 4
+--- !u!114 &4467638547550068612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3452270629591168218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b244460e5b75a24d88b4d2e99041fbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WalkAudioClip: {fileID: 8300000, guid: 58c65ed49687f4e4da67c6ad1483a28d, type: 3}
+  LoopWalkAudio: 0
+  AttackAudioClip: {fileID: 8300000, guid: 83fd356b4c407a64082f3a82855d8746, type: 3}
+  LoopAttackAudio: 0
+  ShootAudioClip: {fileID: 8300000, guid: 12de6c9bac1a5ff4b89bd110308fc5c7, type: 3}
+  LoopShootAudio: 0
+  DeathAudioClip: {fileID: 8300000, guid: a3897d2545794974192c60c5e82441a1, type: 3}
+  LoopDeathAudio: 0
+  JumpAudioClip: {fileID: 8300000, guid: 6bdaf72ca14456c418ae89979a6dee0d, type: 3}
+  LoopJumpAudio: 0
+  DamageAudioClip: {fileID: 8300000, guid: 0e300cb6f4d026942a5c7db0392d4e0b, type: 3}
+  LoopDamageAudio: 0
+  HealAudioClip: {fileID: 0}
+  LoopHealAudio: 0
+  TimeStopAudioClip: {fileID: 0}
+  LoopTimeStopAudio: 0
+  VolumeLevel: 0.384
+  WalkSource: {fileID: 0}
+  AttackSource: {fileID: 0}
+  ShootSource: {fileID: 0}
+  DeathSource: {fileID: 0}
+  JumpSource: {fileID: 0}
+  DamageSource: {fileID: 0}
+  HealSource: {fileID: 0}
+  TimeStopSource: {fileID: 0}
 --- !u!1 &6591741127831624062
 GameObject:
   m_ObjectHideFlags: 0

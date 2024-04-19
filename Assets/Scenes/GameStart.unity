@@ -7715,10 +7715,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Dinara Mukhtarova \t\n\tCharacter Design, World Building, Map.\n\nJohn
-    Fang-Wu\n\tStory and Dialogue, Cutscene, Art Assets\n\nColt Kondo\n\tMain Frame
-    Code, Player Attack, \n\nEric Linger\n\tUI Design, Player Abilities\n\nDaniel
-    Marzo\n\tPlayer and Enemy Movements, Inventory\n\n\t\n\t"
+  m_text: "Dinara Mukhtarova \t\n\tCharacter Design, World Building, Map Layout,
+    Art Assets, Boss Fight.\n\nJohn Fang-Wu\n\tMain Story and Dialogue, Intro Cutscene,
+    Art Assets, Level Design.\n\nColt Kondo\n\tMain Frame Code, Player Attack, Debugging.\n\nEric
+    Linger\n\tUI Design, Player Abilities, Time Stop Ability, Debugging.\n\nDaniel
+    Marzo\n\tPlayer and Enemy Movements, Animations, Boss Fight.\n\n\t\n\t"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -7781,7 +7782,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: -75.36792}
+  m_margin: {x: 0, y: 0, z: -212.91763, w: -75.36792}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
