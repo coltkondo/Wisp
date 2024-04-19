@@ -7,12 +7,14 @@ public class EnemyHealth : MonoBehaviour
     [Header("Settings")]
     public bool EnemyHealthBar = false;
     public int maxHealth = 100;
-    private int currentHealth;
+    public int currentHealth;
 
     [Header("Health Bar for enemy")]
     public float padding = 2f;
     public Vector2 Dimensions;
     public GameObject HealthBar;
+
+    public GameObject HealthBar_fill;
     public RectTransform canvasRectTransform;
 
     [Header("Item Drop Settings")]
@@ -37,10 +39,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Update()
     {
-        if (EnemyHealthBar)
-        {
-            UpdateHealthBarPosition();
-        }
+        
     }
 
     public void DecreaseHealth(int value)
@@ -85,28 +84,16 @@ public class EnemyHealth : MonoBehaviour
     private void UpdateHealthBar()
     {
         float fillAmount = (float)currentHealth / maxHealth;
-        healthBarImage.fillAmount = fillAmount > 1 ? 1.0f : fillAmount;
+        HealthBar_fill.GetComponent<Image>().fillAmount = fillAmount > 1 ? 1.0f : fillAmount;
     }
 
     private void SetupHealthBar()
     {
-        if (canvasRectTransform == null)
-            canvasRectTransform = GameObject.FindGameObjectWithTag("EnemyHealthCanvas").GetComponent<RectTransform>();
-
-        GameObject newHealthBar = Instantiate(HealthBar, transform.position, Quaternion.identity);
-        healthRectTransform = newHealthBar.GetComponent<RectTransform>();
-        newHealthBar.transform.SetParent(canvasRectTransform);
-        healthBarImage = newHealthBar.GetComponent<Image>();
-        healthBarImage.type = Image.Type.Filled;
-        healthRectTransform.sizeDelta += Dimensions;
+        HealthBar.SetActive(true);
+        //HealthBar.GetComponent<Image>().type = Image.Type.Filled;
         UpdateHealthBar();
     }
 
-    private void UpdateHealthBarPosition()
-    {
-        Vector2 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
-        healthRectTransform.anchoredPosition = screenPoint - canvasRectTransform.sizeDelta / 2f + new Vector2(0f, padding);
-    }
 
     private void HandleDeath()
     {
