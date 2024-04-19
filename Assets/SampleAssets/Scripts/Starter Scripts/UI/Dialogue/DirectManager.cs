@@ -270,6 +270,11 @@ public class DirectManager : MonoBehaviour
 			UnFreezePlayer();
 		}
 		}
+
+		if (freezePlayerOnDialogue)
+		{
+			UnFreezePlayer();
+		}
 		playerCombat.enabled = true;
 	}
 }
