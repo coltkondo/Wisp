@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2193b9a9a379d40d1871703340c2ac4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  speed: 15
   animator: {fileID: 2743455958089420964}
   summonDelay: 3
   lifetime: 3
