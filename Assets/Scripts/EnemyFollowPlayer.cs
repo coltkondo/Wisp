@@ -21,10 +21,12 @@ public class EnemyFollowPlayer : MonoBehaviour
     private bool isMoving = true; // Flag to control movement
     private bool hasAttacked = false; // Flag to prevent multiple attacks
 
+    private GameManager gameManager;
     private Vector3 lastPosition; // To track movement direction
 
     private void Start()
     {
+        gameManager = FindAnyObjectByType<GameManager>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         InitializeBulletSpawnPoints();
         transform.position = startPosition.position; // Start at the initial position
@@ -44,11 +46,11 @@ public class EnemyFollowPlayer : MonoBehaviour
     {
         if (player == null) return;
 
-        if (isChasingPlayer)
+        if (isChasingPlayer && !gameManager.timeIsStopped)
         {
             ChasePlayer();
         }
-        else if (isMoving)
+        else if (isMoving && !gameManager.timeIsStopped)
         {
             MoveBetweenPoints();
         }
@@ -59,7 +61,7 @@ public class EnemyFollowPlayer : MonoBehaviour
         Vector3 targetPosition = movingToEnd ? endPosition.position : startPosition.position;
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, targetPosition) < 0.1f && !isFiring)
+        if (Vector3.Distance(transform.position, targetPosition) < 0.1f && !isFiring && !gameManager.timeIsStopped)
         {
             StartCoroutine(SummonBullets());
             isMoving = false; // Stop moving while summoning
