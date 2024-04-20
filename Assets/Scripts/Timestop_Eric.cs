@@ -12,6 +12,7 @@ public class Timestop_Eric : MonoBehaviour
     public int currentTimePoints;
     public int maxTimePoints;
 
+    private PlayerAudio playerAudio;
     private PlayerHealth playerHealth;
     private GameManager gameManager;
 
@@ -19,6 +20,7 @@ public class Timestop_Eric : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerAudio = player.GetComponent<PlayerAudio>();
         playerHealth = player.GetComponent<PlayerHealth>();
         gameManager = FindAnyObjectByType<GameManager>();
 
@@ -28,7 +30,7 @@ public class Timestop_Eric : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X)) //XC lick for Input - Main Time Stop
+        if (Input.GetKeyDown(KeyCode.X) && !gameManager.timeStopRunning) //X Click for Input - Main Time Stop
         {
             if (currentTimePoints != 0)
             {
@@ -39,17 +41,18 @@ public class Timestop_Eric : MonoBehaviour
             
         }
 
-        if (Input.GetKeyDown(KeyCode.Z)) //Z Click for Heal
-        {
-            if (currentTimePoints != 0)
+        if (playerHealth.currentHealth != 3) {
+            if (Input.GetKeyDown(KeyCode.Z)) //Z Click for Heal
             {
-                Debug.Log("Heal Key Pressed");
-                decreaseTimePoints(1);
-                StartCoroutine(PlayerHealFreeze());
+                if (currentTimePoints != 0)
+                {
+                    playerAudio.HealSource.Play();
+                    Debug.Log("Heal Key Pressed");
+                    Debug.Log("Audio playing: " + playerAudio.HealSource.isPlaying);
+                    decreaseTimePoints(1);
+                    StartCoroutine(PlayerHealFreeze());
+                }
             }
-
-            
-
         }
     }
 

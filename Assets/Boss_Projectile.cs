@@ -2,24 +2,28 @@ using UnityEngine;
 
 public class Boss_Projectile : MonoBehaviour
 {
-    public float speed = 5f;  // Speed of the projectile
+    public float speed = 5f; // Speed of the projectile
     public Animator animator; // Animator component
 
     private Vector3 targetPosition;
     private bool isSummoned = false;
 
     public float summonDelay = 3f;
-    public float lifetime = 5f;     // Lifetime of the projectile in seconds
+    public float lifetime = 5f; // Lifetime of the projectile in seconds
 
+    private GameManager gameManager;
+
+    private float remainingLifetime; // Remaining lifetime for the projectile
 
     void Start()
     {
         // Start the summoning animation
         animator.Play("Boss_Proj_Summon");
+        gameManager = FindObjectOfType<GameManager>(); // Corrected method name for finding the GameManager
         // Set to launch the projectile after a delay
-        Invoke(nameof(LaunchProjectile), 1f); // Wait for 1 second
+        Invoke(nameof(LaunchProjectile), summonDelay); // Now using summonDelay for the delay
 
-        Destroy(gameObject, lifetime);
+        remainingLifetime = lifetime; // Initialize remaining lifetime
     }
 
     void LaunchProjectile()
@@ -33,8 +37,17 @@ public class Boss_Projectile : MonoBehaviour
     {
         if (isSummoned)
         {
-            // Move towards the target position
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            if (!gameManager.timeIsStopped)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+                
+                // Update the remaining lifetime only when the time is not stopped
+                remainingLifetime -= Time.deltaTime;
+                if (remainingLifetime <= 0f)
+                {
+                    Destroy(gameObject); // Destroy the projectile when its adjusted lifetime is up
+                }
+            }
         }
     }
 }

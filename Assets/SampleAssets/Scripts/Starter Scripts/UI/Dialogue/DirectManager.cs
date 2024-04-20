@@ -241,9 +241,12 @@ public class DirectManager : MonoBehaviour
 		if (currentTrigger.isTransition)
 		{
 			StartCoroutine(Transition());
+		} else {
+			CompleteDialogue();
 		}
+	}
 
-		IEnumerator Transition() {
+	private	IEnumerator Transition() {
         Animator anim = fadeOutImage.GetComponent<Animator>();
         anim.SetTrigger("StartFadeOut"); // Make sure the trigger name matches the one in the Animator
         // Wait for the animation to finish
@@ -265,11 +268,16 @@ public class DirectManager : MonoBehaviour
 		anim.ResetTrigger("StartFadeOut");
 		anim.ResetTrigger("StartFadeIn");
 
+		CompleteDialogue();
+	}
+
+	private void CompleteDialogue() {
 		if (freezePlayerOnDialogue)
 		{
 			UnFreezePlayer();
 		}
-		}
+
 		playerCombat.enabled = true;
 	}
 }
+

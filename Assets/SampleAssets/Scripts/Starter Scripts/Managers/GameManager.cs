@@ -13,10 +13,11 @@ public class GameManager : MonoBehaviour
 	public Animator[] anim;
     public GameObject timestop_UI;
 
-	[HideInInspector]
-	public Vector3 RespawnPlace;
+    public Vector3 RespawnPlace;
 
-	private bool timeStopRunning = false;
+	[HideInInspector]
+
+	public bool timeStopRunning = false;
     private Animator timestop_anim;
 
 	[Tooltip("Place your player game object in here so this knows where to handle respawns")]
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviour
 		{
 			Player = FindObjectOfType<Movement>().gameObject;
 		}
-		RespawnPlace = Player.transform.position;
+		// RespawnPlace = Player.transform.position;
 
 		enemies = GameObject.FindGameObjectsWithTag("Enemy"); //Searches for all of the enemies within the Level
 		Debug.Log("NUMBER OF ENEMIES: " + enemies.Length + "");
@@ -98,6 +99,8 @@ public class GameManager : MonoBehaviour
     IEnumerator FreezeTime()
 	{
 		if (timeStopRunning == false) {
+            PlayerAudio playerAudio = Player.GetComponent<PlayerAudio>();
+            playerAudio.TimeStopSource.Play();
 			timeStopRunning = true;
             Debug.Log("Time is stopped");
             m_ColorGrading.enabled.Override(true);
