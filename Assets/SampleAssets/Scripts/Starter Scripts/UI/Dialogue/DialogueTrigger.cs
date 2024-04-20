@@ -19,6 +19,8 @@ public class DialogueTrigger : MonoBehaviour
     public GameObject[] objectsToDisable;
 
     public GameObject[] objectsToEnable;
+
+    public Transform player;
     [HideInInspector]
     public bool hasBeenUsed = false;
     bool inArea = false;
@@ -39,6 +41,7 @@ public class DialogueTrigger : MonoBehaviour
         if (interactionPrompt.activeInHierarchy && Input.GetKeyDown(KeyCode.E)) // Check if 'E' is pressed when prompt is active
         {
             manager.currentTrigger = this;
+            FacePlayer();
             TriggerDialogue();
             interactionPrompt.SetActive(false); // Optionally, hide the interaction prompt
         }
@@ -124,5 +127,23 @@ public class DialogueTrigger : MonoBehaviour
         
         inArea = false;
 
+    }
+
+    private void FacePlayer() {
+        Vector3 direction = player.position - transform.position;
+        var localScaleX = transform.localScale.x;
+        var localScaleY = transform.localScale.y;
+        
+        // If player is to the right of NPC
+        if (direction.x > 0)
+        {
+            // Face right (assuming the sprite faces right by default)
+            transform.localScale = new Vector3(-localScaleX, localScaleY, 1);
+        }
+        else
+        {
+            // Face left
+            transform.localScale = new Vector3(localScaleX, localScaleY, 1);
+        }
     }
 }
