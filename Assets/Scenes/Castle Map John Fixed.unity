@@ -115930,7 +115930,7 @@ PrefabInstance:
     - target: {fileID: 4467638547550068612, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: TimeStopAudioClip
       value: 
-      objectReference: {fileID: 8300000, guid: baa8ef93068cd5646b6b7c525230f961, type: 3}
+      objectReference: {fileID: 8300000, guid: 23a2a229325850d418c181e8ad07011f, type: 3}
     - target: {fileID: 5847989207768456444, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: playerAudio
       value: 
