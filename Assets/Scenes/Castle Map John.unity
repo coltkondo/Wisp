@@ -114734,7 +114734,7 @@ MonoBehaviour:
   LoopDamageAudio: 0
   HealAudioClip: {fileID: 8300000, guid: d081376ae7ec8324dbe65cc207d84ab8, type: 3}
   LoopHealAudio: 0
-  TimeStopAudioClip: {fileID: 8300000, guid: baa8ef93068cd5646b6b7c525230f961, type: 3}
+  TimeStopAudioClip: {fileID: 8300000, guid: 23a2a229325850d418c181e8ad07011f, type: 3}
   LoopTimeStopAudio: 0
   VolumeLevel: 0.384
   WalkSource: {fileID: 0}
@@ -116390,7 +116390,7 @@ PrefabInstance:
     - target: {fileID: 4467638547550068612, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: TimeStopAudioClip
       value: 
-      objectReference: {fileID: 8300000, guid: baa8ef93068cd5646b6b7c525230f961, type: 3}
+      objectReference: {fileID: 8300000, guid: 23a2a229325850d418c181e8ad07011f, type: 3}
     - target: {fileID: 5847989207768456444, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: playerAudio
       value: 
@@ -117041,7 +117041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 950387510915009837, guid: d97c6ade06cd89f4ea39d5e000cd26fc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.29
+      value: -3.54
       objectReference: {fileID: 0}
     - target: {fileID: 950387510915009837, guid: d97c6ade06cd89f4ea39d5e000cd26fc, type: 3}
       propertyPath: m_LocalPosition.z

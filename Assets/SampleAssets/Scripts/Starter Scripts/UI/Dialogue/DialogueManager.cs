@@ -96,12 +96,12 @@ public class DialogueManager : MonoBehaviour
 
 	private void FreezePlayer()
 	{
-		playerMovement.enabled = false; //Stops player from moving
+		gameManager.DisablePlayerMovement(); //Stops player from moving
 	}
 
 	private void UnFreezePlayer()
 	{
-		playerMovement.enabled = true; //Allows player to move again
+		gameManager.EnablePlayerMovement(); //Allows player to move again
 	}
 
 	public void StartDialogue(Queue<string> dialogue)
