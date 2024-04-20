@@ -5627,6 +5627,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1604222976}
+    - target: {fileID: 8106711168472580266, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9019885730166459718, guid: f997f720a82db9d41815d18e6a495343, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
