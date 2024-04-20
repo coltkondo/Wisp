@@ -1,0 +1,33 @@
+[NAME=Halo][SPEAKERSPRITE=Halo]Wisp! I see you've made it past the Hollows safe and sound!
+[NAME=Halo][SPEAKERSPRITE=Halo]Oh?
+[NAME=Halo][SPEAKERSPRITE=Halo]Already made a friend? I'm Halo, Wisp's mentor. What's your name, little one? 
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]Elizabeth! Nice to meet you, Mr. Halo!
+[NAME=Halo][SPEAKERSPRITE=Halo]Hahahahah! Very well!
+[NAME=Halo][SPEAKERSPRITE=Halo]I welcome you both to Hollow Village. Don't let its name fool you though, this place is full of life, you'll see!
+[NAME=Halo][SPEAKERSPRITE=Halo]I encourage you to talk to some of the friendly locals around here.
+[NAME=Halo][SPEAKERSPRITE=Halo]Have you met Heitzman the Blacksmith yet?
+[NAME=Halo][SPEAKERSPRITE=Halo]He can give your scythe a much-needed upgrade. It's your main tool, after all, so keeping it sharp is important.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Won't I need to give them something in return?
+[NAME=Halo][SPEAKERSPRITE=Halo]Not at all. Heitzman knows you're coming. Consider it a graduation gift from me! 
+[NAME=Wisp][SPEAKERSPRITE=Wisp]!!!
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]Mr. Halo, Mr. Halo. Have you seen Mr. Snuggles around here by any chance?
+[NAME=Halo][SPEAKERSPRITE=Halo]Mr. Snuggles? That name doesn't ring a bell.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]We are looking for her lost teddy bear.
+[NAME=Halo][SPEAKERSPRITE=Halo]I see... I haven't seen him myself, but the villagers here are friendly. 
+[NAME=Halo][SPEAKERSPRITE=Halo]They might have seen Mr. Snuggles. Why don't you ask around?
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]Bummer. Do you think maybe someone in the village found him? Mr. Snuggles is pretty big and cuddly after all.
+[NAME=Halo][SPEAKERSPRITE=Halo]Hmm, that's a good possibility.
+[NAME=Halo][SPEAKERSPRITE=Halo]There's a young witch here named Abigail who loves lost things. Maybe she can help you out.
+[NAME=Halo][SPEAKERSPRITE=Halo]She usually hangs around by the old well near the middle of the village. 
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]Thanks Mr. Halo!
+[NAME=Halo][SPEAKERSPRITE=Halo]No problem at all! I hope you can find your dear friend very soon.
+[NAME=Halo][SPEAKERSPRITE=Halo]And Wisp, let me warn you before I go. This job is not for the faint-hearted.
+[NAME=Halo][SPEAKERSPRITE=Halo]There'll be dangers lurking around every corner, creatures that wouldn't hesitate to harvest your soul. 
+[NAME=Halo][SPEAKERSPRITE=Halo]Courage isn't the absence of fear, but facing it head-on. 
+[NAME=Halo][SPEAKERSPRITE=Halo]If you are here, it means you are capable of anything you set your mind to.
+[NAME=Halo][SPEAKERSPRITE=Halo]You've got that spark within you, Wisp, I can see it. 
+[NAME=Halo][SPEAKERSPRITE=Halo]Now go forth! I believe in you, so believe in yourself! I'll be closer to you than you think.
+[NAME=Halo][SPEAKERSPRITE=Halo]It was a pleasure to meet you, Elizabeth. Until next time y'all!
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]Goodbye, Mr. Halo!!
+
+

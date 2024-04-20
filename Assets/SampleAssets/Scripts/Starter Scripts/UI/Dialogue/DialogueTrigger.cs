@@ -135,7 +135,7 @@ public class DialogueTrigger : MonoBehaviour
         var localScaleY = transform.localScale.y;
         
         // If player is to the right of NPC
-        if (direction.x > 0)
+        if (direction.x < 0)
         {
             // Face right (assuming the sprite faces right by default)
             transform.localScale = new Vector3(-localScaleX, localScaleY, 1);
