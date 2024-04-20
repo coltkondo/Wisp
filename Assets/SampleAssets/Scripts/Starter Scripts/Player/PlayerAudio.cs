@@ -21,6 +21,12 @@ public class PlayerAudio : MonoBehaviour
 	public AudioClip DamageAudioClip;
 	public bool LoopDamageAudio = false;
 
+	public AudioClip HealAudioClip;
+	public bool LoopHealAudio = false;
+
+	public AudioClip TimeStopAudioClip;
+	public bool LoopTimeStopAudio = false;
+
 	[Range(0, 1)]
 	public float VolumeLevel = 1;
 
@@ -33,6 +39,11 @@ public class PlayerAudio : MonoBehaviour
 	[HideInInspector] public AudioSource DeathSource;
 	[HideInInspector] public AudioSource JumpSource;
 	[HideInInspector] public AudioSource DamageSource;
+
+	[HideInInspector] public AudioSource HealSource;
+
+	[HideInInspector] public AudioSource TimeStopSource;
+
 
 	//The whole [HideInInspector] thing just makes it so that way you can't see these public variables in editor
 
@@ -90,6 +101,20 @@ public class PlayerAudio : MonoBehaviour
 		DamageSource.clip = DamageAudioClip;
 		DamageSource.volume = VolumeLevel;
 		DamageSource.loop = LoopDamageAudio;
+
+		GameObject HealGameObject = new GameObject("HealAudioSource");
+		AssignParent(HealGameObject);
+		HealSource = HealGameObject.AddComponent<AudioSource>();
+		HealSource.clip = HealAudioClip;
+		HealSource.volume = VolumeLevel;
+		HealSource.loop = LoopHealAudio;
+
+		GameObject TimeStopGameObject = new GameObject("TimeStopAudioSource");
+		AssignParent(TimeStopGameObject);
+		TimeStopSource = TimeStopGameObject.AddComponent<AudioSource>();
+		TimeStopSource.clip = TimeStopAudioClip;
+		TimeStopSource.volume = VolumeLevel;
+		TimeStopSource.loop = LoopTimeStopAudio;
 	}
 
 	//Just a helper function that assigns whatever object as a child of this gameObject
@@ -104,5 +129,8 @@ public class PlayerAudio : MonoBehaviour
 		AttackSource.Stop();
 		DeathSource.Stop();
 		JumpSource.Stop();
+		DamageSource.Stop();
+		HealSource.Stop();
+		TimeStopSource.Stop();
 	}
 }

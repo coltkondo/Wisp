@@ -15,8 +15,8 @@ MonoBehaviour:
   speakerLibrary:
   - name: Knight
     sprite: {fileID: 21300000, guid: 9e1ff36130b7cf84c85fcbc320c69a20, type: 3}
-  - name: Chibi
-    sprite: {fileID: 21300000, guid: 2e8f84bd54a3f504bac18790c259a358, type: 3}
+  - name: Girl
+    sprite: {fileID: 21300000, guid: 33b34a6c0564f9a45a87ed0bf5d66446, type: 3}
   - name: Wisp
     sprite: {fileID: 21300000, guid: 47a1fedcc75378842af2cf800369ced0, type: 3}
   - name: Halo

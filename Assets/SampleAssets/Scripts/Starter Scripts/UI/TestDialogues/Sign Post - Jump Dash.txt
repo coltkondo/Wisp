@@ -1,0 +1,2 @@
+[NAME=][SPEAKERSPRITE=]Can't make the jump?
+[NAME=][SPEAKERSPRITE=]Try jumping and dashing forward with 'Space' and 'Left Shift'! 

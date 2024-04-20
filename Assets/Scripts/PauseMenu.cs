@@ -10,8 +10,18 @@ public class MenuPause : MonoBehaviour
     public GameObject confirmQuit;
 
     public GameObject settingsMenu;
+
+    public GameObject player;
+    
+    private PlayerCombat playerCombat;
+    private Movement playerMovement;
     
     // Update is called once per frame
+
+    void Start() {
+        playerCombat = player.GetComponent<PlayerCombat>();
+        playerMovement = player.GetComponent<Movement>();
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
@@ -28,11 +38,15 @@ public class MenuPause : MonoBehaviour
     public void Resume() {
         Time.timeScale = 1f;
         pauseMenuUI.SetActive(false);
+        playerCombat.enabled = true;
+        playerMovement.enabled = true;        
     }
 
     void Pause() {
         Time.timeScale = 0f;
         pauseMenuUI.SetActive(true);
+        playerCombat.enabled = false;
+        playerMovement.enabled = false;        
     }
 
     public void Menu() {

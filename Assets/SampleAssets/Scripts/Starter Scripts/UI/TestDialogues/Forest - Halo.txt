@@ -9,18 +9,18 @@
 [NAME=Halo][SPEAKERSPRITE=Halo]It's not just a device to mark the passage of time but a key to manipulating it.
 [NAME=Halo][SPEAKERSPRITE=Halo]With the Time Watch, you can perform a variety of amazing things—you see.
 [NAME=Halo][SPEAKERSPRITE=Halo]The watch can heal your wounds by rewinding time on your physical being.
-[NAME=Halo][SPEAKERSPRITE=Halo]However, this requires soul points, which you can accumulate by defeating enemies.
+[NAME=Halo][SPEAKERSPRITE=Halo]However, this requires soul gems, which you can harvest by defeating enemies.
 [NAME=Halo][SPEAKERSPRITE=Halo]Lastly, the watch can manipulate time in your surroundings, not just within you. 
 [NAME=Halo][SPEAKERSPRITE=Halo]Find a path blocked or a bridge collapsed?
 [NAME=Halo][SPEAKERSPRITE=Halo]With the Time Watch, you can reverse such changes, creating a way forward.
-[NAME=Halo][SPEAKERSPRITE=Halo]But, as with its other powers, this too hinges on soul points.
+[NAME=Halo][SPEAKERSPRITE=Halo]But, as with its other powers, this too hinges on soul gems.
 [NAME=Halo][SPEAKERSPRITE=Halo]It's an incredibly useful tool for a Grim Reaper after all, but remember, the watch's power isn't infinite.
 [NAME=Halo][SPEAKERSPRITE=Halo]Each use is a decision, so wield it sparingly and wisely.
 [NAME=Halo][SPEAKERSPRITE=Halo]To heal yourself, use the Z key. If you want to stop the time in your surroundings, use the X key.
 [NAME=Halo][SPEAKERSPRITE=Halo]Last but not least, let's freshen up your memory on the basics of movement and combat.
 [NAME=Halo][SPEAKERSPRITE=Halo]You can move with the WASD keys, jump with the Spacebar, and dash pressing Left Shift.
 [NAME=Halo][SPEAKERSPRITE=Halo]You can also attack with the left mouse button and shoot a fireball with your right mouse button.
-[NAME=Halo][SPEAKERSPRITE=Halo]Be careful, though, as your fireball uses soul points.
+[NAME=Halo][SPEAKERSPRITE=Halo]Be careful, though, as your fireball uses soul gems.
 [NAME=Halo][SPEAKERSPRITE=Halo]If you need help remembering all of this, check out this guide!
 [NAME=][SPEAKERSPRITE=][SHOWOBJECT=UI/Quest_Log]Wisp received 'Grim Reapers for Dummies'!
 [NAME=Halo][SPEAKERSPRITE=Halo]It'll be handy if you need to review what you were taught in the academy. 

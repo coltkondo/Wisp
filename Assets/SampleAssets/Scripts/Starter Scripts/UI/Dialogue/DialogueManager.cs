@@ -77,9 +77,16 @@ public class DialogueManager : MonoBehaviour
 
 	public GameObject fadeOutImage;
 
+	public GameObject player;
+
+	private PlayerCombat playerCombat;
+	private Movement playerMovement;
+
 	private void Start()
-	{
+	{	
 		gameManager = GetComponent<GameManager>();
+		playerCombat = player.GetComponent<PlayerCombat>();
+		playerMovement = player.GetComponent<Movement>();
 		foreach (SpeakerLibrary.SpriteInfo info in speakerLibrary.speakerLibrary)
 		{
 			speakerSpriteNames.Add(info.name);
@@ -103,6 +110,7 @@ public class DialogueManager : MonoBehaviour
 		speaker.sprite = invisSprite; //Clear the speaker
 		DialogueUI.SetActive(true);
 		continueImage.SetActive(false);
+		playerCombat.enabled = false;
 		if (freezePlayerOnDialogue)
 		{
 			FreezePlayer();
@@ -243,9 +251,12 @@ public class DialogueManager : MonoBehaviour
 		if (currentTrigger.isTransition)
 		{
 			StartCoroutine(Transition());
+		} else {
+			CompleteDialogue();
 		}
+	}
 
-		IEnumerator Transition() {
+	private	IEnumerator Transition() {
         Animator anim = fadeOutImage.GetComponent<Animator>();
         anim.SetTrigger("StartFadeOut"); // Make sure the trigger name matches the one in the Animator
         // Wait for the animation to finish
@@ -267,12 +278,17 @@ public class DialogueManager : MonoBehaviour
 		anim.ResetTrigger("StartFadeOut");
 		anim.ResetTrigger("StartFadeIn");
 
+		CompleteDialogue();
+	}
+
+	private void CompleteDialogue() {
 		if (freezePlayerOnDialogue)
 		{
 			UnFreezePlayer();
 		}
+
+		playerCombat.enabled = true;
 	}
-}
 	private void ShowObject(string objectName)
 	{
 		GameObject objToShow = GameObject.Find(objectName);

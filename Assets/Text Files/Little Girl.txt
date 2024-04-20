@@ -1,0 +1,20 @@
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Hey, are you alright?
+[NAME=???][SPEAKERSPRITE=Girl]N-No! I mean, yes! Please don't hurt me!
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Everything is okay now. I'm not here to harm you.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]I'm Wisp.
+[NAME=???][SPEAKERSPRITE=Girl]A Grim Reaper? But you don't look scary. 
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Looks can be deceiving sometimes.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]What's your name? Are you lost?
+[NAME=???][SPEAKERSPRITE=Girl]I-It's Elizabeth.
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]I don't know where I am. One minute I was... Somewhere else, and the next... Here. All alone.
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]And I lost him too...
+[NAME=Wisp][SPEAKERSPRITE=Wisp]?
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Lost who?
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]My favorite teddy bear, Mr. Snuggles. I can't find him anywhere. 
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]He was a gift from someone special, I always carry him with me. But one morning—poof. Gone.
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]He looks about this big... And like... About this fluffy...
+[NAME=Wisp][SPEAKERSPRITE=Wisp](Do you have the slightest idea how little that narrows it down?)
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]Will you help me find him? Please? 
+[NAME=Wisp][SPEAKERSPRITE=Wisp]I'm sorry to hear that, Elizabeth. Of course, I'll help you search for him. 
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Let's start by heading to the village. Perhaps someone there has seen your toy.
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]Yippie! But mind you, he's not a toy! He's Mr. Snuggles! 

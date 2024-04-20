@@ -16,8 +16,12 @@ public class DirectTrigger : MonoBehaviour
     private float nextTime = 0f; // used with waitTime to create a timer system
     public bool singleUseDialogue = false;
     public bool isTransition = false;
+
+    public GameObject[] objectsToDisable;
+
+    public GameObject[] objectsToEnable;
     [HideInInspector]
-    public bool hasBeenUsed = true;
+    public bool hasBeenUsed = false;
     bool inArea = false;
 
 
