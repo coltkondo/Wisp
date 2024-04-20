@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroCutscene.unity
     guid: 45db6aad249f2aa499fb6348e5918ee2
   - enabled: 1
-    path: Assets/Scenes/Castle Map John.unity
+    path: Assets/Scenes/1 Main Lvl.unity
     guid: 6f75b600ff1d9014083b5af1b73bdd2e
   - enabled: 0
     path: Assets/Scenes/Castle Map.unity
