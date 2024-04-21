@@ -233,7 +233,7 @@ public class Movement : MonoBehaviour
     isDashing = true;
     
     // Adjust these values as needed to position the smoke trail correctly relative to your player's feet
-    Vector3 smokeSpawnPosition = transform.position - new Vector3(0, 0.3f, 0); // Adjust 0.5f to lower or raise the spawn position
+    Vector3 smokeSpawnPosition = transform.position - new Vector3(0, 0.4f, 0); // Adjust 0.5f to lower or raise the spawn position
     
     // Instantiate smoke trail with the adjusted position
     GameObject smokeTrailInstance = Instantiate(smokeTrailPrefab, smokeSpawnPosition, Quaternion.identity);
