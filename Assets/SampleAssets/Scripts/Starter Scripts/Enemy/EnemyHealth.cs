@@ -61,7 +61,8 @@ public class EnemyHealth : MonoBehaviour
         yield return new WaitForSeconds(2.0f); // Adjust the delay based on your death animation duration
 		DropItems(); // Drop items before destroying the enemy
         Destroy(gameObject);
-        if (EnemyHealthBar) Destroy(healthBarImage.gameObject);
+        if (EnemyHealthBar) Destroy(HealthBar.gameObject);
+        
     }
 
     IEnumerator dmgFlicker()
