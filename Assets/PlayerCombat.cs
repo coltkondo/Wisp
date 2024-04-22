@@ -39,7 +39,8 @@ public class PlayerCombat : MonoBehaviour
         if (Time.time >= nextAttackTime)
         {
             if (Input.GetMouseButtonDown(0))
-            {
+            {   
+                playerAudio.AttackSource.Play();
                 if (isHoldingW)
                 {
                     AttackAbove();

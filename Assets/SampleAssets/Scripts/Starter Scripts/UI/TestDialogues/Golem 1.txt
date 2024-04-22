@@ -1,0 +1,19 @@
+[NAME=???][SPEAKERSPRITE=Golem]?
+[NAME=???][SPEAKERSPRITE=Golem]?
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Are you Heitzman the Blacksmith?
+[NAME=???][SPEAKERSPRITE=Golem]Yes, that would be me. 
+[NAME=Heitzman][SPEAKERSPRITE=Golem]Do you need anything kid?
+[NAME=Wisp][SPEAKERSPRITE=Wisp]I'm Wisp, Halo's mentee. 
+[NAME=Wisp][SPEAKERSPRITE=Wisp]I was wondering if you could sharpen up my scythe. 
+[NAME=Heitzman][SPEAKERSPRITE=Golem]Yes, Halo talked to me about you.
+[NAME=Heitzman][SPEAKERSPRITE=Golem]Let me see your scythe.
+[NAME=Heitzman][SPEAKERSPRITE=Golem].
+[NAME=Heitzman][SPEAKERSPRITE=Golem]. .
+[NAME=Heitzman][SPEAKERSPRITE=Golem]. . .
+[NAME=Heitzman][SPEAKERSPRITE=Golem]This scythe is indeed very powerful, and so must its bearer be as well. 
+[NAME=Heitzman][SPEAKERSPRITE=Golem]It is not something a novice should carry on with them after all.
+[NAME=Heitzman][SPEAKERSPRITE=Golem]I will get to work now. Come pick it up later kid.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Thank you.
+
+
+
