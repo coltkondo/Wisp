@@ -40860,7 +40860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8027420832673747933, guid: 2119dac6a27e746419b17d53c72a4fc5, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 9100796918288698028, guid: 2119dac6a27e746419b17d53c72a4fc5, type: 3}
       propertyPath: m_Name
@@ -114832,6 +114832,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d06a41d158ac74b8810a75a1bdc551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1604222990 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8084568360553902649, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+  m_PrefabInstance: {fileID: 2109331799}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604222976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd097f8b615a18458f7de123360fc2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1644897461 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9172655849905577566, guid: f997f720a82db9d41815d18e6a495343, type: 3}
@@ -116499,6 +116510,10 @@ PrefabInstance:
       propertyPath: playerAudio
       value: 
       objectReference: {fileID: 1604222986}
+    - target: {fileID: 7871766548928998085, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: timestop_script
+      value: 
+      objectReference: {fileID: 1604222990}
     - target: {fileID: 8084568360553902649, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: timeBar
       value: 
