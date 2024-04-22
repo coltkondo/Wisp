@@ -242,8 +242,8 @@ public class PlayerHealth : MonoBehaviour
 		{
 			if (collision.gameObject.TryGetComponent(out Damager weapon))
 			{
-				if (weapon.alignmnent == Damager.Alignment.Enemy ||
-					weapon.alignmnent == Damager.Alignment.Environment)
+				if ((weapon.alignmnent == Damager.Alignment.Enemy ||
+					weapon.alignmnent == Damager.Alignment.Environment) && !playerDead)
 				{
 					DecreaseHealth(weapon.damageValue);
 					if (currentHealth == 0)
@@ -318,35 +318,58 @@ public class PlayerHealth : MonoBehaviour
 
 
     IEnumerator PlayerDies()
-	{
-		if (gameManager != null && gameSceneManager != null)
-		{
-			anim.SetBool("isDead", true);
-			Debug.Log("Set dead to true");
-			gameManager.DisablePlayerMovement();
-			iFrames = true;
-
-			if (playerAudio && !playerAudio.DeathSource.isPlaying && playerAudio.DeathSource.clip != null)
-			{
-				playerAudio.DeathSource.Play();
-			}
-			yield return new WaitForSeconds(0.3f);
-			//WISP DEATH ANIMATION GOES HERE (INCREASE WAITFORSECONDS TO COMPENSATE)
-			StartCoroutine(gameSceneManager.FadeOut());
-
-			yield return new WaitForSeconds(0.5f);
-			gameManager.Respawn(gameObject);
-			StartCoroutine(gameSceneManager.FadeIn());
-            yield return new WaitForSeconds(0.5f);
-            ResetHealth();
-            gameManager.EnablePlayerMovement();
-            yield return new WaitForSeconds(0.5f);
-            iFrames = false;
-
+{
+    if (gameManager != null && gameSceneManager != null)
+    {
+		
+        // Trigger the death animation
+        anim.SetBool("isDead", true);
+        Debug.Log("Player has died.");
+		playerDead = true;
+        // Disable player movement
+        gameManager.DisablePlayerMovement();
+        
+        // Play death sound if available
+        if (playerAudio && !playerAudio.DeathSource.isPlaying && playerAudio.DeathSource.clip != null)
+        {
+            playerAudio.DeathSource.Play();
         }
-		else
-		{
-			Debug.Log("Game Manager or Game Scene Manager not assigned on player!");
-		}
-	}
+		yield return new WaitForSeconds(0.2f);
+		anim.SetBool("isDead", false);
+        // Wait for 2 seconds to play tanim.SetBool("isDead", false);he death animation
+        yield return new WaitForSeconds(1.3f);
+
+        // After the death animation, reset the isDead state to stop the animation
+        anim.SetBool("isDead", false);
+        
+        // If you have any death cleanup or respawn animation, start it here
+        StartCoroutine(gameSceneManager.FadeOut());
+
+        // Wait for the fade out to complete
+        yield return new WaitForSeconds(0.5f);
+        
+        // Respawning the player
+        gameManager.Respawn(gameObject);
+        
+        // Start fading in
+        StartCoroutine(gameSceneManager.FadeIn());
+        
+        // Wait for the fade in to complete before enabling movement
+        yield return new WaitForSeconds(0.5f);
+
+        // Reset player's health and status
+		playerDead = false;
+        ResetHealth();
+        gameManager.EnablePlayerMovement();
+
+        // Wait a bit before resetting iFrames
+        yield return new WaitForSeconds(0.5f);
+        iFrames = false;
+    }
+    else
+    {
+        Debug.Log("Game Manager or Game Scene Manager not assigned on player!");
+    }
+}
+
 }
