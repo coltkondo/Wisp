@@ -21,3 +21,9 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 47a1fedcc75378842af2cf800369ced0, type: 3}
   - name: Halo
     sprite: {fileID: 21300000, guid: f597ffc6a03a95f4a8a1cb502a3a57b7, type: 3}
+  - name: Golem
+    sprite: {fileID: 21300000, guid: 44833eb821e9bb54fa7800aa5f5f599d, type: 3}
+  - name: Witch
+    sprite: {fileID: 21300000, guid: 131156d81d182084ba421940574d9322, type: 3}
+  - name: Slime
+    sprite: {fileID: 21300000, guid: a29425999e93ebf4eb361764f9ed0f4a, type: 3}

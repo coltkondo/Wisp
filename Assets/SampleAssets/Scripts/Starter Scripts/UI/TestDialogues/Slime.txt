@@ -1,0 +1,34 @@
+[NAME=???][SPEAKERSPRITE=Slime]?
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Uhm, excuse us...
+[NAME=???][SPEAKERSPRITE=Slime]Whoa! A Grim Reaper!
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Hello, I'm Wisp. 
+[NAME=Wisp][SPEAKERSPRITE=Wisp]And this one here is Elizabeth.
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]Hi!
+[NAME=???][SPEAKERSPRITE=Slime]I'm Benda, nice to meet y'all!
+[NAME=Benda][SPEAKERSPRITE=Slime]Do you need help with something?
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Ah, yes.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Do you know where the way to the cave is? 
+[NAME=Benda][SPEAKERSPRITE=Slime]The cave?!?
+[NAME=Benda][SPEAKERSPRITE=Slime]Are you sure you want to go there?!?
+[NAME=Wisp][SPEAKERSPRITE=Wisp]We are looking for someone. We think they might be in that cave.
+[NAME=Benda][SPEAKERSPRITE=Slime]The Hollow Cave...
+[NAME=Benda][SPEAKERSPRITE=Slime]Keep going straight ahead until you see a narrow entrance.
+[NAME=Benda][SPEAKERSPRITE=Slime]But if you are a Grim Reaper... You might do just fine. 
+[NAME=Benda][SPEAKERSPRITE=Slime]It is too dangerous for her though.
+[NAME=Benda][SPEAKERSPRITE=Slime]I advise you to let her stay in the village until you come back.
+[NAME=Wisp][SPEAKERSPRITE=Wisp].
+[NAME=Wisp][SPEAKERSPRITE=Wisp]. .
+[NAME=Wisp][SPEAKERSPRITE=Wisp]. . .
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Benda's right... 
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Elizabeth, it's better if you stay here.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]I don't want you to get hurt. 
+[NAME=Wisp][SPEAKERSPRITE=Wisp]I'm sorry...
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]I understand...
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]But promise me!
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]Promise me that you'll bring Mr. Snuggles back!
+[NAME=Wisp][SPEAKERSPRITE=Wisp]I will! Pinky promise.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Thank you, Benda. 
+[NAME=Wisp][SPEAKERSPRITE=Wisp]I'll be going now.
+[NAME=Benda][SPEAKERSPRITE=Slime]You got it!
+
+

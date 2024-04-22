@@ -57505,7 +57505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1645768335579175570, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.08
+      value: -44.1
       objectReference: {fileID: 0}
     - target: {fileID: 1645768335579175570, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -57728,6 +57728,14 @@ PrefabInstance:
       propertyPath: timestop_UI
       value: 
       objectReference: {fileID: 2132669593}
+    - target: {fileID: 5354452291545427814, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
+      propertyPath: RespawnPlace.x
+      value: -44.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354452291545427814, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
+      propertyPath: RespawnPlace.y
+      value: -4.02
+      objectReference: {fileID: 0}
     - target: {fileID: 8965207512815088854, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
       propertyPath: m_Name
       value: Managers
