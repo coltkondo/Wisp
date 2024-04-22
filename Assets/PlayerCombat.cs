@@ -11,11 +11,15 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
     public int attackDamage = 40;
-    public float attackRate = 2f;
+
+    [Header("Attack Rate")]
+    public float attackRate = 2f;  // Rate at which the player can melee attack
     float nextAttackTime = 0f;
-    private Vector2 worldPosition;
-    private Vector2 lookDirection;
-    private float angle;
+
+    [Header("Shooting")]
+    public float shootCooldown = 1f;  // Cooldown time between shots
+    private float nextShootTime = 0f;  // When the player is allowed to shoot again
+
     private GameObject bulletInstance;
 
     [Header("Audio")]
@@ -44,10 +48,6 @@ public class PlayerCombat : MonoBehaviour
                 {
                     Attack();
                 }
-                if (playerAudio && !playerAudio.AttackSource.isPlaying && playerAudio.AttackSource.clip != null)
-                {
-                    playerAudio.AttackSource.Play();
-                }
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }
@@ -68,12 +68,10 @@ public class PlayerCombat : MonoBehaviour
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPointAbove.position, attackRange, enemyLayers);
 
-        Debug.Log("hit enemies: " + hitEnemies.Length);
+        Debug.Log("Hit enemies above: " + hitEnemies.Length);
         foreach (Collider2D enemy in hitEnemies)
         {
-            Debug.Log("Hit enemy: " + enemy.name);
             enemy.GetComponent<EnemyHealth>().DecreaseHealth(attackDamage);
-
         }
     }
 
@@ -83,34 +81,20 @@ public class PlayerCombat : MonoBehaviour
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-        Debug.Log("hit enemies: " + hitEnemies.Length);
+        Debug.Log("Hit enemies: " + hitEnemies.Length);
         foreach (Collider2D enemy in hitEnemies)
         {
-            Debug.Log("Hit enemy: " + enemy.name);
             enemy.GetComponent<EnemyHealth>().DecreaseHealth(attackDamage);
-
         }
-
     }
-
-    void OnDrawGizmosSelected()
-    {
-        if (attackPoint == null)
-            return;
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-        
-        if (attackPointAbove == null)
-            return;
-        Gizmos.DrawWireSphere(attackPointAbove.position, attackRange);
-    }
-
 
     private void HandleShooting()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && Time.time >= nextShootTime)
         {
             bulletInstance = Instantiate(bullet, attackPoint.position, Quaternion.identity);
-            
+            nextShootTime = Time.time + shootCooldown;
+
             if (playerAudio && !playerAudio.ShootSource.isPlaying && playerAudio.ShootSource.clip != null)
             {
                 playerAudio.ShootSource.Play();
@@ -118,5 +102,12 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-
+    void OnDrawGizmosSelected()
+    {
+        if (attackPoint != null)
+            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        
+        if (attackPointAbove != null)
+            Gizmos.DrawWireSphere(attackPointAbove.position, attackRange);
+    }
 }
