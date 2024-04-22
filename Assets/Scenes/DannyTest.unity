@@ -157,6 +157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree4
       objectReference: {fileID: 0}
+    - target: {fileID: 3990553310081919412, guid: 112e3512836b54c4d8f508131a75cea4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8572310500613069054, guid: 112e3512836b54c4d8f508131a75cea4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.6353612
@@ -1412,6 +1416,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SilverKey
       objectReference: {fileID: 0}
+    - target: {fileID: 1534959528590289886, guid: 71d092adae859459cb09d719dbec54d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5940989613408531111, guid: 71d092adae859459cb09d719dbec54d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.57
@@ -1508,9 +1516,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyHealthBar: 0
   maxHealth: 5
+  currentHealth: 0
   padding: 2
   Dimensions: {x: 0, y: 0}
   HealthBar: {fileID: 0}
+  HealthBar_fill: {fileID: 0}
   canvasRectTransform: {fileID: 0}
   itemPrefab: {fileID: 0}
   numberOfItemsToDrop: 3
@@ -1706,6 +1716,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8027420832673747933, guid: 2119dac6a27e746419b17d53c72a4fc5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8412915472332013128, guid: 2119dac6a27e746419b17d53c72a4fc5, type: 3}
       propertyPath: itemPrefab
       value: 
@@ -1717,6 +1731,10 @@ PrefabInstance:
     - target: {fileID: 9100796918288698028, guid: 2119dac6a27e746419b17d53c72a4fc5, type: 3}
       propertyPath: m_Name
       value: SkeleEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 9100796918288698028, guid: 2119dac6a27e746419b17d53c72a4fc5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2078,6 +2096,10 @@ PrefabInstance:
       value: Scroll
       objectReference: {fileID: 0}
     - target: {fileID: 6107848640399749038, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1129300451}
+    - target: {fileID: 6107848640399749038, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
       propertyPath: scrollText
       value: 
       objectReference: {fileID: 838079435}
@@ -2280,6 +2302,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoulGem
       objectReference: {fileID: 0}
+    - target: {fileID: 5002716552632815579, guid: 78212a995efed47e2ab4fa6e18bbd5b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2309,13 +2335,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1747816701072669607, guid: 9611c8adde81d41aaa161e65094b56f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1747816701072669607, guid: 9611c8adde81d41aaa161e65094b56f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.71
+      objectReference: {fileID: 0}
     - target: {fileID: 2559225399817006838, guid: 9611c8adde81d41aaa161e65094b56f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.4372556
+      value: -1.13
       objectReference: {fileID: 0}
     - target: {fileID: 2559225399817006838, guid: 9611c8adde81d41aaa161e65094b56f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.78436375
+      value: -1.15
       objectReference: {fileID: 0}
     - target: {fileID: 2559225399817006838, guid: 9611c8adde81d41aaa161e65094b56f0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2369,6 +2403,10 @@ PrefabInstance:
     - target: {fileID: 5619753175147515648, guid: fc2c960fe7e8f4ae3b755d8fc084fdbf, type: 3}
       propertyPath: m_Name
       value: SilverCoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 5619753175147515648, guid: fc2c960fe7e8f4ae3b755d8fc084fdbf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8032442770002626967, guid: fc2c960fe7e8f4ae3b755d8fc084fdbf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2466,6 +2504,10 @@ PrefabInstance:
     - target: {fileID: 8400405571067451617, guid: 505d2a6563d534abc90adaf0126e7a04, type: 3}
       propertyPath: m_Name
       value: bush2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8400405571067451617, guid: 505d2a6563d534abc90adaf0126e7a04, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
