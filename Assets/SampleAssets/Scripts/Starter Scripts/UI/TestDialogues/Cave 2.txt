@@ -1,0 +1,58 @@
+[NAME=Elizabeth?][SPEAKERSPRITE=Evil Girl]Quite impressive for a rookie! 
+[NAME=Elizabeth?][SPEAKERSPRITE=Evil Girl]Newcomers don't usually get this far.
+[NAME=Elizabeth?][SPEAKERSPRITE=Evil Girl]You can keep that teddy bear as a reward.
+[NAME=Elizabeth?][SPEAKERSPRITE=Evil Girl]I have no use for something so ragged anyways. 
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Elizabeth?
+[NAME=Wisp][SPEAKERSPRITE=Wisp]No, you are not her.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]W-Who are you?
+[NAME=Elizabeth?][SPEAKERSPRITE=Evil Girl]Oh, but where did my manners go?
+[NAME=Elizabeth?][SPEAKERSPRITE=Evil Girl]Let me introduce myself one more time.
+[NAME=Elizabeth?][SPEAKERSPRITE=Evil Girl]Gatekeeper of the Court of Stars — Lilith.
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]Pleased to make your acquaintance, little Wisp.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]?!
+[NAME=Wisp][SPEAKERSPRITE=Wisp]. 
+[NAME=Wisp][SPEAKERSPRITE=Wisp]. .
+[NAME=Wisp][SPEAKERSPRITE=Wisp]. . .
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Was this your plan from the very beginning?
+[NAME=Wisp][SPEAKERSPRITE=Wisp]To finish me off?
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]Oh please, don't be absurd.
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]Why would I want to harvest your poor, tiny soul?
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]Have you forgotten the rules of this place?
+[NAME=Wisp][SPEAKERSPRITE=Wisp].
+[NAME=Wisp][SPEAKERSPRITE=Wisp]. .
+[NAME=Wisp][SPEAKERSPRITE=Wisp]. . .
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Nothing dies and nothing is born in the Underworld.
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]100 points!
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]Spirits like you and I cannot die of natural causes in this place.
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]Such is the immortal blessing that the Court of Stars has brought upon us all. 
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]Don't you think that's magnificent?
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]We can do whatever we want in this place!
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]Satiate our desires to the very top and then repeat the cycle all over again!
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]I wouldn't dare take away this wonderful blessing from you. 
+[NAME=Wisp][SPEAKERSPRITE=Wisp]But you set me up, didn't you?
+[NAME=Wisp][SPEAKERSPRITE=Wisp]From the moment I met you until the moment I left for this cave?
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Was everything a farce?! 
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]How stubborn.
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]Curiosity is a trait of the wise, but you sure love to question too much.
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]As if it was your favorite past time. 
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]But enough, little Wisp.
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]You yourself said that looks can be deceiving sometimes.
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]And I think you are getting the wrong idea about me.
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]I'm your ally, after all. Not your enemy.
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]The quality of reapers has withered over the centuries. 
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]Their products come expired more often than not.
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]How repulsive.
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]I'm the answer to the talentless.
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]And you the remedy to such mediocrity. 
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]Don't kick the bucket before our next business meeting.
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]I have high hopes in you.
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]Otherwise, I'll be really, really upset.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Just answer me one question.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Why Elizabeth?
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]?
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]HAHAHAHAH.
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]You are one amusing little Reaper, Wisp.
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl].
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]. .
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]. . .
+[NAME=Lilith][SPEAKERSPRITE=Evil Girl]I'm just a big fan of hers. 

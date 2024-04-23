@@ -1,0 +1,6 @@
+[SPEAKERSPRITE=]It's a big, fluffy teddy bear. 
+[SPEAKERSPRITE=]It looks worn and old.
+[SPEAKERSPRITE=]Without much thought, you decide to keep it. 
+[SPEAKERSPRITE=]Perhaps you'll find their rightful owner one day.
+[SPEAKERSPRITE=]Wisp has received Wall Climb!
+[SPEAKERSPRITE=]Explore new areas and decipher the secrets atop the walls of the Underworld!

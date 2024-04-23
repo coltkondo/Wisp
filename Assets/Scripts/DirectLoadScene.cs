@@ -8,14 +8,9 @@ public class DirectLoadScene : MonoBehaviour
     public GameObject fadeOutImage;
     public int sceneIndex = 2;
 
-    public GameObject player;
-
-    private Movement playerMovement;
-
     // Start is called before the first frame update
     void Start()
     {
-        playerMovement = player.GetComponent<Movement>();
     }
     private void Update()
     {
@@ -26,7 +21,6 @@ public class DirectLoadScene : MonoBehaviour
         Debug.Log("Collision gang");
         if (other.CompareTag("Player"))
         {
-            playerMovement.enabled = false;
             ChangeScene();
         }
     }
