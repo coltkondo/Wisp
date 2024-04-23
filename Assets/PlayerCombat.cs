@@ -12,6 +12,9 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask enemyLayers;
     public int attackDamage = 40;
 
+    public GameObject manager;
+    private DialogueManager dialogueManager;
+
     [Header("Attack Rate")]
     public float attackRate = 2f;  // Rate at which the player can melee attack
     float nextAttackTime = 0f;
@@ -28,31 +31,13 @@ public class PlayerCombat : MonoBehaviour
     private void Start()
     {
         playerAudio = GetComponent<PlayerAudio>();
+        dialogueManager = manager.GetComponent<DialogueManager>();
     }
 
     private bool isHoldingW = false;
 
     void Update()
     {
-        HandleShooting();
-
-        if (Time.time >= nextAttackTime)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {   
-                playerAudio.AttackSource.Play();
-                if (isHoldingW)
-                {
-                    AttackAbove();
-                }
-                else
-                {
-                    Attack();
-                }
-                nextAttackTime = Time.time + 1f / attackRate;
-            }
-        }
-
         if (Input.GetKeyDown(KeyCode.W))
         {
             isHoldingW = true;
@@ -61,6 +46,29 @@ public class PlayerCombat : MonoBehaviour
         {
             isHoldingW = false;
         }
+
+        if (dialogueManager.isTalking == false)
+        {
+            HandleShooting();
+
+            if (Time.time >= nextAttackTime)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    playerAudio.AttackSource.Play();
+                    if (isHoldingW)
+                    {
+                        AttackAbove();
+                    }
+                    else
+                    {
+                        Attack();
+                    }
+                    nextAttackTime = Time.time + 1f / attackRate;
+                }
+            }
+        }
+        
     }
 
     void AttackAbove()

@@ -118,10 +118,9 @@ public class EnemyHealth : MonoBehaviour
         CapsuleCollider2D collider = GetComponent<CapsuleCollider2D>();
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         DeathSource.Play(); // Play the death sound
-        if (collider != null)
-        {
-            collider.enabled = false;
-        }
+
+        gameObject.layer = 9;
+
         if (rb != null)
         {
             rb.Sleep();
