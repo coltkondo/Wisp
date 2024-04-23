@@ -483,6 +483,7 @@ MonoBehaviour:
   canvasRectTransform: {fileID: 0}
   itemPrefab: {fileID: 5002716552632815579, guid: 78212a995efed47e2ab4fa6e18bbd5b3, type: 3}
   numberOfItemsToDrop: 10
+  deathSound: {fileID: 8300000, guid: 5d697f2828bc2b447b3ff92bd8ee9b89, type: 3}
 --- !u!70 &1656822313108406698
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

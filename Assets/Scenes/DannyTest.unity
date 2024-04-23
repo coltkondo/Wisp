@@ -1524,6 +1524,9 @@ MonoBehaviour:
   canvasRectTransform: {fileID: 0}
   itemPrefab: {fileID: 0}
   numberOfItemsToDrop: 3
+  deathSound: {fileID: 0}
+  DeathSource: {fileID: 0}
+  VolumeLevel: 1
 --- !u!70 &1836617839756018838
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1734,7 +1737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9100796918288698028, guid: 2119dac6a27e746419b17d53c72a4fc5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2335,6 +2338,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 56004228644658950, guid: 9611c8adde81d41aaa161e65094b56f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1747816701072669607, guid: 9611c8adde81d41aaa161e65094b56f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.04
