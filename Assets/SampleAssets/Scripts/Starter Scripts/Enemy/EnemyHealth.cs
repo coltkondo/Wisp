@@ -86,24 +86,38 @@ public class EnemyHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(animationDelay); // Wait for death animation to play out
         DropItems();
-        Destroy(gameObject);
+        if (gameObject.name == "Shadow_Boss")
+        {
+            spriteRender.sprite = null;
+        } else
+        {
+            Destroy(gameObject);
+        }
         if (EnemyHealthBar) Destroy(HealthBar.gameObject);
     }
     private	IEnumerator Transition() {
         Animator anim = fadeOutImage.GetComponent<Animator>();
+        Debug.Log("FADE OUT SHOULD BEGIN");
         anim.SetTrigger("StartFadeOut"); // Make sure the trigger name matches the one in the Animator
         // Wait for the animation to finish
-        yield return new WaitForSeconds(2); // Adjust this time based on the animation length
-
-		anim.ResetTrigger("StartFadeOut");
+        yield return new WaitForSeconds(2.4f); // Adjust this time based on the animation length
+        Debug.Log("SCENE CHANGE");
+        //SceneManager.LoadScene(7);
+        anim.ResetTrigger("StartFadeOut");
 		anim.ResetTrigger("StartFadeIn");
 	}
 
     private IEnumerator HandleDeathSequence()
     {
-        yield return StartCoroutine(DestroyAfterAnimation());
-        StartCoroutine(Transition());
-        SceneManager.LoadScene(7);
+        StartCoroutine(DestroyAfterAnimation());
+        if (gameObject.name == "Shadow_Boss")
+        {
+            StartCoroutine(Transition());
+            yield return new WaitForSeconds(2.4f);
+            SceneManager.LoadScene(7);
+            
+        }
+        
     }
 
     IEnumerator FadeOutBossMusic(float fadeTime)
