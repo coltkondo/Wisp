@@ -10,7 +10,8 @@ public class Damager : MonoBehaviour
 	{
 		Player,
 		Enemy,
-		Environment
+		Environment,
+		Dead
 	}
 
 	[Tooltip("This determines whose side the damager is on. If the player is wielding the weapon, then its alignment is Player")]

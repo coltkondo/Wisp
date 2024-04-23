@@ -70,7 +70,7 @@ public class DialogueManager : MonoBehaviour
 	[HideInInspector]
 	public List<string> speakerSpriteNames;
 
-
+	public bool isTalking = false;
 
 	[Header("Options")]
 	public bool freezePlayerOnDialogue = true;
@@ -110,7 +110,8 @@ public class DialogueManager : MonoBehaviour
 		speaker.sprite = invisSprite; //Clear the speaker
 		DialogueUI.SetActive(true);
 		continueImage.SetActive(false);
-		playerCombat.enabled = false;
+		//playerCombat.enabled = false;
+		isTalking = true;
 		if (freezePlayerOnDialogue)
 		{
 			FreezePlayer();
@@ -287,7 +288,8 @@ public class DialogueManager : MonoBehaviour
 			UnFreezePlayer();
 		}
 
-		playerCombat.enabled = true;
+		//playerCombat.enabled = true;
+		isTalking = false;
 	}
 	private void ShowObject(string objectName)
 	{

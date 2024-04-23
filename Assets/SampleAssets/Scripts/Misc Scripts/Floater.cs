@@ -1,45 +1,35 @@
 ﻿using UnityEngine;
+using System.Collections;
 
+// Makes objects float up & down while gently spinning.
 public class Floater : MonoBehaviour
 {
+    // User Inputs
     public float degreesPerSecond = 15.0f;
     public float amplitude = 0.5f;
     public float frequency = 1f;
-    public LayerMask groundLayer;
 
-    private Vector3 posOffset = new Vector3();
-    private Vector3 tempPos = new Vector3();
-    private bool isGrounded = false;
+    // Position Storage Variables
+    Vector3 posOffset = new Vector3();
+    Vector3 tempPos = new Vector3();
 
-    private Rigidbody rb;
-
+    // Use this for initialization
     void Start()
     {
+        // Store the starting position & rotation of the object
         posOffset = transform.position;
-
-        rb = gameObject.AddComponent<Rigidbody>();
-        rb.useGravity = true;
-        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (isGrounded)
-        {
-            transform.Rotate(new Vector3(0f, Time.deltaTime * degreesPerSecond, 0f), Space.World);
-            tempPos = posOffset;
-            tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
-            transform.position = tempPos;
-        }
-    }
+        // Spin object around Y-Axis
+        transform.Rotate(new Vector3(0f, Time.deltaTime * degreesPerSecond, 0f), Space.World);
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if ((groundLayer & (1 << collision.gameObject.layer)) != 0)
-        {
-            isGrounded = true;
-            rb.isKinematic = true;
-            posOffset = transform.position;
-        }
+        // Float up/down with a Sin()
+        tempPos = posOffset;
+        tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
+
+        transform.position = tempPos;
     }
 }
