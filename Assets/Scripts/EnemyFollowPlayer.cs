@@ -4,8 +4,8 @@ using System.Collections;
 public class EnemyFollowPlayer : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
-    [SerializeField] private Transform startPosition;
-    [SerializeField] private Transform endPosition;
+    [SerializeField] private Transform startPosition; 
+    [SerializeField] private Transform endPosition;   
     private int travelCount = 0;
     private bool movingToEnd = true;
 
@@ -18,20 +18,11 @@ public class EnemyFollowPlayer : MonoBehaviour
     private Transform player;
     private bool isFiring = false;
     private bool isChasingPlayer = false;
-    private bool isMoving = true;
-    private bool hasAttacked = false;
+    private bool isMoving = true; 
+    private bool hasAttacked = false; 
 
     private GameManager gameManager;
-    private Vector3 lastPosition;
-
-    public AudioClip shootSound;
-    public AudioClip slashSound;
-
-    [HideInInspector] public AudioSource ShootSource;
-    [HideInInspector] public AudioSource SlashSource;
-
-    [Range(0, 1)]
-    public float VolumeLevel = 1;
+    private Vector3 lastPosition; 
 
     private void Start()
     {
@@ -39,33 +30,7 @@ public class EnemyFollowPlayer : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         InitializeBulletSpawnPoints();
         transform.position = startPosition.position;
-        SetupAudio();
-    }
-
-    void SetupAudio()
-    {
-        GameObject ShootGameObject = new GameObject("ShootAudioSource");
-        GameObject SlashGameObject = new GameObject("SlashAudioSource");
-
-        AssignParent(ShootGameObject);
-        AssignParent(SlashGameObject);
-
-        ShootSource = ShootGameObject.AddComponent<AudioSource>();
-        SlashSource = SlashGameObject.AddComponent<AudioSource>();
-
-        ShootSource.clip = shootSound;
-        SlashSource.clip = slashSound;
-
-        ShootSource.volume = VolumeLevel;
-        SlashSource.volume = VolumeLevel;
-
-        ShootSource.loop = false;
-        SlashSource.loop = false;
-    }
-
-    void AssignParent(GameObject obj)
-    {
-        obj.transform.parent = transform;
+        lastPosition = transform.position;
     }
 
     private void InitializeBulletSpawnPoints()
@@ -115,7 +80,6 @@ public class EnemyFollowPlayer : MonoBehaviour
         foreach (Transform spawnPoint in bulletSpawnPoints)
         {
             Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
-
             yield return new WaitForSeconds(1);
         }
         isFiring = false;
@@ -124,7 +88,6 @@ public class EnemyFollowPlayer : MonoBehaviour
         if (++travelCount >= 3)
         {
             isChasingPlayer = true;
-            lastPosition = player.position; // Save player's last known position when starting to chase
             hasAttacked = false;
         }
         else
@@ -137,19 +100,17 @@ public class EnemyFollowPlayer : MonoBehaviour
     {
         if (animator.GetBool("isDead")) return;
 
-        if (!hasAttacked)
+        float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
+        if (distanceFromPlayer > meleeRange)
         {
-            if (Vector2.Distance(transform.position, lastPosition) > meleeRange)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, lastPosition, speed * Time.deltaTime);
-            }
-            else
-            {
-                animator.SetTrigger("isAttacking");
-                SlashSource.Play();
-                StartCoroutine(ResumePatrolAfterMelee());
-                hasAttacked = true;
-            }
+            Vector3 floatPosition = new Vector3(player.position.x, player.position.y + Random.Range(-1f, 1f), player.position.z);
+            transform.position = Vector2.MoveTowards(transform.position, floatPosition, speed * Time.deltaTime);
+        }
+        else if (!hasAttacked)
+        {
+            animator.SetTrigger("isAttacking");
+            StartCoroutine(ResumePatrolAfterMelee());
+            hasAttacked = true;
         }
     }
 
@@ -171,12 +132,12 @@ public class EnemyFollowPlayer : MonoBehaviour
         isChasingPlayer = false;
         travelCount = 0;
         isMoving = true;
-        hasAttacked = false;
+        hasAttacked = true;
     }
 
     public void OnDeath()
     {
-        animator.SetBool("isDead", true);
-        Destroy(gameObject, 1f);
+        animator.SetBool("isDead", true); // Set isDead to true when the enemy dies
+        Destroy(gameObject, 1f); // Wait for death animation to finish
     }
 }
