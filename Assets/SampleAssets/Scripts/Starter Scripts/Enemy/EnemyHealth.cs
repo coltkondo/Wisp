@@ -97,14 +97,13 @@ public class EnemyHealth : MonoBehaviour
 
 		anim.ResetTrigger("StartFadeOut");
 		anim.ResetTrigger("StartFadeIn");
-
-        SceneManager.LoadScene(1);
 	}
 
     private IEnumerator HandleDeathSequence()
     {
         yield return StartCoroutine(DestroyAfterAnimation());
         StartCoroutine(Transition());
+        SceneManager.LoadScene(7);
     }
 
     IEnumerator FadeOutBossMusic(float fadeTime)
