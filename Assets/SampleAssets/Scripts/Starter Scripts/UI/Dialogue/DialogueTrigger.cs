@@ -131,12 +131,6 @@ public class DialogueTrigger : MonoBehaviour
             if (manager.isInDialouge) {
                 manager.EndDialogue();
             }
-
-            if (hasScythe) {
-                playerCombat.enabled = true;
-            } else {
-                playerCombat.enabled = false;
-            }
         } 
         
         inArea = false;
@@ -161,11 +155,13 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    private void CheckGolem() {
+    private void CheckGolem() {            
         if (this.gameObject.name == "Golem") {
             if (hasScythe) {
+                playerCombat.enabled = true;
                 hasScythe = false;
             } else {
+                playerCombat.enabled = false;
                 hasScythe = true;
             }
         }
