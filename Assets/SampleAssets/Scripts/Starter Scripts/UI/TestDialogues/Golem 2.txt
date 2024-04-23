@@ -1,29 +1,30 @@
-[NAME=Heitzman the Blacksmith][SPEAKERSPRITE=Golem].
-[NAME=Heitzman the Blacksmith][SPEAKERSPRITE=Golem]Hey there, I have finished sharpening up your scythe. 
-[NAME=Heitzman the Blacksmith][SPEAKERSPRITE=Golem]Here you go.
+[NAME=Heitzman][SPEAKERSPRITE=Golem].
+[NAME=Heitzman][SPEAKERSPRITE=Golem]Hey there, I have finished sharpening up your scythe. 
+[NAME=Heitzman][SPEAKERSPRITE=Golem]Here you go.
 [NAME=][SPEAKERSPRITE=]Wisp received Scythe!
 [NAME=][SPEAKERSPRITE=]Damage: 1 -> 2
 [NAME=Wisp][SPEAKERSPRITE=Wisp]Thanks!
 [NAME=Elizabeth][SPEAKERSPRITE=Girl]Mr. Heitzman, do you know where Lilith went?
-[NAME=Heitzman the Blacksmith][SPEAKERSPRITE=Golem]Lilith?
-[NAME=Heitzman the Blacksmith][SPEAKERSPRITE=Golem].
-[NAME=Heitzman the Blacksmith][SPEAKERSPRITE=Golem]. .
-[NAME=Heitzman the Blacksmith][SPEAKERSPRITE=Golem]. . .
-[NAME=Heitzman the Blacksmith][SPEAKERSPRITE=Golem]Why do you ask?
+[NAME=Heitzman][SPEAKERSPRITE=Golem]Lilith?
+[NAME=Heitzman][SPEAKERSPRITE=Golem].
+[NAME=Heitzman][SPEAKERSPRITE=Golem]. .
+[NAME=Heitzman][SPEAKERSPRITE=Golem]. . .
+[NAME=Heitzman][SPEAKERSPRITE=Golem]Why do you ask?
 [NAME=Wisp][SPEAKERSPRITE=Wisp]This girl here lost her teddy bear, Mr. Snuggles.
 [NAME=Wisp][SPEAKERSPRITE=Wisp]We talked to Abigail.
-[NAME=Wisp][SPEAKERSPRITE=Wisp]She told us that someone from the Court of Stars named Lilith recently came across this town with a teddy bear in hand.
-[NAME=Heitzman the Blacksmith][SPEAKERSPRITE=Golem]Reckless child...
-[NAME=Heitzman the Blacksmith][SPEAKERSPRITE=Golem]Yes, she is right.
-[NAME=Heitzman the Blacksmith][SPEAKERSPRITE=Golem]Lilith came to this village and headed to the cave afterwards. 
-[NAME=Heitzman the Blacksmith][SPEAKERSPRITE=Golem]You can sometimes hear a screeching scream come out of it ever since.
-[NAME=Heitzman the Blacksmith][SPEAKERSPRITE=Golem]Everyone is too scared to go in and see what's going on though. 
-[NAME=Heitzman the Blacksmith][SPEAKERSPRITE=Golem]I wouldn't advise you to go there. It is dangerous.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]She told us that someone from the Court of Stars named Lilith recently came here.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]That she walked across town with a teddy bear in hand.
+[NAME=Heitzman][SPEAKERSPRITE=Golem]Reckless child...
+[NAME=Heitzman][SPEAKERSPRITE=Golem]Yes, she is right.
+[NAME=Heitzman][SPEAKERSPRITE=Golem]Lilith came to this village and headed to the cave afterwards. 
+[NAME=Heitzman][SPEAKERSPRITE=Golem]You can sometimes hear a screeching scream come out of it ever since.
+[NAME=Heitzman][SPEAKERSPRITE=Golem]Everyone is too scared to go in and see what's going on though. 
+[NAME=Heitzman][SPEAKERSPRITE=Golem]I wouldn't advise you to go there. It is dangerous.
 [NAME=Wisp][SPEAKERSPRITE=Wisp]We don't have much choice if we want to find Mr. Snuggles, do we?
 [NAME=Elizabeth][SPEAKERSPRITE=Girl]At least we know where to go now!
 [NAME=Wisp][SPEAKERSPRITE=Wisp]Thank you for everything, Heitzman.
 [NAME=Wisp][SPEAKERSPRITE=Wisp]We'll be going now.
-[NAME=Heitzman the Blacksmith][SPEAKERSPRITE=Golem]Farewell, take good care of yourselves. 
+[NAME=Heitzman][SPEAKERSPRITE=Golem]Farewell, take good care of yourselves. 
 
 
 

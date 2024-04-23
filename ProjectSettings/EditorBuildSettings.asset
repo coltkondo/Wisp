@@ -15,24 +15,48 @@ EditorBuildSettings:
     path: Assets/Scenes/ColtUI.unity
     guid: e9baa2d1e44bf5f429177b62acb4a5a9
   - enabled: 1
-    path: Assets/Scenes/GameStart.unity
+    path: Assets/Scenes/0 GameStart.unity
     guid: b99f5d1b541228349bcac205ef5eb584
   - enabled: 1
-    path: Assets/Scenes/IntroCutscene.unity
+    path: Assets/Scenes/1 IntroCutscene.unity
     guid: 45db6aad249f2aa499fb6348e5918ee2
   - enabled: 1
-    path: Assets/Scenes/1 Main Lvl.unity
+    path: Assets/Scenes/2 Forest.unity
     guid: 6f75b600ff1d9014083b5af1b73bdd2e
   - enabled: 1
-    path: Assets/Scenes/1 Village Level.unity
+    path: Assets/Scenes/3 Village Level.unity
     guid: ab3c9fb989346334bba39b3762be557a
+  - enabled: 1
+    path: Assets/Scenes/4 Cave John.unity
+    guid: 1c1e6a1f9db5b7648aee6836a6cc5158
+  - enabled: 1
+    path: Assets/Scenes/5 BossCutscene.unity
+    guid: 21c0a9a777ca3974fa05d3cb5561b6a7
+  - enabled: 1
+    path: Assets/Scenes/6 Boss Fight.unity
+    guid: bd47291525dcd634b986d90e622cfea5
+  - enabled: 1
+    path: Assets/Scenes/7 Cave John Fixed.unity
+    guid: 84a89a9c02532774ba72be1a6523e627
+  - enabled: 1
+    path: Assets/Scenes/8 Village Fixed.unity
+    guid: 604698ca1d71b7f408dc77fe8ef796fd
+  - enabled: 1
+    path: Assets/Scenes/9 Cave Return.unity
+    guid: 1f6b9d68c85c21f40b55bc9f5992b7f9
+  - enabled: 1
+    path: Assets/Scenes/10 Forest Return.unity
+    guid: 742a8024b98ba044e8e6c9bb86b51530
+  - enabled: 1
+    path: Assets/Scenes/11 Village Fixed 1.unity
+    guid: 9b04ac4617837124f9e21deb9e6822df
   - enabled: 0
     path: Assets/Scenes/Castle Map.unity
     guid: bc3d03e4987544863ac732ec7d721e38
   - enabled: 0
     path: Assets/Scenes/JohnTest.unity
     guid: a2a6ff19a0a01eb47941b1f98486a9e9
-  - enabled: 1
-    path: Assets/Scenes/1Boss Room.unity
+  - enabled: 0
+    path: Assets/Scenes/Boss Room.unity
     guid: 28738db9b89d57b4080d314e33ee44fc
   m_configObjects: {}
