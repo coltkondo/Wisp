@@ -3,6 +3,9 @@ using UnityEngine;
 public class Boss_Projectile : MonoBehaviour
 {
     public float speed = 5f; // Speed of the projectile
+
+    private float speedHolder;
+
     public Animator animator; // Animator component
 
     private GameManager gameManager;
@@ -18,6 +21,8 @@ public class Boss_Projectile : MonoBehaviour
     public bool LoopShootAudio = false;
     [Range(0, 1)]
     public float VolumeLevel = 1;
+
+    private bool isLaunched = false;
 
     void Start()
     {
@@ -51,6 +56,7 @@ public class Boss_Projectile : MonoBehaviour
 
     void LaunchProjectile()
     {
+        isLaunched = true;
         Vector2 moveDirection = (GameObject.FindWithTag("Player").transform.position - transform.position).normalized * speed;
         rb.velocity = moveDirection;
         ShootSource.Play();
@@ -61,17 +67,34 @@ public class Boss_Projectile : MonoBehaviour
         if (!gameManager.timeIsStopped && isFrozen)
         {
             // Resume movement with the stored velocity
+            Debug.Log("BOSS BULLETS RESUME");
             rb.isKinematic = false;
+            speed = speedHolder;
             rb.velocity = storedVelocity;
             isFrozen = false;
         }
         else if (gameManager.timeIsStopped && !isFrozen)
         {
             // Store the current velocity and stop movement
-            storedVelocity = rb.velocity;
-            rb.velocity = Vector2.zero;
-            rb.isKinematic = true;
-            isFrozen = true;
+            if (isLaunched == true)
+            {
+                storedVelocity = rb.velocity;
+                speedHolder = speed;
+                speed = 0f;
+                rb.velocity = Vector2.zero;
+                rb.isKinematic = true;
+                isFrozen = true;
+            } else
+            {
+                Vector2 moveDirection = (GameObject.FindWithTag("Player").transform.position - transform.position).normalized * speed;
+                storedVelocity = moveDirection;
+                speedHolder = speed;
+                speed = 0f;
+                rb.velocity = Vector2.zero;
+                rb.isKinematic = true;
+                isFrozen = true;
+            }
+            
         }
 
         if (!gameManager.timeIsStopped)
@@ -80,6 +103,7 @@ public class Boss_Projectile : MonoBehaviour
             remainingLifetime -= Time.fixedDeltaTime;
             if (remainingLifetime <= 0f)
             {
+                isLaunched = false;
                 Destroy(gameObject);
             }
         }

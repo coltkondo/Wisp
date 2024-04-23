@@ -115,6 +115,10 @@ public class DirectTrigger : MonoBehaviour
         }
         
         inArea = false;
+        if (singleUseDialogue == true)
+        {
+            gameObject.SetActive(false);
+        }
 
     }
 }
