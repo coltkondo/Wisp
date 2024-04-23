@@ -1,0 +1,9 @@
+[NAME=Wisp][SPEAKERSPRITE=Wisp]?
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Where did everyone go?
+[NAME=Wisp][SPEAKERSPRITE=Wisp].
+[NAME=Wisp][SPEAKERSPRITE=Wisp]. .
+[NAME=Wisp][SPEAKERSPRITE=Wisp]. . .
+[NAME=Wisp][SPEAKERSPRITE=Wisp]I'm going to the Hollow Forest.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]I need to get away from here.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Maybe find answers.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Or maybe find myself.
