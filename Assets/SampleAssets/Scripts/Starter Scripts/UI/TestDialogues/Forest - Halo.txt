@@ -19,8 +19,8 @@
 [NAME=Halo][SPEAKERSPRITE=Halo]To heal yourself, use the Z key. If you want to stop the time in your surroundings, use the X key.
 [NAME=Halo][SPEAKERSPRITE=Halo]Last but not least, let's freshen up your memory on the basics of movement and combat.
 [NAME=Halo][SPEAKERSPRITE=Halo]You can move with the WASD keys, jump with the Spacebar, and dash pressing Left Shift.
-[NAME=Halo][SPEAKERSPRITE=Halo]You can also attack with the left mouse button and shoot a fireball with your right mouse button.
-[NAME=Halo][SPEAKERSPRITE=Halo]Be careful, though, as your fireball uses soul gems.
+[NAME=Halo][SPEAKERSPRITE=Halo]When it comes to combat, your scythe will be your best companion.
+[NAME=Halo][SPEAKERSPRITE=Halo]Attack with the left mouse button and shoot a fireball with your right mouse button.
 [NAME=Halo][SPEAKERSPRITE=Halo]If you need help remembering all of this, check out this guide!
 [NAME=][SPEAKERSPRITE=][SHOWOBJECT=UI/Quest_Log]Wisp received 'Grim Reapers for Dummies'!
 [NAME=Halo][SPEAKERSPRITE=Halo]It'll be handy if you need to review what you were taught in the academy. 

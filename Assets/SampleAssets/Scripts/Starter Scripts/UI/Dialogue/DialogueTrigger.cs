@@ -21,10 +21,16 @@ public class DialogueTrigger : MonoBehaviour
     public GameObject[] objectsToEnable;
 
     public Transform player;
+
+    public GameObject playerObject;
     [HideInInspector]
     public bool hasBeenUsed = false;
     bool inArea = false;
     public GameObject interactionPrompt;
+
+    public bool hasScythe = true;
+
+    private PlayerCombat playerCombat;
 
 
     // public bool useCollision; // unused for now
@@ -32,6 +38,7 @@ public class DialogueTrigger : MonoBehaviour
     private void Start()
     {
         manager = FindObjectOfType<DialogueManager>();
+        playerCombat = playerObject.GetComponent<PlayerCombat>();
     }
 
 
@@ -43,6 +50,7 @@ public class DialogueTrigger : MonoBehaviour
             manager.currentTrigger = this;
             FacePlayer();
             TriggerDialogue();
+            CheckGolem();
             interactionPrompt.SetActive(false); // Optionally, hide the interaction prompt
         }
 
@@ -123,6 +131,12 @@ public class DialogueTrigger : MonoBehaviour
             if (manager.isInDialouge) {
                 manager.EndDialogue();
             }
+
+            if (hasScythe) {
+                playerCombat.enabled = true;
+            } else {
+                playerCombat.enabled = false;
+            }
         } 
         
         inArea = false;
@@ -144,6 +158,16 @@ public class DialogueTrigger : MonoBehaviour
         {
             // Face left
             transform.localScale = new Vector3(localScaleX, localScaleY, 1);
+        }
+    }
+
+    private void CheckGolem() {
+        if (this.gameObject.name == "Golem") {
+            if (hasScythe) {
+                hasScythe = false;
+            } else {
+                hasScythe = true;
+            }
         }
     }
 }

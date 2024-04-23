@@ -1,0 +1,44 @@
+[NAME=???][SPEAKERSPRITE=Witch]Who goes there?!
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]!!!
+[NAME=???][SPEAKERSPRITE=Witch]Just when I was locking in.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]We are sorry to interrupt you. 
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Are you perhaps Abigail?
+[NAME=???][SPEAKERSPRITE=Witch]That's correct.
+[NAME=Abigail][SPEAKERSPRITE=Witch]What business do you have with me?
+[NAME=Wisp][SPEAKERSPRITE=Wisp]We wanted to ask you if you had seen a teddy bear around here.
+[NAME=Abigail][SPEAKERSPRITE=Witch]A teddy bear? Do I look like someone who would know that?
+[NAME=Abigail][SPEAKERSPRITE=Witch].
+[NAME=Abigail][SPEAKERSPRITE=Witch]. .
+[NAME=Abigail][SPEAKERSPRITE=Witch]. . .
+[NAME=Abigail][SPEAKERSPRITE=Witch]Why the long faces?
+[NAME=Abigail][SPEAKERSPRITE=Witch]Of course I'd know! I'm Abigail the Witch after all. 
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]S-So where is he?
+[NAME=Abigail][SPEAKERSPRITE=Witch]I don't really know. 
+[NAME=Wisp][SPEAKERSPRITE=Wisp]???
+[NAME=Abigail][SPEAKERSPRITE=Witch]But listen to me. 
+[NAME=Abigail][SPEAKERSPRITE=Witch]A couple of days ago, a member of the Court of Stars recently came to this village.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]The Court of Stars!
+[NAME=Abigail][SPEAKERSPRITE=Witch]That's right. They called themselves Lilith. 
+[NAME=Abigail][SPEAKERSPRITE=Witch]I didn't personally spoke with them but they were holding onto a teddy bear.
+[NAME=Abigail][SPEAKERSPRITE=Witch]Perhaps they have whatever it is you are both looking for.
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]What's the Court of Stars?
+[NAME=Abigail][SPEAKERSPRITE=Witch]?!
+[NAME=Abigail][SPEAKERSPRITE=Witch]You don't know who the Court of Stars is?!
+[NAME=Abigail][SPEAKERSPRITE=Witch]Ignorant child.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]No need to berate her, she just got here not too long ago. 
+[NAME=Abigail][SPEAKERSPRITE=Witch]Sure... If you say so. 
+[NAME=Wisp][SPEAKERSPRITE=Wisp]The Court of Stars are the entities that govern the Underworld.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Without them, there wouldn't be an Underworld in the first place.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]They take care of us and let us live for—
+[NAME=Abigail][SPEAKERSPRITE=Witch]Are you going to keep talking or can I return to my magecraft?
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Sorry, we'll go now.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Thanks for your help.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]. 
+[NAME=Wisp][SPEAKERSPRITE=Wisp]. .
+[NAME=Wisp][SPEAKERSPRITE=Wisp]. . .
+[NAME=Wisp][SPEAKERSPRITE=Wisp](I should go pick up my scythe.)
+
+
+
+
+

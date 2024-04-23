@@ -4,8 +4,8 @@ using System.Collections;
 public class EnemyFollowPlayer : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
-    [SerializeField] private Transform startPosition; // Use Transform to set in the Inspector
-    [SerializeField] private Transform endPosition;   // Use Transform to set in the Inspector
+    [SerializeField] private Transform startPosition; 
+    [SerializeField] private Transform endPosition;   
     private int travelCount = 0;
     private bool movingToEnd = true;
 
@@ -18,18 +18,18 @@ public class EnemyFollowPlayer : MonoBehaviour
     private Transform player;
     private bool isFiring = false;
     private bool isChasingPlayer = false;
-    private bool isMoving = true; // Flag to control movement
-    private bool hasAttacked = false; // Flag to prevent multiple attacks
+    private bool isMoving = true; 
+    private bool hasAttacked = false; 
 
     private GameManager gameManager;
-    private Vector3 lastPosition; // To track movement direction
+    private Vector3 lastPosition; 
 
     private void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         InitializeBulletSpawnPoints();
-        transform.position = startPosition.position; // Start at the initial position
+        transform.position = startPosition.position;
         lastPosition = transform.position;
     }
 
@@ -44,7 +44,7 @@ public class EnemyFollowPlayer : MonoBehaviour
 
     private void Update()
     {
-        if (player == null) return;
+        if (player == null || animator.GetBool("isDead")) return;
 
         if (isChasingPlayer && !gameManager.timeIsStopped)
         {
@@ -58,60 +58,65 @@ public class EnemyFollowPlayer : MonoBehaviour
 
     private void MoveBetweenPoints()
     {
+        if (animator.GetBool("isDead")) return;
+
         Vector3 targetPosition = movingToEnd ? endPosition.position : startPosition.position;
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, targetPosition) < 0.1f && !isFiring && !gameManager.timeIsStopped)
         {
             StartCoroutine(SummonBullets());
-            isMoving = false; // Stop moving while summoning
+            isMoving = false;
         }
     }
 
     private IEnumerator SummonBullets()
     {
-        FacePlayer(); // Adjust orientation to face the player before summoning
+        if (animator.GetBool("isDead")) yield break;
+
+        FacePlayer();
         isFiring = true;
         animator.SetTrigger("Summon");
         foreach (Transform spawnPoint in bulletSpawnPoints)
         {
             Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
-            yield return new WaitForSeconds(1); // Cooldown between bullets
+            yield return new WaitForSeconds(1);
         }
         isFiring = false;
-        isMoving = true; // Resume movement after summoning
+        isMoving = true;
 
-        if (++travelCount >= 3) // Complete two cycles
+        if (++travelCount >= 3)
         {
-            isChasingPlayer = true; // Start chasing the player
-            hasAttacked = false; // Reset attack flag when starting chase
+            isChasingPlayer = true;
+            hasAttacked = false;
         }
         else
         {
-            movingToEnd = !movingToEnd; // Toggle the movement direction
+            movingToEnd = !movingToEnd;
         }
     }
 
     private void ChasePlayer()
     {
+        if (animator.GetBool("isDead")) return;
+
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
         if (distanceFromPlayer > meleeRange)
         {
             Vector3 floatPosition = new Vector3(player.position.x, player.position.y + Random.Range(-1f, 1f), player.position.z);
             transform.position = Vector2.MoveTowards(transform.position, floatPosition, speed * Time.deltaTime);
-             // Player has moved out of range, reset attack flag
         }
         else if (!hasAttacked)
         {
-            animator.SetTrigger("isAttacking"); // Play melee attack animation
+            animator.SetTrigger("isAttacking");
             StartCoroutine(ResumePatrolAfterMelee());
-            hasAttacked = true; // Ensure the attack only triggers once per engagement
+            hasAttacked = true;
         }
     }
 
     private void FacePlayer()
     {
-        if (player == null) return;
+        if (player == null || animator.GetBool("isDead")) return;
         Vector3 directionToPlayer = player.position - transform.position;
         float xDirection = Mathf.Sign(directionToPlayer.x);
         Vector3 localScale = transform.localScale;
@@ -121,16 +126,18 @@ public class EnemyFollowPlayer : MonoBehaviour
 
     private IEnumerator ResumePatrolAfterMelee()
     {
-        yield return new WaitForSeconds(1.2f); // Wait for the melee animation to finish
-        isChasingPlayer = false; // Reset to start patrolling again
-        travelCount = 0; // Reset travel count to restart the patrol cycles
-        isMoving = true; // Allow movement again
+        if (animator.GetBool("isDead")) yield break;
+
+        yield return new WaitForSeconds(1.2f);
+        isChasingPlayer = false;
+        travelCount = 0;
+        isMoving = true;
         hasAttacked = true;
     }
 
     public void OnDeath()
     {
-        animator.SetTrigger("Die");
+        animator.SetBool("isDead", true); // Set isDead to true when the enemy dies
         Destroy(gameObject, 1f); // Wait for death animation to finish
     }
 }
