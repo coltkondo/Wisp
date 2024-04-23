@@ -46,7 +46,6 @@ public class Timestop_Eric : MonoBehaviour
             {
                 if (currentTimePoints != 0)
                 {
-                    playerAudio.HealSource.Play();
                     Debug.Log("Heal Key Pressed");
                     Debug.Log("Audio playing: " + playerAudio.HealSource.isPlaying);
                     decreaseTimePoints(1);
@@ -98,7 +97,11 @@ public class Timestop_Eric : MonoBehaviour
     {
         gameManager.DisablePlayerMovement();
         // INSERT HEAL ANIMATION FLAG HERE
-        yield return new WaitForSeconds(0.3f);
+        if (playerAudio.HealSource.isPlaying != true)
+        {
+            playerAudio.HealSource.Play();
+        } 
+        yield return new WaitForSeconds(1.4f);
         playerHealth.IncreaseHealth(1);
         yield return new WaitForSeconds(0.2f);
         gameManager.EnablePlayerMovement();
