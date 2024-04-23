@@ -15,9 +15,11 @@ GameObject:
   - component: {fileID: 3277967016860157145}
   - component: {fileID: 7657681509410993884}
   - component: {fileID: 8886812297437269068}
-  m_Layer: 0
+  - component: {fileID: 5018889618921512922}
+  - component: {fileID: 6541934739513278445}
+  m_Layer: 7
   m_Name: Boss_Bullet
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +128,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2390bc45854a5624997345703414fef3, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -136,7 +138,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!58 &3277967016860157145
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -207,3 +209,64 @@ MonoBehaviour:
   TopDown: 0
   alignmnent: 1
   damageValue: 1
+--- !u!114 &5018889618921512922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753132043087282072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c259f5eb5ac2414a82aa059e05bb479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyHealthBar: 0
+  maxHealth: 1
+  currentHealth: 0
+  padding: 2
+  Dimensions: {x: 0, y: 0}
+  HealthBar: {fileID: 0}
+  HealthBar_fill: {fileID: 0}
+  canvasRectTransform: {fileID: 0}
+  itemPrefab: {fileID: 5002716552632815579, guid: 78212a995efed47e2ab4fa6e18bbd5b3, type: 3}
+  numberOfItemsToDrop: 1
+  deathSound: {fileID: 0}
+  DeathSource: {fileID: 0}
+  VolumeLevel: 1
+  animationDelay: 0.1
+--- !u!70 &6541934739513278445
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753132043087282072}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.02876727, y: -0.2811974}
+  m_Size: {x: 0.22805405, y: 0.22805405}
+  m_Direction: 0
