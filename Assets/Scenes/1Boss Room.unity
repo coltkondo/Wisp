@@ -116132,6 +116132,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+--- !u!1 &1269544952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 717534522428033986, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+  m_PrefabInstance: {fileID: 1269544951}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1282444848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116758,7 +116763,7 @@ PrefabInstance:
     - target: {fileID: 5354452291545427814, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
       propertyPath: timestop_UI
       value: 
-      objectReference: {fileID: 2132669593}
+      objectReference: {fileID: 1269544952}
     - target: {fileID: 5354452291545427814, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
       propertyPath: RespawnPlace.x
       value: -44.1
@@ -120835,11 +120840,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de2058c1eb1a5fb40b1834a6a6e5d805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2132669593 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1510022423739311655, guid: f997f720a82db9d41815d18e6a495343, type: 3}
-  m_PrefabInstance: {fileID: 1269544951}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2145495563
 GameObject:
   m_ObjectHideFlags: 0
