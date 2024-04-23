@@ -1,4 +1,5 @@
 [NAME=???][SPEAKERSPRITE=Witch]Who goes there?!
+[NAME=???][SPEAKERSPRITE=Witch]Show yourselves!
 [NAME=Elizabeth][SPEAKERSPRITE=Girl]!!!
 [NAME=???][SPEAKERSPRITE=Witch]Just when I was locking in.
 [NAME=Wisp][SPEAKERSPRITE=Wisp]We are sorry to interrupt you. 
@@ -37,8 +38,3 @@
 [NAME=Wisp][SPEAKERSPRITE=Wisp]. .
 [NAME=Wisp][SPEAKERSPRITE=Wisp]. . .
 [NAME=Wisp][SPEAKERSPRITE=Wisp](I should go pick up my scythe.)
-
-
-
-
-
