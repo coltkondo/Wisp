@@ -188,7 +188,7 @@ public class Movement : MonoBehaviour
         isWallJumping = false;
     }
 
-    /*private void Flip()
+    private void Flip()
     {
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Wisp_Attack"))
         {
@@ -204,9 +204,9 @@ public class Movement : MonoBehaviour
             }
         }
         
-    }*/
+    }
 
-    private void Flip()
+    /*private void Flip()
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
@@ -215,7 +215,7 @@ public class Movement : MonoBehaviour
             localScale.x *= -1f;
             transform.localScale = localScale;
         }
-    }
+    }*/
 
     public void DisablePlayer()
     {

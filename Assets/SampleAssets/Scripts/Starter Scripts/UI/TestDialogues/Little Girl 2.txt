@@ -1,0 +1,7 @@
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]Good luck, Wisp!
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Thanks, Elizabeth.
+[NAME=Wisp][SPEAKERSPRITE=Wisp]I'll return with Mr. Snuggles. 
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Believe it!
+[NAME=Wisp][SPEAKERSPRITE=Wisp]I'll be right back. 
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Don't you go anywhere, got it?
+[NAME=Elizabeth][SPEAKERSPRITE=Girl]Yip yip!

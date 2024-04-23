@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7996919014701640549}
   - component: {fileID: 8061819622143384002}
   m_Layer: 8
-  m_Name: bullet
+  m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TopDown: 0
   alignmnent: 0
-  damageValue: 5
+  damageValue: 1
 --- !u!95 &-7996919014701640549
 Animator:
   serializedVersion: 5
