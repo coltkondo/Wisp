@@ -477,12 +477,14 @@ MonoBehaviour:
   animator: {fileID: 6465579086542488219}
   attackPoint: {fileID: 9137990939542140992}
   attackPointAbove: {fileID: 8599196707662776685}
-  attackRange: 0.61
+  attackRange: 1.5
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
   attackDamage: 1
-  attackRate: 2
+  manager: {fileID: 0}
+  attackRate: 1
+  shootCooldown: 1
   playerAudio: {fileID: 0}
 --- !u!114 &8084568360553902649
 MonoBehaviour:
@@ -500,6 +502,7 @@ MonoBehaviour:
   player: {fileID: 3452270629591168218}
   currentTimePoints: 4
   maxTimePoints: 4
+  manager: {fileID: 0}
 --- !u!114 &4467638547550068612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,7 +527,7 @@ MonoBehaviour:
   LoopJumpAudio: 0
   DamageAudioClip: {fileID: 8300000, guid: 0e300cb6f4d026942a5c7db0392d4e0b, type: 3}
   LoopDamageAudio: 0
-  HealAudioClip: {fileID: 0}
+  HealAudioClip: {fileID: 8300000, guid: d081376ae7ec8324dbe65cc207d84ab8, type: 3}
   LoopHealAudio: 0
   TimeStopAudioClip: {fileID: 0}
   LoopTimeStopAudio: 0
