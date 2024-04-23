@@ -5801,6 +5801,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8772124415485914799, guid: f997f720a82db9d41815d18e6a495343, type: 3}
   m_PrefabInstance: {fileID: 302302288}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &302302290 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 871099442754303216, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+  m_PrefabInstance: {fileID: 302302288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &306293127
 GameObject:
   m_ObjectHideFlags: 0
@@ -114523,9 +114528,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 843527974954484201, guid: 7f3ee3eec1cb76540a7b0c31ccdc948a, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 302302290}
+    - target: {fileID: 843527974954484201, guid: 7f3ee3eec1cb76540a7b0c31ccdc948a, type: 3}
       propertyPath: sceneIndex
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 843527974954484201, guid: 7f3ee3eec1cb76540a7b0c31ccdc948a, type: 3}
+      propertyPath: fadeOutImage
+      value: 
+      objectReference: {fileID: 194443910}
     - target: {fileID: 843527974954484201, guid: 7f3ee3eec1cb76540a7b0c31ccdc948a, type: 3}
       propertyPath: interactionPrompt
       value: 
@@ -116395,11 +116408,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1645768335579175570, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.44
+      value: -22.36
       objectReference: {fileID: 0}
     - target: {fileID: 1645768335579175570, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.91
+      value: -4.01
       objectReference: {fileID: 0}
     - target: {fileID: 1645768335579175570, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: m_LocalPosition.z

@@ -3,25 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadNewScene : MonoBehaviour
+public class DirectLoadScene : MonoBehaviour
 {
     public GameObject fadeOutImage;
     public int sceneIndex = 2;
-    public GameObject interactionPrompt;
+
+    public GameObject player;
+
+    private Movement playerMovement;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        playerMovement = player.GetComponent<Movement>();
     }
     private void Update()
     {
-
-        if (interactionPrompt.activeInHierarchy && Input.GetKeyDown(KeyCode.E)) // Check if 'E' is pressed when prompt is active
-        {
-            ChangeScene();
-            interactionPrompt.SetActive(false); // Hide the interaction prompt
-        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -29,18 +26,10 @@ public class LoadNewScene : MonoBehaviour
         Debug.Log("Collision gang");
         if (other.CompareTag("Player"))
         {
-            interactionPrompt.SetActive(true); // Show interaction prompt
+            playerMovement.enabled = false;
+            ChangeScene();
         }
     }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            interactionPrompt.SetActive(false); // Hide interaction prompt
-        }
-    }
-
     void ChangeScene()
     {
         StartCoroutine(Transition());
