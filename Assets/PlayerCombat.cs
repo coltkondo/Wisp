@@ -6,6 +6,7 @@ public class PlayerCombat : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
     public Animator animator;
+    public GameObject manager;
     public Transform attackPoint;
     public Transform attackPointAbove; // New attack point for attacking above
     public float attackRange = 0.5f;
@@ -25,34 +26,19 @@ public class PlayerCombat : MonoBehaviour
     [Header("Audio")]
     public PlayerAudio playerAudio;
 
+    private DialogueManager diaManager;
+
     private void Start()
     {
         playerAudio = GetComponent<PlayerAudio>();
+        diaManager = manager.GetComponent<DialogueManager>();
+
     }
 
     private bool isHoldingW = false;
 
     void Update()
     {
-        HandleShooting();
-
-        if (Time.time >= nextAttackTime)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {   
-                playerAudio.AttackSource.Play();
-                if (isHoldingW)
-                {
-                    AttackAbove();
-                }
-                else
-                {
-                    Attack();
-                }
-                nextAttackTime = Time.time + 1f / attackRate;
-            }
-        }
-
         if (Input.GetKeyDown(KeyCode.W))
         {
             isHoldingW = true;
@@ -61,6 +47,30 @@ public class PlayerCombat : MonoBehaviour
         {
             isHoldingW = false;
         }
+
+        if (diaManager.isTalking == false)
+        {
+            HandleShooting();
+
+            if (Time.time >= nextAttackTime)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    playerAudio.AttackSource.Play();
+                    if (isHoldingW)
+                    {
+                        AttackAbove();
+                    }
+                    else
+                    {
+                        Attack();
+                    }
+                    nextAttackTime = Time.time + 1f / attackRate;
+                }
+            }
+
+        }
+        
     }
 
     void AttackAbove()

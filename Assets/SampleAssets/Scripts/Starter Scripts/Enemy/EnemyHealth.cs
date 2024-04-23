@@ -99,12 +99,21 @@ public class EnemyHealth : MonoBehaviour
     private void HandleDeath()
     {
         currentHealth = 0;
-		CapsuleCollider2D collider = GetComponent<CapsuleCollider2D>();
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        /*CapsuleCollider2D collider = GetComponent<CapsuleCollider2D>();
+        Damager damage = GetComponent<Damager>();
+        if (damage != null)
+        {
+            //damage.alignmnent = Damager.Alignment.Dead;
+            damage.damageValue = 0;
+        }
         if (collider != null)
         {
-            collider.enabled = false;
-        }
+            //collider.layer
+        }*/
+
+        gameObject.layer = 9;
+
         if (rb != null)
         {
             rb.Sleep();

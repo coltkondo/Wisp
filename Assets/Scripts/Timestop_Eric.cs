@@ -8,6 +8,7 @@ public class Timestop_Eric : MonoBehaviour
 {
     public GameObject timeBar;
     public GameObject player;
+    public GameObject manager;
 
     public int currentTimePoints;
     public int maxTimePoints;
@@ -15,6 +16,7 @@ public class Timestop_Eric : MonoBehaviour
     private PlayerAudio playerAudio;
     private PlayerHealth playerHealth;
     private GameManager gameManager;
+    private DialogueManager diaManager;
 
     private Animator animator;
     // Start is called before the first frame update
@@ -23,6 +25,7 @@ public class Timestop_Eric : MonoBehaviour
         playerAudio = player.GetComponent<PlayerAudio>();
         playerHealth = player.GetComponent<PlayerHealth>();
         gameManager = FindAnyObjectByType<GameManager>();
+        diaManager = manager.GetComponent<DialogueManager>();
 
         timeBar.GetComponent<Image>().type = Image.Type.Filled;
         currentTimePoints = maxTimePoints;
@@ -30,28 +33,33 @@ public class Timestop_Eric : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X) && !gameManager.timeStopRunning) //X Click for Input - Main Time Stop
+        if (diaManager.isTalking == false)
         {
-            if (currentTimePoints != 0)
-            {
-                decreaseTimePoints(1);
-                //perform time stop effects here
-                gameManager.timeIsStopped = true;
-            }
-            
-        }
-
-        if (playerHealth.currentHealth != 3) {
-            if (Input.GetKeyDown(KeyCode.Z)) //Z Click for Heal
+            if (Input.GetKeyDown(KeyCode.X) && !gameManager.timeStopRunning) //X Click for Input - Main Time Stop
             {
                 if (currentTimePoints != 0)
                 {
-                    Debug.Log("Heal Key Pressed");
-                    Debug.Log("Audio playing: " + playerAudio.HealSource.isPlaying);
                     decreaseTimePoints(1);
-                    StartCoroutine(PlayerHealFreeze());
+                    //perform time stop effects here
+                    gameManager.timeIsStopped = true;
+                }
+
+            }
+
+            if (playerHealth.currentHealth != 3)
+            {
+                if (Input.GetKeyDown(KeyCode.Z)) //Z Click for Heal
+                {
+                    if (currentTimePoints != 0)
+                    {
+                        Debug.Log("Heal Key Pressed");
+                        Debug.Log("Audio playing: " + playerAudio.HealSource.isPlaying);
+                        decreaseTimePoints(1);
+                        StartCoroutine(PlayerHealFreeze());
+                    }
                 }
             }
+        
         }
     }
 
