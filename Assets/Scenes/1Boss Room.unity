@@ -394,11 +394,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 220951843459854119, guid: 99442e0ff6ad14fbcbdaafcb9398baf9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.47
+      value: -6.98
       objectReference: {fileID: 0}
     - target: {fileID: 220951843459854119, guid: 99442e0ff6ad14fbcbdaafcb9398baf9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.18
+      value: 2.88
       objectReference: {fileID: 0}
     - target: {fileID: 220951843459854119, guid: 99442e0ff6ad14fbcbdaafcb9398baf9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -437,6 +437,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6145891172869560236, guid: 99442e0ff6ad14fbcbdaafcb9398baf9, type: 3}
+      propertyPath: slashSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d8d720da9ef90ec44b1d146f359d5341, type: 3}
+    - target: {fileID: 6145891172869560236, guid: 99442e0ff6ad14fbcbdaafcb9398baf9, type: 3}
+      propertyPath: VolumeLevel
+      value: 0.365
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145891172869560236, guid: 99442e0ff6ad14fbcbdaafcb9398baf9, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6145891172869560236, guid: 99442e0ff6ad14fbcbdaafcb9398baf9, type: 3}
       propertyPath: endPosition
       value: 
       objectReference: {fileID: 196302804}
@@ -458,7 +470,15 @@ PrefabInstance:
       objectReference: {fileID: 817182946}
     - target: {fileID: 8804517229780164891, guid: 99442e0ff6ad14fbcbdaafcb9398baf9, type: 3}
       propertyPath: maxHealth
-      value: 20
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8804517229780164891, guid: 99442e0ff6ad14fbcbdaafcb9398baf9, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d697f2828bc2b447b3ff92bd8ee9b89, type: 3}
+    - target: {fileID: 8804517229780164891, guid: 99442e0ff6ad14fbcbdaafcb9398baf9, type: 3}
+      propertyPath: audioSource
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8804517229780164891, guid: 99442e0ff6ad14fbcbdaafcb9398baf9, type: 3}
       propertyPath: HealthBar_fill

@@ -15,9 +15,18 @@ public class Boss_Projectile : MonoBehaviour
 
     private float remainingLifetime; // Remaining lifetime for the projectile
 
+    [Header("Audio Settings")]
+    [HideInInspector] public AudioSource ShootSource;
+    public AudioClip ShootAudioClip;
+	public bool LoopShootAudio = false;
+    [Range(0, 1)]
+	public float VolumeLevel = 1;
+    
+
     void Start()
     {
         // Start the summoning animation
+        SetupAudio();
         animator.Play("Boss_Proj_Summon");
         gameManager = FindObjectOfType<GameManager>(); // Corrected method name for finding the GameManager
         // Set to launch the projectile after a delay
@@ -25,12 +34,27 @@ public class Boss_Projectile : MonoBehaviour
 
         remainingLifetime = lifetime; // Initialize remaining lifetime
     }
+    void SetupAudio(){
+        GameObject ShootGameObject = new GameObject("ShootAudioSource");
+		AssignParent(ShootGameObject);
+		ShootSource = ShootGameObject.AddComponent<AudioSource>();
+		ShootSource.clip = ShootAudioClip;
+		ShootSource.volume = VolumeLevel;
+		ShootSource.loop = LoopShootAudio;
+
+    }
+
+    void AssignParent(GameObject obj)
+	{
+		obj.transform.parent = transform;
+	}
 
     void LaunchProjectile()
     {
         // Set the target position to the player's current position at the time of launch
         targetPosition = GameObject.FindWithTag("Player").transform.position;
         isSummoned = true;
+        ShootSource.Play();
     }
 
     void Update()
