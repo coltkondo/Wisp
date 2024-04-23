@@ -16,6 +16,8 @@ public class CutsceneControl : MonoBehaviour
     public float textFade = 1.0f;
     public bool isFading = false;
 
+    public int nextSceneIndex = 2;
+
     public bool buttonActive = false;
 
     public bool isPaused = false;
@@ -82,7 +84,7 @@ public class CutsceneControl : MonoBehaviour
     void EndReached(VideoPlayer vp)
     {
         isFading = true;
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(nextSceneIndex);
     }
 
     void ActivateButton()

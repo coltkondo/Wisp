@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class EnemyHealth : MonoBehaviour
 
     [Header("Audio Settings")]
     public AudioClip deathSound; // The sound that plays upon death
+
+    public GameObject fadeOutImage;
+
+    public AudioSource BossMusic;
     [HideInInspector] public AudioSource DeathSource;
 
     private Image healthBarImage;
@@ -84,6 +89,36 @@ public class EnemyHealth : MonoBehaviour
         Destroy(gameObject);
         if (EnemyHealthBar) Destroy(HealthBar.gameObject);
     }
+    private	IEnumerator Transition() {
+        Animator anim = fadeOutImage.GetComponent<Animator>();
+        anim.SetTrigger("StartFadeOut"); // Make sure the trigger name matches the one in the Animator
+        // Wait for the animation to finish
+        yield return new WaitForSeconds(2); // Adjust this time based on the animation length
+
+		anim.ResetTrigger("StartFadeOut");
+		anim.ResetTrigger("StartFadeIn");
+
+        SceneManager.LoadScene(1);
+	}
+
+    private IEnumerator HandleDeathSequence()
+    {
+        yield return StartCoroutine(DestroyAfterAnimation());
+        StartCoroutine(Transition());
+    }
+
+    IEnumerator FadeOutBossMusic(float fadeTime)
+    {
+        float startVolume = BossMusic.volume;
+
+        while (BossMusic.volume > 0)
+        {
+            BossMusic.volume -= startVolume * Time.deltaTime / fadeTime;
+            yield return null;
+        }
+
+        BossMusic.Stop();
+        }
 
     IEnumerator dmgFlicker()
     {
@@ -127,7 +162,8 @@ public class EnemyHealth : MonoBehaviour
             rb.Sleep();
         }
         anim.SetBool("isDead", true);
-        StartCoroutine(DestroyAfterAnimation());
+        StartCoroutine(FadeOutBossMusic(3.0f));
+        StartCoroutine(HandleDeathSequence());
     }
 
     private void DropItems()

@@ -1,0 +1,3 @@
+[NAME=???][SPEAKERSPRITE=]Stunning performance! 
+[NAME=???][SPEAKERSPRITE=]Truly amazing!
+[NAME=Wisp][SPEAKERSPRITE=Wisp]Who's there?!
