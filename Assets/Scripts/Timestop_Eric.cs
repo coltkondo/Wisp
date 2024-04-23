@@ -17,6 +17,9 @@ public class Timestop_Eric : MonoBehaviour
     private GameManager gameManager;
 
     private Animator animator;
+
+    public GameObject manager;
+    private DialogueManager dialogueManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,35 +27,42 @@ public class Timestop_Eric : MonoBehaviour
         playerHealth = player.GetComponent<PlayerHealth>();
         gameManager = FindAnyObjectByType<GameManager>();
 
+        dialogueManager = manager.GetComponent<DialogueManager>();
+
         timeBar.GetComponent<Image>().type = Image.Type.Filled;
         currentTimePoints = maxTimePoints;
         updateTimeBar();
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X) && !gameManager.timeStopRunning) //X Click for Input - Main Time Stop
+        if (dialogueManager.isTalking == false)
         {
-            if (currentTimePoints != 0)
-            {
-                decreaseTimePoints(1);
-                //perform time stop effects here
-                gameManager.timeIsStopped = true;
-            }
-            
-        }
-
-        if (playerHealth.currentHealth != 3) {
-            if (Input.GetKeyDown(KeyCode.Z)) //Z Click for Heal
+            if (Input.GetKeyDown(KeyCode.X) && !gameManager.timeStopRunning) //X Click for Input - Main Time Stop
             {
                 if (currentTimePoints != 0)
                 {
-                    Debug.Log("Heal Key Pressed");
-                    Debug.Log("Audio playing: " + playerAudio.HealSource.isPlaying);
                     decreaseTimePoints(1);
-                    StartCoroutine(PlayerHealFreeze());
+                    //perform time stop effects here
+                    gameManager.timeIsStopped = true;
+                }
+
+            }
+
+            if (playerHealth.currentHealth != 3)
+            {
+                if (Input.GetKeyDown(KeyCode.Z)) //Z Click for Heal
+                {
+                    if (currentTimePoints != 0)
+                    {
+                        Debug.Log("Heal Key Pressed");
+                        Debug.Log("Audio playing: " + playerAudio.HealSource.isPlaying);
+                        decreaseTimePoints(1);
+                        StartCoroutine(PlayerHealFreeze());
+                    }
                 }
             }
         }
+        
     }
 
         // Time Bar Section - Updates the UI for changes to player's time points.
