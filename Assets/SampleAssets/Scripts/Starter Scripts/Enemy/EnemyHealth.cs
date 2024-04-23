@@ -33,6 +33,8 @@ public class EnemyHealth : MonoBehaviour
     [Range(0, 1)]
 	public float VolumeLevel = 1;
 
+    public float animationDelay = 2.0f;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -77,7 +79,7 @@ public class EnemyHealth : MonoBehaviour
 
     private IEnumerator DestroyAfterAnimation()
     {
-        yield return new WaitForSeconds(2.0f); // Wait for death animation to play out
+        yield return new WaitForSeconds(animationDelay); // Wait for death animation to play out
         DropItems();
         Destroy(gameObject);
         if (EnemyHealthBar) Destroy(HealthBar.gameObject);
