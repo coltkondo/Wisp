@@ -30,6 +30,7 @@ public class NPCFollow : MonoBehaviour
     void Update()
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
+        animator.SetFloat("distance", distance);
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();
 

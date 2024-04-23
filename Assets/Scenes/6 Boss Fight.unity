@@ -125840,6 +125840,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Upgraded Wisp
       objectReference: {fileID: 0}
+    - target: {fileID: 7360567395182073863, guid: bc423d90ddd17044391f8feff7df9416, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 614999987}
+    - target: {fileID: 8569635994142274644, guid: bc423d90ddd17044391f8feff7df9416, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 614999987}
     - target: {fileID: 8569635994142274644, guid: bc423d90ddd17044391f8feff7df9416, type: 3}
       propertyPath: timeBar
       value: 
