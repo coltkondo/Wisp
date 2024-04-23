@@ -1778,7 +1778,7 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 8039329330583948016}
   confirmQuit: {fileID: 8411484478615473696}
   settingsMenu: {fileID: 4706616668259158780}
-  player: {fileID: 0}
+  player: {fileID: 3452270629591168218, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
 --- !u!1 &2137788197560752385
 GameObject:
   m_ObjectHideFlags: 0

@@ -54,7 +54,7 @@ public class MenuPause : MonoBehaviour
     }
     public void QuitYes() {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("GameStart");
+        SceneManager.LoadScene("0 GameStart");
     }
 
     public void QuitNo() {
