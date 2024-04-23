@@ -3151,8 +3151,11 @@ MonoBehaviour:
   isTransition: 0
   objectsToDisable: []
   objectsToEnable: []
+  player: {fileID: 0}
+  playerObject: {fileID: 0}
   hasBeenUsed: 0
   interactionPrompt: {fileID: 0}
+  hasScythe: 1
 --- !u!212 &300474154
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38935,6 +38938,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 8412915472332013128, guid: 2119dac6a27e746419b17d53c72a4fc5, type: 3}
+      propertyPath: VolumeLevel
+      value: 0.323
+      objectReference: {fileID: 0}
     - target: {fileID: 9100796918288698028, guid: 2119dac6a27e746419b17d53c72a4fc5, type: 3}
       propertyPath: m_Name
       value: SkeleEnemy
@@ -39990,8 +39997,11 @@ MonoBehaviour:
   - {fileID: 1000297628}
   - {fileID: 866185103}
   objectsToEnable: []
+  player: {fileID: 0}
+  playerObject: {fileID: 0}
   hasBeenUsed: 0
   interactionPrompt: {fileID: 438854562}
+  hasScythe: 1
 --- !u!114 &1000297637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103277,6 +103287,10 @@ MonoBehaviour:
   LoopJumpAudio: 0
   DamageAudioClip: {fileID: 0}
   LoopDamageAudio: 0
+  HealAudioClip: {fileID: 0}
+  LoopHealAudio: 0
+  TimeStopAudioClip: {fileID: 0}
+  LoopTimeStopAudio: 0
   VolumeLevel: 0.384
   WalkSource: {fileID: 0}
   AttackSource: {fileID: 0}
@@ -103284,6 +103298,8 @@ MonoBehaviour:
   DeathSource: {fileID: 0}
   JumpSource: {fileID: 0}
   DamageSource: {fileID: 0}
+  HealSource: {fileID: 0}
+  TimeStopSource: {fileID: 0}
 --- !u!1 &1626086331 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3045686736294889905, guid: f997f720a82db9d41815d18e6a495343, type: 3}
@@ -103866,6 +103882,8 @@ MonoBehaviour:
   speakerLibrary: {fileID: 11400000, guid: 5f6138b7d9482b142a255791c78eb123, type: 2}
   speakerSpriteNames: []
   freezePlayerOnDialogue: 1
+  fadeOutImage: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1777693553 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4792675639098790034, guid: ba8dc31b6daecb644a65b34f36e7840a, type: 3}
@@ -104478,11 +104496,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1645768335579175570, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.08
+      value: 59.94
       objectReference: {fileID: 0}
     - target: {fileID: 1645768335579175570, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.02
+      value: 2.37
       objectReference: {fileID: 0}
     - target: {fileID: 1645768335579175570, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: m_LocalPosition.z

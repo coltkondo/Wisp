@@ -360,7 +360,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.68, y: 6.63, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 1}
+  m_LocalScale: {x: 4.5, y: 4.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1048188932160943085}
@@ -483,6 +483,7 @@ MonoBehaviour:
   canvasRectTransform: {fileID: 0}
   itemPrefab: {fileID: 5002716552632815579, guid: 78212a995efed47e2ab4fa6e18bbd5b3, type: 3}
   numberOfItemsToDrop: 10
+  deathSound: {fileID: 8300000, guid: 5d697f2828bc2b447b3ff92bd8ee9b89, type: 3}
 --- !u!70 &1656822313108406698
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

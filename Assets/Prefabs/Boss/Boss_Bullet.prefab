@@ -188,6 +188,10 @@ MonoBehaviour:
   animator: {fileID: 2743455958089420964}
   summonDelay: 3
   lifetime: 3
+  ShootSource: {fileID: 0}
+  ShootAudioClip: {fileID: 8300000, guid: 5e7cad6f7a91b1c45903a1bf4bca0c9a, type: 3}
+  LoopShootAudio: 0
+  VolumeLevel: 0.949
 --- !u!114 &8886812297437269068
 MonoBehaviour:
   m_ObjectHideFlags: 0
