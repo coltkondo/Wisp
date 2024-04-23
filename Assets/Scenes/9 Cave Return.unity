@@ -111696,6 +111696,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7871766548928998085, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1786455963}
+    - target: {fileID: 7871766548928998085, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: attackRate
       value: 1
       objectReference: {fileID: 0}
@@ -111707,6 +111711,14 @@ PrefabInstance:
       propertyPath: playerAudio
       value: 
       objectReference: {fileID: 868716164}
+    - target: {fileID: 7871766548928998085, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: attackDamage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084568360553902649, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1786455963}
     - target: {fileID: 8084568360553902649, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: timeBar
       value: 

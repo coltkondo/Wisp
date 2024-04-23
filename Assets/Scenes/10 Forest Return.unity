@@ -6113,7 +6113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5180387783018373032, guid: 1ac0acc1519a34aa0b0e8985665a7a8b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.36
+      value: 2.04
       objectReference: {fileID: 0}
     - target: {fileID: 6008428095278589359, guid: 1ac0acc1519a34aa0b0e8985665a7a8b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -102697,6 +102697,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BugEnemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4641783004158329526, guid: 1ac0acc1519a34aa0b0e8985665a7a8b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 5180387783018373032, guid: 1ac0acc1519a34aa0b0e8985665a7a8b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6008428095278589359, guid: 1ac0acc1519a34aa0b0e8985665a7a8b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 62.673527
@@ -116299,6 +116307,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7871766548928998085, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1777133432}
+    - target: {fileID: 7871766548928998085, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: attackRate
       value: 1
       objectReference: {fileID: 0}
@@ -116318,6 +116330,10 @@ PrefabInstance:
       propertyPath: timestop_script
       value: 
       objectReference: {fileID: 1604222990}
+    - target: {fileID: 8084568360553902649, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1777133432}
     - target: {fileID: 8084568360553902649, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: timeBar
       value: 
