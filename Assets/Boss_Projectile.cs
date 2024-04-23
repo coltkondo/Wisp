@@ -5,16 +5,12 @@ public class Boss_Projectile : MonoBehaviour
     public float speed = 5f; // Speed of the projectile
     public Animator animator; // Animator component
 
-    private Vector3 targetPosition;
-    private bool isSummoned = false;
-
-    public float summonDelay = 3f;
-    public float lifetime = 5f; // Lifetime of the projectile in seconds
-
     private GameManager gameManager;
 
     private float remainingLifetime; // Remaining lifetime for the projectile
     private Rigidbody2D rb; // Rigidbody2D component
+    private Vector2 storedVelocity; // To store the velocity when time is stopped
+    private bool isFrozen = false; // Flag to check if projectile is currently frozen
 
     [Header("Audio Settings")]
     [HideInInspector] public AudioSource ShootSource;
@@ -28,14 +24,14 @@ public class Boss_Projectile : MonoBehaviour
         SetupAudio();
         animator.Play("Boss_Proj_Summon");
         gameManager = FindObjectOfType<GameManager>();
-        rb = GetComponent<Rigidbody2D>(); // Get the Rigidbody2D component
+        rb = GetComponent<Rigidbody2D>();
         if (rb == null) {
-            rb = gameObject.AddComponent<Rigidbody2D>(); // Add Rigidbody2D if not already attached
+            rb = gameObject.AddComponent<Rigidbody2D>();
         }
-        rb.gravityScale = 0; // Ensure the projectile does not fall downwards due to gravity
-        Invoke(nameof(LaunchProjectile), summonDelay);
+        rb.gravityScale = 0;
+        Invoke(nameof(LaunchProjectile), 3f); // Use the summonDelay directly here if variable required
 
-        remainingLifetime = lifetime;
+        remainingLifetime = 5f; // Use the lifetime directly here if variable required
     }
 
     void SetupAudio()
@@ -55,19 +51,33 @@ public class Boss_Projectile : MonoBehaviour
 
     void LaunchProjectile()
     {
-        targetPosition = GameObject.FindWithTag("Player").transform.position;
-        isSummoned = true;
-        Vector2 moveDirection = (targetPosition - transform.position).normalized * speed;
+        Vector2 moveDirection = (GameObject.FindWithTag("Player").transform.position - transform.position).normalized * speed;
         rb.velocity = moveDirection;
         ShootSource.Play();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (isSummoned && !gameManager.timeIsStopped)
+        if (!gameManager.timeIsStopped && isFrozen)
         {
-            // Remaining lifetime update
-            remainingLifetime -= Time.deltaTime;
+            // Resume movement with the stored velocity
+            rb.isKinematic = false;
+            rb.velocity = storedVelocity;
+            isFrozen = false;
+        }
+        else if (gameManager.timeIsStopped && !isFrozen)
+        {
+            // Store the current velocity and stop movement
+            storedVelocity = rb.velocity;
+            rb.velocity = Vector2.zero;
+            rb.isKinematic = true;
+            isFrozen = true;
+        }
+
+        if (!gameManager.timeIsStopped)
+        {
+            // Continue counting down lifetime only when time is not stopped
+            remainingLifetime -= Time.fixedDeltaTime;
             if (remainingLifetime <= 0f)
             {
                 Destroy(gameObject);
