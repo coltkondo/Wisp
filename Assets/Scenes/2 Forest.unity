@@ -3006,6 +3006,10 @@ PrefabInstance:
       propertyPath: amplitude
       value: 0.18
       objectReference: {fileID: 0}
+    - target: {fileID: -8905301980029209447, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 5332864416336636836, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
       propertyPath: m_Name
       value: Scroll (2)
@@ -5695,6 +5699,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1604222988}
+    - target: {fileID: 5579564364004376175, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7139c41cb6d39fe4eb077c3a0f538e8b, type: 2}
     - target: {fileID: 6481828694286370037, guid: f997f720a82db9d41815d18e6a495343, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5804,6 +5812,11 @@ GameObject:
 --- !u!95 &302302290 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 871099442754303216, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+  m_PrefabInstance: {fileID: 302302288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &302302291 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5426763775134503728, guid: f997f720a82db9d41815d18e6a495343, type: 3}
   m_PrefabInstance: {fileID: 302302288}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &306293127
@@ -6169,6 +6182,11 @@ Transform:
 --- !u!1 &438854562 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6488170644263000340, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+  m_PrefabInstance: {fileID: 302302288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &442802130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6782323416061090190, guid: f997f720a82db9d41815d18e6a495343, type: 3}
   m_PrefabInstance: {fileID: 302302288}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &449367694
@@ -45553,11 +45571,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9611c8adde81d41aaa161e65094b56f0, type: 3}
---- !u!1 &1000297628 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5192964685935963546, guid: 77d918b5c19a6b24e8d9ea7670a1ac82, type: 3}
-  m_PrefabInstance: {fileID: 6864707021099285108}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1001686052 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7943187249740008579, guid: 1cc16129ccc4b40afa3c6f701047da67, type: 3}
@@ -104447,6 +104460,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8905301980029209447, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 5332864416336636836, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
       propertyPath: m_Name
       value: Scroll (1)
@@ -115324,33 +115341,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8965207512815088854, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
   m_PrefabInstance: {fileID: 1963895737}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1777133436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777133432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07429bf1d023ee04487c64d0dc12e4ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DialogueUI: {fileID: 593444438}
-  TextBox: {fileID: 1454074850}
-  NameText: {fileID: 1206346835}
-  speaker: {fileID: 586187936}
-  continueImage: {fileID: 931689716}
-  isScrollingText: 1
-  typeSpeed: 0.01
-  currentTrigger: {fileID: 0}
-  isInDialouge: 0
-  invisSprite: {fileID: 0}
-  speakerLibrary: {fileID: 11400000, guid: 5f6138b7d9482b142a255791c78eb123, type: 2}
-  speakerSpriteNames: []
-  freezePlayerOnDialogue: 1
-  fadeOutImage: {fileID: 194443910}
-  player: {fileID: 1604222976}
 --- !u!1001 &1801147726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -115362,6 +115352,10 @@ PrefabInstance:
     - target: {fileID: -8905301980029209447, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
       propertyPath: amplitude
       value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: -8905301980029209447, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 5332864416336636836, guid: ddca8b2b2989f4563ba6a0f3b10387ab, type: 3}
       propertyPath: m_Name
@@ -116123,10 +116117,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 593444438}
     - target: {fileID: 3026630446990555794, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
-      propertyPath: invisSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 6422b21f00c0a2141957fd15401664b3, type: 3}
-    - target: {fileID: 3026630446990555794, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
       propertyPath: fadeOutImage
       value: 
       objectReference: {fileID: 194443910}
@@ -116134,26 +116124,10 @@ PrefabInstance:
       propertyPath: continueImage
       value: 
       objectReference: {fileID: 931689716}
-    - target: {fileID: 3026630446990555794, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
-      propertyPath: speakerLibrary
+    - target: {fileID: 3394909527261201120, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
+      propertyPath: Transition
       value: 
-      objectReference: {fileID: 11400000, guid: 5f6138b7d9482b142a255791c78eb123, type: 2}
-    - target: {fileID: 3026630446990555794, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
-      propertyPath: freezePlayerOnDialogue
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026630446990555794, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
-      propertyPath: objectsToDisable.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3026630446990555794, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
-      propertyPath: objectsToDisable.Array.data[0]
-      value: 
-      objectReference: {fileID: 1000297628}
-    - target: {fileID: 3026630446990555794, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
-      propertyPath: objectsToDisable.Array.data[1]
-      value: 
-      objectReference: {fileID: 866185103}
+      objectReference: {fileID: 302302291}
     - target: {fileID: 3462653073603374687, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.78
@@ -116210,10 +116184,34 @@ PrefabInstance:
       propertyPath: RespawnPlace.y
       value: -3.07
       objectReference: {fileID: 0}
-    - target: {fileID: 5354452291545427814, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
-      propertyPath: timeFreezeDuration
-      value: 3
-      objectReference: {fileID: 0}
+    - target: {fileID: 8662330718422002416, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1604222976}
+    - target: {fileID: 8662330718422002416, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
+      propertyPath: TextBox
+      value: 
+      objectReference: {fileID: 1454074850}
+    - target: {fileID: 8662330718422002416, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
+      propertyPath: speaker
+      value: 
+      objectReference: {fileID: 586187936}
+    - target: {fileID: 8662330718422002416, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
+      propertyPath: NameText
+      value: 
+      objectReference: {fileID: 1206346835}
+    - target: {fileID: 8662330718422002416, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
+      propertyPath: DialogueUI
+      value: 
+      objectReference: {fileID: 593444438}
+    - target: {fileID: 8662330718422002416, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
+      propertyPath: fadeOutImage
+      value: 
+      objectReference: {fileID: 194443910}
+    - target: {fileID: 8662330718422002416, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
+      propertyPath: continueImage
+      value: 
+      objectReference: {fileID: 931689716}
     - target: {fileID: 8965207512815088854, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
       propertyPath: m_Name
       value: Managers
@@ -116221,10 +116219,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8965207512815088854, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 1777133436}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
 --- !u!4 &1980777137 stripped
 Transform:
@@ -116495,6 +116490,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1079923060}
     - target: {fileID: 3356057517831624795, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: youDiedText
+      value: 
+      objectReference: {fileID: 442802130}
+    - target: {fileID: 3356057517831624795, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: useHealthBar
       value: 0
       objectReference: {fileID: 0}
@@ -116574,6 +116573,10 @@ PrefabInstance:
       propertyPath: playerAudio
       value: 
       objectReference: {fileID: 1604222986}
+    - target: {fileID: 7871766548928998085, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: attackDamage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7871766548928998085, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: timestop_script
       value: 
@@ -117440,7 +117443,8 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1391762704565977961, guid: 77d918b5c19a6b24e8d9ea7670a1ac82, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

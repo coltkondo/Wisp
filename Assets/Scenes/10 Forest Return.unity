@@ -5805,6 +5805,16 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 871099442754303216, guid: f997f720a82db9d41815d18e6a495343, type: 3}
   m_PrefabInstance: {fileID: 302302288}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &302302291 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6782323416061090190, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+  m_PrefabInstance: {fileID: 302302288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &302302292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5426763775134503728, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+  m_PrefabInstance: {fileID: 302302288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &306293127
 GameObject:
   m_ObjectHideFlags: 0
@@ -115999,6 +116009,10 @@ PrefabInstance:
       propertyPath: objectsToDisable.Array.data[1]
       value: 
       objectReference: {fileID: 866185103}
+    - target: {fileID: 3394909527261201120, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
+      propertyPath: Transition
+      value: 
+      objectReference: {fileID: 302302292}
     - target: {fileID: 3462653073603374687, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.78
@@ -116063,7 +116077,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8662330718422002416, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -116319,6 +116334,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1079923060}
+    - target: {fileID: 3356057517831624795, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: youDiedText
+      value: 
+      objectReference: {fileID: 302302291}
     - target: {fileID: 3356057517831624795, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: useHealthBar
       value: 0

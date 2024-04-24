@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3462653073603374687}
   - component: {fileID: 5354452291545427814}
   - component: {fileID: 3026630446990555794}
+  - component: {fileID: 8662330718422002416}
   - component: {fileID: 3394909527261201120}
   - component: {fileID: 5498988315087516622}
   m_Layer: 0
@@ -51,7 +52,9 @@ MonoBehaviour:
   timeFreezeDuration: 3
   enemies: []
   anim: []
-  RespawnPlace: {x: 0, y: 0, z: 0}
+  timestop_UI: {fileID: 0}
+  RespawnPlace: {x: 23.81, y: -3.07, z: 0}
+  timeStopRunning: 0
   Player: {fileID: 0}
 --- !u!114 &3026630446990555794
 MonoBehaviour:
@@ -73,10 +76,41 @@ MonoBehaviour:
   isScrollingText: 1
   typeSpeed: 0.01
   currentTrigger: {fileID: 0}
-  invisSprite: {fileID: 0}
-  speakerLibrary: {fileID: 0}
+  isInDialouge: 0
+  invisSprite: {fileID: 21300000, guid: 6422b21f00c0a2141957fd15401664b3, type: 3}
+  speakerLibrary: {fileID: 11400000, guid: 5f6138b7d9482b142a255791c78eb123, type: 2}
   speakerSpriteNames: []
   freezePlayerOnDialogue: 1
+  fadeOutImage: {fileID: 0}
+  player: {fileID: 0}
+  isTalking: 0
+--- !u!114 &8662330718422002416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8965207512815088854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07429bf1d023ee04487c64d0dc12e4ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueUI: {fileID: 0}
+  TextBox: {fileID: 0}
+  NameText: {fileID: 0}
+  speaker: {fileID: 0}
+  continueImage: {fileID: 0}
+  isScrollingText: 1
+  typeSpeed: 0.01
+  currentTrigger: {fileID: 0}
+  isInDialouge: 0
+  invisSprite: {fileID: 0}
+  speakerLibrary: {fileID: 11400000, guid: 5f6138b7d9482b142a255791c78eb123, type: 2}
+  speakerSpriteNames: []
+  freezePlayerOnDialogue: 1
+  fadeOutImage: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &3394909527261201120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155555feb21b3444bba1aa8a3e623f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Transition: {fileID: 694469586231803010, guid: 6ce8052fecc8d334087060156cb0e319, type: 3}
+  Transition: {fileID: 0}
   startWithFadeIn: 1
 --- !u!114 &5498988315087516622
 MonoBehaviour:

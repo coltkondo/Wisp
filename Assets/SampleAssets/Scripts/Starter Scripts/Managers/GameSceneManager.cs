@@ -13,9 +13,16 @@ public class GameSceneManager : MonoBehaviour
 
     [Tooltip("If you want to open this scene with a fade in")]
     public bool startWithFadeIn = true;
+
+    private GameObject player;
+    private PlayerHealth playerHealth;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        playerHealth = player.GetComponent<PlayerHealth>();
+
         if (startWithFadeIn)
         {
             StartCoroutine(FadeIn());
@@ -44,17 +51,20 @@ public class GameSceneManager : MonoBehaviour
     public IEnumerator FadeIn()
     {
         Transition.SetActive(true);
-        Transition.GetComponent<Animator>().SetBool("FadeIn", true);
+        Debug.Log("Transition Active: " + Transition.activeInHierarchy);
+        //yield return new WaitForSeconds(0.1f);
+        Transition.GetComponent<Animator>().SetTrigger("StartFadeIn");
         yield return new WaitForSeconds(0.7f);
-        Transition.GetComponent<Animator>().SetBool("FadeIn", false);
+        //Transition.GetComponent<Animator>().SetTrigger("StartFadeIn");
+        //yield return new WaitForSeconds(0.4f);
         Transition.SetActive(false);
     }
 
     public IEnumerator FadeOut()
     {
         Transition.SetActive(true);
-        Transition.GetComponent<Animator>().SetBool("FadeOut", true);
-        yield return new WaitForSeconds(0.7f);
-        Transition.GetComponent<Animator>().SetBool("FadeOut", false);
+        Transition.GetComponent<Animator>().SetTrigger("StartFadeOut");
+        yield return new WaitForSeconds(playerHealth.deathFadeTime);
+        //Transition.GetComponent<Animator>().SetBool("StartFadeOut", false);
     }
 }
