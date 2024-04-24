@@ -38,7 +38,7 @@ public class EnemyHealth : MonoBehaviour
     [Range(0, 1)]
 	public float VolumeLevel = 1;
 
-    public float animationDelay = 2.0f;
+    public float animationDelay;
 
     void Start()
     {
@@ -84,7 +84,9 @@ public class EnemyHealth : MonoBehaviour
 
     private IEnumerator DestroyAfterAnimation()
     {
+        Debug.Log("Start Animation Delay for " + animationDelay + "seconds");
         yield return new WaitForSeconds(animationDelay); // Wait for death animation to play out
+        Debug.Log("End Animation Delay");
         DropItems();
         if (gameObject.name == "Shadow_Boss")
         {
@@ -174,7 +176,10 @@ public class EnemyHealth : MonoBehaviour
             rb.Sleep();
         }
         anim.SetBool("isDead", true);
-        StartCoroutine(FadeOutBossMusic(3.0f));
+        if (gameObject.name == "Shadow_Boss")
+        {
+            StartCoroutine(FadeOutBossMusic(3.0f));
+        }
         StartCoroutine(HandleDeathSequence());
     }
 

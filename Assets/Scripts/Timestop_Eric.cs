@@ -20,12 +20,14 @@ public class Timestop_Eric : MonoBehaviour
 
     public GameObject manager;
     private DialogueManager dialogueManager;
+    private SpriteRenderer spriteRender;
     // Start is called before the first frame update
     void Start()
     {
         playerAudio = player.GetComponent<PlayerAudio>();
         playerHealth = player.GetComponent<PlayerHealth>();
         gameManager = FindAnyObjectByType<GameManager>();
+        spriteRender = player.GetComponent<SpriteRenderer>();
 
         dialogueManager = manager.GetComponent<DialogueManager>();
 
@@ -58,6 +60,7 @@ public class Timestop_Eric : MonoBehaviour
                         Debug.Log("Audio playing: " + playerAudio.HealSource.isPlaying);
                         decreaseTimePoints(1);
                         StartCoroutine(PlayerHealFreeze());
+                        StartCoroutine(healFlicker());
                     }
                 }
             }
@@ -115,5 +118,22 @@ public class Timestop_Eric : MonoBehaviour
         playerHealth.IncreaseHealth(1);
         yield return new WaitForSeconds(0.2f);
         gameManager.EnablePlayerMovement();
+    }
+
+    IEnumerator healFlicker()
+    {
+        // Red Damage Flicker
+        spriteRender.color = Color.green;
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = Color.green;
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = Color.green;
+        // Return to Normal
+        yield return new WaitForSeconds(0.1f);
+        spriteRender.color = Color.white;
     }
 }
