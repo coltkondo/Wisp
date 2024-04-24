@@ -106,22 +106,19 @@ MonoBehaviour:
   EnemyHealthBar: 0
   maxHealth: 2
   currentHealth: 0
-  maxHealth: 2
-  currentHealth: 0
   padding: 2
   Dimensions: {x: 0, y: 0}
   HealthBar: {fileID: 0}
   HealthBar_fill: {fileID: 0}
-  HealthBar_fill: {fileID: 0}
   canvasRectTransform: {fileID: 0}
   itemPrefab: {fileID: 5002716552632815579, guid: 78212a995efed47e2ab4fa6e18bbd5b3, type: 3}
   numberOfItemsToDrop: 1
-  deathSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 4a30c7496d1d8104d93918d2350404f6, type: 3}
   fadeOutImage: {fileID: 0}
   BossMusic: {fileID: 0}
   DeathSource: {fileID: 0}
   VolumeLevel: 1
-  animationDelay: 2
+  animationDelay: 0.6
 --- !u!114 &6912924099898979769
 MonoBehaviour:
   m_ObjectHideFlags: 0

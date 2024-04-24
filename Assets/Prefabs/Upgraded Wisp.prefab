@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5370880389463768749}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1830605463156257903}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hitCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 7360567395182073863}
   - component: {fileID: 8569635994142274644}
   - component: {fileID: 3225747683219581842}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Upgraded Wisp
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -451,6 +451,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   attackDamage: 2
+  manager: {fileID: 0}
   attackRate: 1
   shootCooldown: 1
   playerAudio: {fileID: 3225747683219581842}
@@ -470,6 +471,7 @@ MonoBehaviour:
   player: {fileID: 3783954695112121794}
   currentTimePoints: 4
   maxTimePoints: 4
+  manager: {fileID: 0}
 --- !u!114 &3225747683219581842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,7 +518,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3394925201391224625}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WallCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,7 +549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5717012718514081614}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hitCheckUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}

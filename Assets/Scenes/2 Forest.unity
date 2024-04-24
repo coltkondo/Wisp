@@ -45496,6 +45496,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 571159336929352317, guid: 9611c8adde81d41aaa161e65094b56f0, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a30c7496d1d8104d93918d2350404f6, type: 3}
+    - target: {fileID: 571159336929352317, guid: 9611c8adde81d41aaa161e65094b56f0, type: 3}
+      propertyPath: animationDelay
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 2559225399817006838, guid: 9611c8adde81d41aaa161e65094b56f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 29.28
@@ -103373,6 +103381,14 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 571159336929352317, guid: 9611c8adde81d41aaa161e65094b56f0, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a30c7496d1d8104d93918d2350404f6, type: 3}
+    - target: {fileID: 571159336929352317, guid: 9611c8adde81d41aaa161e65094b56f0, type: 3}
+      propertyPath: animationDelay
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 2559225399817006838, guid: 9611c8adde81d41aaa161e65094b56f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 61.58
@@ -115579,6 +115595,14 @@ PrefabInstance:
     - target: {fileID: 2568163719105550266, guid: 1ac0acc1519a34aa0b0e8985665a7a8b, type: 3}
       propertyPath: m_Name
       value: BugEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859792084458552803, guid: 1ac0acc1519a34aa0b0e8985665a7a8b, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 716398d65bb6d0e42969d15448f84962, type: 3}
+    - target: {fileID: 4859792084458552803, guid: 1ac0acc1519a34aa0b0e8985665a7a8b, type: 3}
+      propertyPath: animationDelay
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6008428095278589359, guid: 1ac0acc1519a34aa0b0e8985665a7a8b, type: 3}
       propertyPath: m_LocalPosition.x
