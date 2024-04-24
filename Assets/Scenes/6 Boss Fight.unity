@@ -115458,6 +115458,10 @@ PrefabInstance:
       propertyPath: objectsToDisable.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3394909527261201120, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
+      propertyPath: Transition
+      value: 
+      objectReference: {fileID: 971820231}
     - target: {fileID: 3462653073603374687, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.78
@@ -115522,7 +115526,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Managers '
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8662330718422002416, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -116730,6 +116735,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallaxCamera: {fileID: 1231259732}
+--- !u!1 &928331157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6782323416061090190, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+  m_PrefabInstance: {fileID: 1911946229}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &931174178
 GameObject:
   m_ObjectHideFlags: 0
@@ -119871,6 +119881,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &971820231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5426763775134503728, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+  m_PrefabInstance: {fileID: 1911946229}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1004103597
 GameObject:
   m_ObjectHideFlags: 0
@@ -125836,6 +125851,14 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 614999986}
+    - target: {fileID: 757955894993005380, guid: bc423d90ddd17044391f8feff7df9416, type: 3}
+      propertyPath: youDiedText
+      value: 
+      objectReference: {fileID: 928331157}
+    - target: {fileID: 757955894993005380, guid: bc423d90ddd17044391f8feff7df9416, type: 3}
+      propertyPath: deathFadeTime
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 757955894993005380, guid: bc423d90ddd17044391f8feff7df9416, type: 3}
       propertyPath: gameSceneManager
       value: 

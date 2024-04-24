@@ -130,7 +130,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.85, y: -2.04, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7260630247844269246}
@@ -214,7 +214,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -265,14 +265,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b1036248a1f29349b05040ba860e7e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAudio: {fileID: 0}
+  playerAudio: {fileID: 4467638547550068612}
   speed: 6
-  jumpingPower: 12
+  jumpingPower: 15
   isFacingRight: 1
   wallSlidingSpeed: 2
   wallJumpingDuration: 0.01
   wallJumpingPower: {x: 3, y: 8}
-  dashingPower: 4
+  dashingPower: 8
   dashingTime: 0.2
   dashingCooldown: 1
   isDisabled: 0
@@ -435,6 +435,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   gameSceneManager: {fileID: 0}
+  youDiedText: {fileID: 0}
+  sceneIndex: 12
+  deathFadeTime: 1.5
   maxHealth: 3
   currentHealth: 0
   HealthIcons: {fileID: 0}
@@ -442,7 +445,7 @@ MonoBehaviour:
   useHealthBar: 0
   playerAudio: {fileID: 0}
   iFrames: 0
-  iFramesDuration: 0
+  iFramesDuration: 1.5
   index: 0
 --- !u!114 &2144772588267353002
 MonoBehaviour:
@@ -481,11 +484,11 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
-  attackDamage: 1
+  attackDamage: 2
   manager: {fileID: 0}
   attackRate: 1
   shootCooldown: 1
-  playerAudio: {fileID: 0}
+  playerAudio: {fileID: 4467638547550068612}
 --- !u!114 &8084568360553902649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,7 +532,7 @@ MonoBehaviour:
   LoopDamageAudio: 0
   HealAudioClip: {fileID: 8300000, guid: d081376ae7ec8324dbe65cc207d84ab8, type: 3}
   LoopHealAudio: 0
-  TimeStopAudioClip: {fileID: 0}
+  TimeStopAudioClip: {fileID: 8300000, guid: 23a2a229325850d418c181e8ad07011f, type: 3}
   LoopTimeStopAudio: 0
   VolumeLevel: 0.384
   WalkSource: {fileID: 0}

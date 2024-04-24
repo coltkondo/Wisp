@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerHealth : MonoBehaviour
 {
 	public GameManager gameManager;
 	public GameSceneManager gameSceneManager;
+	public GameObject youDiedText;
+	public int sceneIndex = 12;
+	public float deathFadeTime = 1.5f;
 
 	[Header("Health")]
 	[Tooltip("The max health the player can have")]
@@ -248,7 +252,13 @@ public class PlayerHealth : MonoBehaviour
 					DecreaseHealth(weapon.damageValue);
 					if (currentHealth == 0)
 					{
-						TimeToDie();
+                        gameObject.layer = 9;
+						if (playerDead == false)
+						{
+                            TimeToDie();
+                        }
+                        
+						
 					}
 				}
 			}
@@ -275,6 +285,10 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("IFRAMES: COOLDOWN BEGINS");
         yield return new WaitForSeconds(iFramesDuration);
+		if (playerDead)
+		{
+			yield break;
+		}
         iFrames = false;
     }
 
@@ -316,16 +330,17 @@ public class PlayerHealth : MonoBehaviour
         spriteRender.color = Color.white;
     }
 
-
     IEnumerator PlayerDies()
 {
     if (gameManager != null && gameSceneManager != null)
     {
-		
+        playerDead = true;
+		gameObject.layer = 9;
+        iFrames = true;
         // Trigger the death animation
         anim.SetBool("isDead", true);
         Debug.Log("Player has died.");
-		playerDead = true;
+		
         // Disable player movement
         gameManager.DisablePlayerMovement();
         
@@ -337,19 +352,28 @@ public class PlayerHealth : MonoBehaviour
 		yield return new WaitForSeconds(0.2f);
 		anim.SetBool("isDead", false);
         // Wait for 2 seconds to play tanim.SetBool("isDead", false);he death animation
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(0.2f);
 
         // After the death animation, reset the isDead state to stop the animation
         anim.SetBool("isDead", false);
         
         // If you have any death cleanup or respawn animation, start it here
         StartCoroutine(gameSceneManager.FadeOut());
+		youDiedText.SetActive(true);
 
         // Wait for the fade out to complete
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(deathFadeTime);
+
+		youDiedText.SetActive(false);
+        // Respawning the player OR changing level if its the boss
+		if (SceneManager.GetActiveScene().buildIndex == 6)
+			{
+				SceneManager.LoadScene(sceneIndex);
+			} else
+			{
+                gameManager.Respawn(gameObject);
+            }
         
-        // Respawning the player
-        gameManager.Respawn(gameObject);
         
         // Start fading in
         StartCoroutine(gameSceneManager.FadeIn());
@@ -358,12 +382,12 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         // Reset player's health and status
-		playerDead = false;
         ResetHealth();
         gameManager.EnablePlayerMovement();
-
+		gameObject.layer = 10;
         // Wait a bit before resetting iFrames
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
+        playerDead = false;
         iFrames = false;
     }
     else

@@ -111632,6 +111632,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1786455965}
     - target: {fileID: 3356057517831624795, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: youDiedText
+      value: 
+      objectReference: {fileID: 871568905}
+    - target: {fileID: 3356057517831624795, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: useHealthBar
       value: 0
       objectReference: {fileID: 0}
@@ -111776,6 +111780,16 @@ Rigidbody2D:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3452270629591168218, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
   m_PrefabInstance: {fileID: 868716162}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &871568905 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6782323416061090190, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+  m_PrefabInstance: {fileID: 1986755856}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &871568906 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5426763775134503728, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+  m_PrefabInstance: {fileID: 1986755856}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &881792172
 GameObject:
@@ -119371,6 +119385,10 @@ PrefabInstance:
       propertyPath: objectsToDisable.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3394909527261201120, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
+      propertyPath: Transition
+      value: 
+      objectReference: {fileID: 871568906}
     - target: {fileID: 3462653073603374687, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.78
@@ -119435,7 +119453,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Managers '
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8662330718422002416, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
