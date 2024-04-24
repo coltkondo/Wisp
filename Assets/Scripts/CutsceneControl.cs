@@ -48,7 +48,7 @@ public class CutsceneControl : MonoBehaviour
             fadeImage.color = new Color(0, 0, 0, alpha); 
 
             if (fadeImage.color.a >= 1) {
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(nextSceneIndex);
             }
         }
 
