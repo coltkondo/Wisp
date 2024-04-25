@@ -3338,6 +3338,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1604222985}
     - target: {fileID: 1323327731421456426, guid: 244622c5b4a179244acf02bd4ed6202b, type: 3}
+      propertyPath: waitTime
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323327731421456426, guid: 244622c5b4a179244acf02bd4ed6202b, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 1604222976}
@@ -3577,6 +3581,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1604222985}
     - target: {fileID: 3938410838394060630, guid: ba8dc31b6daecb644a65b34f36e7840a, type: 3}
+      propertyPath: waitTime
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3938410838394060630, guid: ba8dc31b6daecb644a65b34f36e7840a, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 1604222976}
@@ -3585,6 +3593,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 247640976}
     - target: {fileID: 3938410838394060630, guid: ba8dc31b6daecb644a65b34f36e7840a, type: 3}
+      propertyPath: objectsToDisable.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3938410838394060630, guid: ba8dc31b6daecb644a65b34f36e7840a, type: 3}
       propertyPath: objectsToEnable.Array.data[0]
       value: 
       objectReference: {fileID: 1522887920}
@@ -3592,6 +3604,10 @@ PrefabInstance:
       propertyPath: objectsToDisable.Array.data[1]
       value: 
       objectReference: {fileID: 894530458}
+    - target: {fileID: 3938410838394060630, guid: ba8dc31b6daecb644a65b34f36e7840a, type: 3}
+      propertyPath: objectsToDisable.Array.data[2]
+      value: 
+      objectReference: {fileID: 1410668695}
     - target: {fileID: 4792675639098790034, guid: ba8dc31b6daecb644a65b34f36e7840a, type: 3}
       propertyPath: m_Name
       value: RewindTrigger 2
@@ -5799,6 +5815,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1604222988}
+    - target: {fileID: 9216102365170905012, guid: f997f720a82db9d41815d18e6a495343, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 6f15af2604165c949b6432040dbb37e6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -103658,6 +103678,83 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5398392275427215661, guid: ccac1d6bcb9ec4400b6475ba4f27a1c1, type: 3}
   m_PrefabInstance: {fileID: 1405670717}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1410668695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1410668697}
+  - component: {fileID: 1410668696}
+  m_Layer: 0
+  m_Name: SuicideWatch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1410668696
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410668695}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.2766037, y: 1.2274258}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.4521637, y: 8.157103}
+  m_EdgeRadius: 0
+--- !u!4 &1410668697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410668695}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 107.6, y: 0.8, z: -3.9798768}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1454074850 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5327504805991682548, guid: f997f720a82db9d41815d18e6a495343, type: 3}
@@ -114724,6 +114821,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1604222985}
     - target: {fileID: 1323327731421456426, guid: 244622c5b4a179244acf02bd4ed6202b, type: 3}
+      propertyPath: waitTime
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1323327731421456426, guid: 244622c5b4a179244acf02bd4ed6202b, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 1604222976}
@@ -116777,6 +116878,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1604222985}
     - target: {fileID: 2798786534582519454, guid: 1a733a080ebd33148a7d77430c18d134, type: 3}
+      propertyPath: waitTime
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798786534582519454, guid: 1a733a080ebd33148a7d77430c18d134, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 1604222976}
@@ -116837,6 +116942,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1604222985}
+    - target: {fileID: 1323327731421456426, guid: 244622c5b4a179244acf02bd4ed6202b, type: 3}
+      propertyPath: waitTime
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1323327731421456426, guid: 244622c5b4a179244acf02bd4ed6202b, type: 3}
       propertyPath: playerObject
       value: 
@@ -117494,6 +117603,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1604222985}
     - target: {fileID: 371170018480652289, guid: 77d918b5c19a6b24e8d9ea7670a1ac82, type: 3}
+      propertyPath: waitTime
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 371170018480652289, guid: 77d918b5c19a6b24e8d9ea7670a1ac82, type: 3}
+      propertyPath: isTransition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 371170018480652289, guid: 77d918b5c19a6b24e8d9ea7670a1ac82, type: 3}
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 1604222976}
@@ -117567,6 +117684,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 284016350292146237, guid: 769c42288d6cb224db0509ad35dd76cc, type: 3}
+      propertyPath: waitTime
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 284016350292146237, guid: 769c42288d6cb224db0509ad35dd76cc, type: 3}
       propertyPath: TextFileAsset
       value: 
@@ -117738,7 +117859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextFileAsset: {fileID: 4900000, guid: b310fcd8b8a82084f95b74c5bbbb495b, type: 3}
-  waitTime: 1
+  waitTime: 0.3
   singleUseDialogue: 1
   isTransition: 1
   objectsToDisable:
@@ -117874,3 +117995,4 @@ SceneRoots:
   - {fileID: 355569260}
   - {fileID: 449367694}
   - {fileID: 1027150071}
+  - {fileID: 1410668697}

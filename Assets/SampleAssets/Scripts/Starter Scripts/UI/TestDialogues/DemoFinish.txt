@@ -1,0 +1,5 @@
+[NAME=Soul Games][SPEAKERSPRITE=Soul Games] Hi there, we're the dev team!
+[NAME=Soul Games][SPEAKERSPRITE=Soul Games] We hope you had a lovely experience playing, and regret to inform you this is the end of the game's story content.
+[NAME=Soul Games][SPEAKERSPRITE=Soul Games] However, with your newfound Wall Climb, you can reach areas you couldn't before, and 
+[NAME=Soul Games][SPEAKERSPRITE=Soul Games] you might find some fun secrets there.
+[NAME=Soul Games][SPEAKERSPRITE=Soul Games] Thank you so much for playing our game!
