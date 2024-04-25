@@ -28,7 +28,9 @@ public class PlayerAudio : MonoBehaviour
 	public bool LoopTimeStopAudio = false;
 
 	[Range(0, 1)]
-	public float VolumeLevel = 1;
+	public float VolumeLevel;
+
+	public float volumeValue;
 
 
 	//And here is where you should create the respective AudioSource
@@ -49,11 +51,27 @@ public class PlayerAudio : MonoBehaviour
 
 	void Start()
 	{
-		SetUpAudio();
+		volumeValue = PlayerPrefs.GetFloat("VideoVolume");
+		VolumeLevel = volumeValue;
+        SetUpAudio();
 	}
 
-	//Here is where you can add more audio sources and the like
-	void SetUpAudio()
+    private void Update()
+    {
+        volumeValue = PlayerPrefs.GetFloat("VideoVolume");
+        VolumeLevel = volumeValue;
+        WalkSource.volume = VolumeLevel;
+        AttackSource.volume = VolumeLevel;
+        ShootSource.volume = VolumeLevel;
+        DeathSource.volume = VolumeLevel;
+        JumpSource.volume = VolumeLevel;
+        DamageSource.volume = VolumeLevel;
+        HealSource.volume = VolumeLevel;
+        TimeStopSource.volume = VolumeLevel;
+    }
+
+    //Here is where you can add more audio sources and the like
+    void SetUpAudio()
 	{
 		//First you have to make a new GameObject with a name
 		GameObject WalkGameObject = new GameObject("WalkAudioSource");

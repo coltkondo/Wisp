@@ -36,12 +36,16 @@ public class EnemyHealth : MonoBehaviour
     private SpriteRenderer spriteRender;
 
     [Range(0, 1)]
-	public float VolumeLevel = 1;
+    public float VolumeLevel;
 
     public float animationDelay;
 
+    public float volumeValue;
+
     void Start()
     {
+        volumeValue = PlayerPrefs.GetFloat("VideoVolume");
+        VolumeLevel = volumeValue;
         currentHealth = maxHealth;
         anim = GetComponent<Animator>();
         spriteRender = GetComponent<SpriteRenderer>();
@@ -55,7 +59,9 @@ public class EnemyHealth : MonoBehaviour
 
     void Update()
     {
-        
+        volumeValue = PlayerPrefs.GetFloat("VideoVolume");
+        VolumeLevel = volumeValue;
+        DeathSource.volume = VolumeLevel;
     }
     void AssignParent(GameObject obj)
 	{

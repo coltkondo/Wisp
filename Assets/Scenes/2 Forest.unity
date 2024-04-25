@@ -41959,7 +41959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TopDown: 0
   alignmnent: 2
-  damageValue: 1
+  damageValue: 2
 --- !u!19719996 &894530461
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -102904,7 +102904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TopDown: 0
   alignmnent: 2
-  damageValue: 1
+  damageValue: 2
 --- !u!1001 &1116969869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117085,6 +117085,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4467638547550068612, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
+      propertyPath: VolumeLevel
+      value: 0.384
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467638547550068612, guid: 4a3499d23cf8344ce95f2f3765b3816f, type: 3}
       propertyPath: HealAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: d081376ae7ec8324dbe65cc207d84ab8, type: 3}
@@ -118082,7 +118086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8092085832575231272, guid: 769c42288d6cb224db0509ad35dd76cc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
