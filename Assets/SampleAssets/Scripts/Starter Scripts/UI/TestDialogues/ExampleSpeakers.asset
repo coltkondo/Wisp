@@ -29,3 +29,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: a29425999e93ebf4eb361764f9ed0f4a, type: 3}
   - name: Evil Girl
     sprite: {fileID: 21300000, guid: ce832520463b4e741a8c60ccfc2c664b, type: 3}
+  - name: Soul Games
+    sprite: {fileID: 21300000, guid: a406589a1c4789945bf98f1089eef707, type: 3}
+  - name: ???
+    sprite: {fileID: 21300000, guid: 7b3b8dea732f95743a681f5f2207e3d0, type: 3}

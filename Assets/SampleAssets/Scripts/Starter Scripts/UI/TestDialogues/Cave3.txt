@@ -3,4 +3,5 @@
 [SPEAKERSPRITE=]Without much thought, you decide to keep it. 
 [SPEAKERSPRITE=]Perhaps you'll find their rightful owner one day.
 [SPEAKERSPRITE=]Wisp has received Wall Climb!
+[SPEAKERSPRITE=]To Wall Climb, simply jump while you're pressed against the wall!
 [SPEAKERSPRITE=]Explore new areas and decipher the secrets atop the walls of the Underworld!
