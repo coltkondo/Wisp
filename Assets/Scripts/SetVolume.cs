@@ -10,6 +10,7 @@ public class SetVolume : MonoBehaviour
     public GameObject[] enemies;
     public EnemyHealth[] enemyHealth;
     public Boss_Projectile[] bossProjAudio;
+    public EnemyFollowPlayer[] bossSound;
     public float volumeValue;
     void Start()
     {
@@ -28,11 +29,18 @@ public class SetVolume : MonoBehaviour
             {
                 enemyHealth = new EnemyHealth[enemies.Length];
                 bossProjAudio = new Boss_Projectile[enemies.Length];
+                bossSound = new EnemyFollowPlayer[enemies.Length];
                 
                 if (enemies[i].GetComponent<Boss_Projectile>() != null)
                 {
                     bossProjAudio[i] = enemies[i].GetComponent<Boss_Projectile>();
                     bossProjAudio[i].VolumeLevel = volumeValue;
+                }
+
+                if (enemies[i].GetComponent<EnemyFollowPlayer>() != null)
+                {
+                    bossSound[i] = enemies[i].GetComponent<EnemyFollowPlayer>();
+                    bossSound[i].VolumeLevel = volumeValue;
                 }
 
                 enemyHealth[i] = enemies[i].GetComponent<EnemyHealth>();
@@ -63,12 +71,20 @@ public class SetVolume : MonoBehaviour
             {
                 enemyHealth = new EnemyHealth[enemies.Length];
                 bossProjAudio = new Boss_Projectile[enemies.Length];
+                bossSound = new EnemyFollowPlayer[enemies.Length];
 
                 if (enemies[i].GetComponent<Boss_Projectile>() != null)
                 {
                     bossProjAudio[i] = enemies[i].GetComponent<Boss_Projectile>();
                     bossProjAudio[i].VolumeLevel = volumeValue;
                 }
+
+                if (enemies[i].GetComponent<EnemyFollowPlayer>() != null)
+                {
+                    bossSound[i] = enemies[i].GetComponent<EnemyFollowPlayer>();
+                    bossSound[i].VolumeLevel = volumeValue;
+                }
+
                 enemyHealth[i] = enemies[i].GetComponent<EnemyHealth>();
                 enemyHealth[i].VolumeLevel = volumeValue;
                 i++;

@@ -31,10 +31,13 @@ public class EnemyFollowPlayer : MonoBehaviour
     [HideInInspector] public AudioSource SlashSource;
 
     [Range(0, 1)]
-    public float VolumeLevel = 1;
+    public float VolumeLevel;
+    public float volumeValue;
 
     private void Start()
     {
+        volumeValue = PlayerPrefs.GetFloat("VideoVolume");
+        VolumeLevel = volumeValue;
         gameManager = FindAnyObjectByType<GameManager>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         InitializeBulletSpawnPoints();
@@ -79,6 +82,11 @@ public class EnemyFollowPlayer : MonoBehaviour
 
     private void Update()
     {
+        volumeValue = PlayerPrefs.GetFloat("VideoVolume");
+        VolumeLevel = volumeValue;
+        ShootSource.volume = VolumeLevel;
+        SlashSource.volume = VolumeLevel;
+
         if (player == null || animator.GetBool("isDead")) return;
 
         if (isChasingPlayer && !gameManager.timeIsStopped)
