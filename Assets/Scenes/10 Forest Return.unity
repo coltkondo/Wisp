@@ -102756,7 +102756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TopDown: 0
   alignmnent: 2
-  damageValue: 1
+  damageValue: 2
 --- !u!1001 &1116969869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114749,6 +114749,7 @@ MonoBehaviour:
   TimeStopAudioClip: {fileID: 8300000, guid: 23a2a229325850d418c181e8ad07011f, type: 3}
   LoopTimeStopAudio: 0
   VolumeLevel: 0.384
+  volumeValue: 0
   WalkSource: {fileID: 0}
   AttackSource: {fileID: 0}
   ShootSource: {fileID: 0}
