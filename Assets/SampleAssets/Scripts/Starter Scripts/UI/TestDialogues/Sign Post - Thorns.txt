@@ -1,2 +1,1 @@
 [NAME=][SPEAKERSPRITE=]WARNING: DANGEROUS THORNS AHEAD
-[NAME=][SPEAKERSPRITE=]Once you go in, you won't come back!
