@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.Rendering.PostProcessing;
 
 public class GameManager : MonoBehaviour
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
 	public GameObject[] enemies;
 	public Animator[] anim;
     public GameObject timestop_UI;
+    public AudioMixer mixer;
 
     public Vector3 RespawnPlace;
 
@@ -31,7 +33,8 @@ public class GameManager : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		if (Player == null)
+        mixer.SetFloat("Volume", PlayerPrefs.GetFloat("Volume"));
+        if (Player == null)
 		{
 			Player = FindObjectOfType<Movement>().gameObject;
 		}

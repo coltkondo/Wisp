@@ -115008,6 +115008,7 @@ MonoBehaviour:
   TimeStopAudioClip: {fileID: 8300000, guid: 23a2a229325850d418c181e8ad07011f, type: 3}
   LoopTimeStopAudio: 0
   VolumeLevel: 0.384
+  volumeValue: 0
   WalkSource: {fileID: 0}
   AttackSource: {fileID: 0}
   ShootSource: {fileID: 0}
@@ -115957,6 +115958,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8412915472332013128, guid: 2119dac6a27e746419b17d53c72a4fc5, type: 3}
+      propertyPath: animationDelay
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9100796918288698028, guid: 2119dac6a27e746419b17d53c72a4fc5, type: 3}
       propertyPath: m_Name
       value: SkeleEnemy (2)
@@ -116613,6 +116618,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5354452291545427814, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 324781d92b3506f4a8e7510c8587392c, type: 2}
     - target: {fileID: 5354452291545427814, guid: ec96afd6e53ef49359c41e2f017c0fec, type: 3}
       propertyPath: Player
       value: 
