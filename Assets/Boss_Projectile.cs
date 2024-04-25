@@ -20,12 +20,15 @@ public class Boss_Projectile : MonoBehaviour
     public AudioClip ShootAudioClip;
     public bool LoopShootAudio = false;
     [Range(0, 1)]
-    public float VolumeLevel = 1;
+    public float VolumeLevel;
+    public float volumeValue;
 
     private bool isLaunched = false;
 
     void Start()
     {
+        volumeValue = PlayerPrefs.GetFloat("VideoVolume");
+        VolumeLevel = volumeValue;
         SetupAudio();
         animator.Play("Boss_Proj_Summon");
         gameManager = FindObjectOfType<GameManager>();
@@ -64,6 +67,9 @@ public class Boss_Projectile : MonoBehaviour
 
     void FixedUpdate()
     {
+        volumeValue = PlayerPrefs.GetFloat("VideoVolume");
+        VolumeLevel = volumeValue;
+        ShootSource.volume = VolumeLevel;
         if (!gameManager.timeIsStopped && isFrozen)
         {
             // Resume movement with the stored velocity
