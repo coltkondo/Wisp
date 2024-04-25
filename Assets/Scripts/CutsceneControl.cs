@@ -22,6 +22,8 @@ public class CutsceneControl : MonoBehaviour
 
     public bool isPaused = false;
 
+    private float volume;
+
 
 
     // Start is called before the first frame update
@@ -31,9 +33,13 @@ public class CutsceneControl : MonoBehaviour
         videoPlayer.time = 0;
         videoPlayer.Prepare();
 
+        volume = PlayerPrefs.GetFloat("VideoVolume");
+
         StartCoroutine(BeginCutsceneAfterDelay(1.5f));
         videoPlayer.loopPointReached += EndReached;
-        skipButton.onClick.AddListener(OnSkipPressed);    
+        skipButton.onClick.AddListener(OnSkipPressed);
+        videoPlayer.SetDirectAudioVolume(0, volume);
+        Debug.Log("Volume" + videoPlayer.GetDirectAudioVolume(0) + "");
     }
 
     // Update is called once per frame
