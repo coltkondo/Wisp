@@ -38,7 +38,7 @@ public class CutsceneControl : MonoBehaviour
         StartCoroutine(BeginCutsceneAfterDelay(1.5f));
         videoPlayer.loopPointReached += EndReached;
         skipButton.onClick.AddListener(OnSkipPressed);
-        videoPlayer.SetDirectAudioVolume(0, volume);
+        videoPlayer.SetDirectAudioVolume(30, volume);
         Debug.Log("Volume" + videoPlayer.GetDirectAudioVolume(0) + "");
     }
 

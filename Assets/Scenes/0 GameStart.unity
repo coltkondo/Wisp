@@ -7675,7 +7675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &899205718
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7912,6 +7912,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 324781d92b3506f4a8e7510c8587392c, type: 2}
+  player: {fileID: 0}
+  playerAudio: {fileID: 0}
+  enemies: []
+  enemyHealth: []
+  bossProjAudio: []
+  bossSound: []
+  volumeValue: 0
 --- !u!1 &1176006022
 GameObject:
   m_ObjectHideFlags: 0
