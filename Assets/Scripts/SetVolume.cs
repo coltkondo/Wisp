@@ -12,9 +12,10 @@ public class SetVolume : MonoBehaviour
     public Boss_Projectile[] bossProjAudio;
     public EnemyFollowPlayer[] bossSound;
     public float volumeValue;
+
     void Start()
     {
-        volumeValue = PlayerPrefs.GetFloat("VideoVolume");
+        volumeValue = PlayerPrefs.GetFloat("VideoVolume"); 
 
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
