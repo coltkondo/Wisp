@@ -34,7 +34,7 @@ But the path of a Grim Reaper is not solely one of battle and strife. It is also
 ## Trailer & Screenshots 
 <div align="center">
   <a href="https://www.youtube.com/watch?v=41WmCLFOm1s">
-    <img src="https://img.youtube.com/vi/41WmCLFOm1s/0.jpg" alt="Watch the video">
+    <img src="https://img.youtube.com/vi/41WmCLFOm1s/1.jpg" alt="Watch the video">
   </a>
 </div>
 <p align="center">◆</p>
