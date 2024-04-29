@@ -54,7 +54,7 @@ But the path of a Grim Reaper is not solely one of battle and strife. It is also
 
 ## Support
 
-For support, feature requests, or any other inquiries, please [open an issue](url-to-issues-page) on this repository.
+For support, feature requests, or any other inquiries, please [open an issue](https://github.com/coltkondo/Wisp/issues) on this repository.
 
 ---
 
